@@ -11,4 +11,8 @@ export default {
 </script>
 
 <style>
+#nprogress .bar {
+    /* 自定义颜色 */
+    background: #409eff !important;
+}
 </style>

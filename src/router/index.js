@@ -5,6 +5,9 @@ import 'nprogress/nprogress.css'
 import Index from '../components/Index'
 
 import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer'
+
+NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 Vue.use(Router)
 
@@ -21,7 +24,8 @@ let router = new Router({
                     path: '/',
                     name: 'index',
                     components: {
-                        header: Header
+                        header: Header,
+                        footer: Footer
                     }
                 }
             ]
