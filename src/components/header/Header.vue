@@ -9,7 +9,7 @@
         <transition name="slide-fade">
             <div id="header" v-show="show">
                 <router-link id="logo" to="/">
-                    <img src="../../../assets/logo.png">
+                    <!-- <img src="../../../assets/logo.png"> -->
                     <span class="title">DB's Blog</span>
                     <span class="motto">success belongs to the persevering</span>
                 </router-link>
@@ -39,14 +39,14 @@
                 </ul>
             </div>
         </transition>
-        <sidebar ref="sidebar" :articleCategoryList="articleCategoryList" :bookCategoryList="bookCategoryList">
-        </sidebar>
+        <!-- <sidebar ref="sidebar" :articleCategoryList="articleCategoryList" :bookCategoryList="bookCategoryList">
+        </sidebar> -->
     </div>
 </template>
 
 <script>
 // import SideBar from "@/components/header/SimpleHeader/SideBar";
-import { treeDataTranslate } from "@/utils";
+import { treeDataTranslate } from "@/util";
 export default {
     components: {
         // sidebar: SideBar
@@ -136,8 +136,8 @@ export default {
 };
 </script>
 
-<style lang="" scoped>
-@import "@/assets/css/header.css";
+<style scoped>
+@import "./css/header.css";
 /* 添加导航栏显示动画 */
 .slide-fade-enter-active,
 .slide-fade-leave-active {

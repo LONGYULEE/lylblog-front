@@ -7,7 +7,7 @@ import http from '@/util/request.js'
 import '@/common/css/index.css'
 
 // 引入vue ant design
-import ant from "./config/AntDesign";
+import ant from "./ant/AntDesign";
 Vue.use(ant);
 
 Vue.config.productionTip = false
