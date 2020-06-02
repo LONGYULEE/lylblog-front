@@ -92,6 +92,6 @@ export default {
 };
 </script>
 
-<style>
-@import "./css/sidebar.css";
+<style lang="less">
+@import "./css/sidebar.less";
 </style>

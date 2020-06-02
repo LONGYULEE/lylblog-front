@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import http from '@/util/request.js'
-import '@/common/css/index.css'
+import '@/common/less/index.less'
 
 // 引入vue ant design
 import ant from "./ant/AntDesign";
