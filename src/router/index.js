@@ -4,8 +4,12 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import Index from '../components/Index'
 
+// 公共
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
+
+//首页
+import HomeContent from '../components/content/HomeContent'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -25,6 +29,7 @@ let router = new Router({
                     name: 'index',
                     components: {
                         header: Header,
+                        content: HomeContent,
                         footer: Footer
                     }
                 }
