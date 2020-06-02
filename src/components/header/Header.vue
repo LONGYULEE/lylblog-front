@@ -39,7 +39,7 @@
                 </ul>
             </div>
         </transition>
-        <sidebar ref="sidebar" :articleCategoryList="articleCategoryList" :bookCategoryList="bookCategoryList">
+        <sidebar ref="sidebar" :articleCategoryList="articleCategoryList">
         </sidebar>
     </div>
 </template>
@@ -55,7 +55,6 @@ export default {
         return {
             show: true,
             articleCategoryList: [],
-            bookCategoryList: [],
             keywords: ""
         };
     },
@@ -115,19 +114,15 @@ export default {
                 method: "get",
                 params: this.$http.adornParams()
             }).then(({ data }) => {
-                if (data && data.code === 200) {
-                    data.categoryList.forEach(category => {
+                if (data && data.code === 2000) {
+                    console.log(data);
+                    data.data.forEach(category => {
                         if (category.type === 0) {
                             this.articleCategoryList.push(category);
-                        } else if (category.type === 1) {
-                            this.bookCategoryList.push(category);
                         }
                     });
                     this.articleCategoryList = treeDataTranslate(
                         this.articleCategoryList
-                    );
-                    this.bookCategoryList = treeDataTranslate(
-                        this.bookCategoryList
                     );
                 }
             });

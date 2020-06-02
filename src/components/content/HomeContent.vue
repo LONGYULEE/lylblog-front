@@ -8,8 +8,8 @@
                         <title-menu-filter @filterByMenu="refreshArticle" slot="menu"
                             :menu-filter-list="defaultFilterList"></title-menu-filter>
                     </section-title>
-                    <!-- <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
-                        :type="'article'"></article-list-cell> -->
+                    <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
+                        :type="'article'"></article-list-cell>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
@@ -17,8 +17,8 @@
                     <!-- <about></about>
                     <recommend></recommend>
                     <hot-read></hot-read>
-                    <friend-links style="margin-top:15px;"></friend-links>
-                    <tag-wall style="margin-top: 15px;"></tag-wall> -->
+                    <friend-links style="margin-top:15px;"></friend-links> -->
+                    <tag-wall style="margin-top: 15px;"></tag-wall>
                 </div>
             </a-col>
         </a-row>
@@ -26,16 +26,16 @@
 </template>
 
 <script>
-// import ArticleListCell from "@/components/views/Article/ArticleListCell";
+import ArticleListCell from "@/components/views/Article/ArticleListCell";
 import SectionTitle from "@/components/views/Section/SectionTitle";
 import TitleMenuFilter from "@/components/views/Section/TitleMenuFilter";
-// import ArticlePageHeader from "@/components/views/Article/ArticlePageHeader";
+import ArticlePageHeader from "@/components/views/Article/ArticlePageHeader";
 // import ArticlePageContent from "@/components/views/Article/ArticlePageContent";
 // import ArchiveListTimeTitle from "@/components/views/Archive/ArchiveListTimeTitle";
 // import ArchiveListCell from "@/components/views/Archive/ArchiveListCell";
 // import About from "@/components/views/About";
 // import FriendLinks from "@/components/views/FriendLinks";
-// import TagWall from "@/components/views/TagWall";
+import TagWall from "@/components/views/tag/TagWall";
 // import Recommend from "@/components/views/Recommend";
 // import HotRead from "@/components/views/HotRead";
 // import SideToc from "@/components/views/SideToc";
@@ -53,17 +53,17 @@ export default {
         };
     },
     components: {
-        // "article-list-cell": ArticleListCell,
+        "article-list-cell": ArticleListCell,
         "section-title": SectionTitle,
-        "title-menu-filter": TitleMenuFilter
-        // "article-page-header": ArticlePageHeader,
+        "title-menu-filter": TitleMenuFilter,
+        "article-page-header": ArticlePageHeader,
         // "article-page-content": ArticlePageContent,
         // "archive-list-time-title": ArchiveListTimeTitle,
         // "archive-list-cell": ArchiveListCell,
         // about: About,
         // "friend-links": FriendLinks,
         // "side-toc": SideToc,
-        // "tag-wall": TagWall,
+        "tag-wall": TagWall
         // recommend: Recommend,
         // "hot-read": HotRead
     },

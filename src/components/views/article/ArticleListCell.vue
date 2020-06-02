@@ -106,8 +106,8 @@ export default {
 };
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" scoped>
-@import '../../../common/stylus/index.styl';
+<style lang="less" scoped>
+@import "../../../common/less/index.less";
 
 .article-cell {
     margin-bottom: 15px;
@@ -115,11 +115,11 @@ export default {
     > a {
         display: block;
         cursor: default;
-        border: 1px solid $color-border;
+        border: 1px solid @color-border;
 
         &:hover {
-            border: 1px solid $color-border-hover;
-            box-shadow: 2px 2px 3px $color-border;
+            border: 1px solid @color-border-hover;
+            box-shadow: 2px 2px 3px @color-border;
         }
 
         .text-wrapper {
@@ -136,23 +136,23 @@ export default {
                 line-height: 27px;
 
                 span.special {
-                    border-radius: $border-radius;
+                    border-radius: @border-radius;
                     font-size: 12px;
                     font-weight: 100;
                     padding: 3px 5px;
                     margin-left: 1px;
                     vertical-align: top;
-                    color: $default-background-color;
-                    background: $iview-secondary-warning-color;
+                    color: @default-background-color;
+                    background: @warning-color;
                     cursor: pointer;
                 }
 
                 a {
-                    color: $color-typegraphy-title;
+                    color: @color-typegraphy-title;
                     cursor: pointer;
 
                     &:hover {
-                        color: $color-typegraphy-title-hover;
+                        color: @color-typegraphy-title-hover;
                         text-decoration: underline;
                     }
                 }
@@ -169,7 +169,7 @@ export default {
                     cursor: pointer;
 
                     &:hover {
-                        color: $color-main-primary;
+                        color: @color-main-primary;
                         text-decoration: underline;
                     }
                 }
@@ -182,7 +182,7 @@ export default {
             .line {
                 width: 50px;
                 margin-top: 30px;
-                border-1px(rgba(7, 17, 27, 0.4));
+                .border-1px(rgba(7, 17, 27, 0.4));
 
                 &::after {
                     margin-bottom: 15px;
@@ -201,7 +201,7 @@ export default {
                 font-weight: 200;
 
                 a {
-                    color: $color-main-primary;
+                    color: @color-main-primary;
                     font-weight: 500;
                     cursor: pointer;
 
@@ -226,7 +226,7 @@ export default {
                         cursor: pointer;
 
                         &:hover {
-                            color: $color-main-primary;
+                            color: @color-main-primary;
                             text-decoration: underline;
                         }
                     }

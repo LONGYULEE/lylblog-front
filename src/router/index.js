@@ -10,6 +10,7 @@ import Footer from '../components/footer/Footer'
 
 //首页
 import HomeContent from '../components/content/HomeContent'
+import ArticleListContent from '@/components/content/ArticleListContent'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -32,7 +33,16 @@ let router = new Router({
                         content: HomeContent,
                         footer: Footer
                     }
-                }
+                },
+                {
+                    path: 'articles',
+                    name: 'articles',
+                    components: {
+                        header: Header,
+                        content: ArticleListContent,
+                        footer: Footer
+                    }
+                },
             ]
         }
     ]
