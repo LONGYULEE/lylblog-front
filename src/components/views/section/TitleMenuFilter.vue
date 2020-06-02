@@ -47,19 +47,15 @@ export default {
 
 <style lang="less" scoped>
 @import "../../../common/less/theme.less";
-
 .title-menu-timeline {
     display: flex;
-
     ul {
         list-style: none;
         li {
             float: left;
             margin: 0 6px;
-
             a {
                 padding: 6px 0;
-
                 &:hover,
                 &.active {
                     color: @color-main-primary;
@@ -68,16 +64,13 @@ export default {
             }
         }
     }
-
     .refresh {
         margin-left: 15px;
         line-height: inherit;
-
         a {
             font-size: 20px;
             color: @color-gradually-gray-41;
             cursor: pointer;
-
             &:hover {
                 color: @color-main-primary;
             }
