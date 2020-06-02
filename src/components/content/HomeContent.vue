@@ -38,7 +38,7 @@ import ArticlePageHeader from "@/components/views/Article/ArticlePageHeader";
 import TagWall from "@/components/views/tag/TagWall";
 // import Recommend from "@/components/views/Recommend";
 // import HotRead from "@/components/views/HotRead";
-// import SideToc from "@/components/views/SideToc";
+import SideToc from "@/components/views/SideToc";
 import merge from "lodash/merge"; // 合并对象工具
 import { DefaultFilterList, DefaultLimitSize } from "@/common/js/const";
 export default {
@@ -62,7 +62,7 @@ export default {
         // "archive-list-cell": ArchiveListCell,
         // about: About,
         // "friend-links": FriendLinks,
-        // "side-toc": SideToc,
+        "side-toc": SideToc,
         "tag-wall": TagWall
         // recommend: Recommend,
         // "hot-read": HotRead
