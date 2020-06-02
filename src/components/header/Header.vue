@@ -131,6 +131,18 @@ export default {
 };
 </script>
 
-<style scoped>
-@import "./css/header.css";
+<style lang="less" scoped>
+@import "./css/header.less";
+
+/* 添加导航栏显示动画 */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+    transition: all 0.8s ease;
+}
+.slide-fade-leave-to,
+.slide-fade-enter {
+    /* .slide-fade-leave-active for below version 2.1.8 */
+    transform: translateY(-70px);
+    opacity: 0;
+}
 </style>
