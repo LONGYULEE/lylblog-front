@@ -89,37 +89,57 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style scope>
 .home-content {
     width: auto;
-    @media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 768px) {
+    .home-content {
         margin: 5px 5px 10px 5px;
     }
-    @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+    .home-content {
         margin: 10px 10px 20px 10px;
     }
-    @media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 992px) {
+    .home-content {
         margin: 15px 35px 50px 35px;
     }
-    @media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1200px) {
+    .home-content {
         width: 1200px;
         margin: 15px auto 0;
-        .layout-left,
-        .layout-right {
-            padding: 0;
-            @media only screen and (max-width: 768px) {
-                padding: 0;
-            }
-            @media screen and (min-width: 768px) {
-                padding: 0;
-            }
-            @media screen and (min-width: 992px) {
-                padding: 0 10px;
-            }
-            @media screen and (min-width: 1200px) {
-                padding: 0 10px;
-            }
-        }
+    }
+    .home-content .layout-left,
+    .home-content .layout-right {
+        padding: 0;
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 768px) {
+    .home-content .layout-left,
+    .home-content .layout-right {
+        padding: 0;
+    }
+}
+@media screen and (min-width: 1200px) and (min-width: 768px) {
+    .home-content .layout-left,
+    .home-content .layout-right {
+        padding: 0;
+    }
+}
+@media screen and (min-width: 1200px) and (min-width: 992px) {
+    .home-content .layout-left,
+    .home-content .layout-right {
+        padding: 0 10px;
+    }
+}
+@media screen and (min-width: 1200px) and (min-width: 1200px) {
+    .home-content .layout-left,
+    .home-content .layout-right {
+        padding: 0 10px;
     }
 }
 </style>

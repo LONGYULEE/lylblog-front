@@ -115,7 +115,6 @@ export default {
                 params: this.$http.adornParams()
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
-                    console.log(data);
                     data.data.forEach(category => {
                         if (category.type === 0) {
                             this.articleCategoryList.push(category);
