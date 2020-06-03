@@ -14,8 +14,8 @@
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
                 <div class="layout-right">
-                    <!-- <about></about>
-                    <recommend></recommend>
+                    <about></about>
+                    <!-- <recommend></recommend>
                     <hot-read></hot-read>
                     <friend-links style="margin-top:15px;"></friend-links> -->
                     <tag-wall style="margin-top: 15px;"></tag-wall>
@@ -33,7 +33,7 @@ import ArticlePageHeader from "@/components/views/Article/ArticlePageHeader";
 // import ArticlePageContent from "@/components/views/Article/ArticlePageContent";
 // import ArchiveListTimeTitle from "@/components/views/Archive/ArchiveListTimeTitle";
 // import ArchiveListCell from "@/components/views/Archive/ArchiveListCell";
-// import About from "@/components/views/About";
+import About from "@/components/views/About";
 // import FriendLinks from "@/components/views/FriendLinks";
 import TagWall from "@/components/views/tag/TagWall";
 // import Recommend from "@/components/views/Recommend";
@@ -60,7 +60,7 @@ export default {
         // "article-page-content": ArticlePageContent,
         // "archive-list-time-title": ArchiveListTimeTitle,
         // "archive-list-cell": ArchiveListCell,
-        // about: About,
+        about: About,
         // "friend-links": FriendLinks,
         "side-toc": SideToc,
         "tag-wall": TagWall

@@ -4,7 +4,8 @@ import {
     Icon,
     Row,
     Tag,
-    Col
+    Col,
+    Progress
 } from 'ant-design-vue';
 
 const ant = {
@@ -15,6 +16,7 @@ const ant = {
         Vue.component(Row.name, Row);
         Vue.component(Tag.name, Tag);
         Vue.component(Col.name, Col);
+        Vue.component(Progress.name, Progress);
         Vue.prototype.$message = message;
     }
 };
