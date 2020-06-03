@@ -2,8 +2,8 @@
     <div class="about">
         <img class="background" src="../../assets/background.jpg" alt="">
         <img class="avatar" src="../../assets/avatar.jpg" alt="">
-        <p class="name">Bobbi</p>
-        <p class="desc">Write the code, Change the World</p>
+        <p class="name">HANLU</p>
+        <p class="desc">人的时间是有限的，但是bug是无限的</p>
         <ul class="social">
             <li><a href="#" target="_blank"><img src="../../assets/icon/GitHub.png" alt=""></a></li>
         </ul>
@@ -54,7 +54,7 @@ export default {};
 </script>
 
 <style lang="less" scoped>
-@import "../../common/less/theme.less";
+@import '../../common/less/theme.less';
 
 .about {
     position: relative;
