@@ -36,5 +36,8 @@ export default {
     @media screen and (min-width: @responsive-lg) {
         font-size: 15px;
     }
+    .copyright {
+        margin: 10px 0;
+    }
 }
 </style>

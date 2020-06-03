@@ -8,7 +8,7 @@
         </ul>
         <div class="refresh">
             <a @click="refresh" title="刷新">
-                <a-icon type="reload" />
+                <a-icon type="sync" :style="{ fontSize: '16px' }" />
             </a>
         </div>
     </div>

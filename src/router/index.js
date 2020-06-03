@@ -12,6 +12,8 @@ import Footer from '../components/footer/Footer'
 import HomeContent from '../components/content/HomeContent'
 import ArticleListContent from '@/components/content/ArticleListContent'
 
+import NotFound from '@/components/views/404'
+
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 Vue.use(Router)
@@ -42,8 +44,17 @@ let router = new Router({
                         content: ArticleListContent,
                         footer: Footer
                     }
-                },
+                }
             ]
+        },
+        {
+            path: '/404',
+            name: 'notfound',
+            component: NotFound,
+        },
+        {
+            path: "*", // 此处需特别注意置于最底部
+            redirect: "/404"
         }
     ]
 })

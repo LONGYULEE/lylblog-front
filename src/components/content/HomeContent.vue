@@ -15,9 +15,9 @@
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
                 <div class="layout-right">
                     <about></about>
-                    <!-- <recommend></recommend>
+                    <recommend></recommend>
                     <hot-read></hot-read>
-                    <friend-links style="margin-top:15px;"></friend-links> -->
+                    <!--<friend-links style="margin-top:15px;"></friend-links> -->
                     <tag-wall style="margin-top: 15px;"></tag-wall>
                 </div>
             </a-col>
@@ -36,8 +36,8 @@ import ArticlePageHeader from "@/components/views/Article/ArticlePageHeader";
 import About from "@/components/views/About";
 // import FriendLinks from "@/components/views/FriendLinks";
 import TagWall from "@/components/views/tag/TagWall";
-// import Recommend from "@/components/views/Recommend";
-// import HotRead from "@/components/views/HotRead";
+import Recommend from "@/components/views/Recommend";
+import HotRead from "@/components/views/HotRead";
 import SideToc from "@/components/views/SideToc";
 import merge from "lodash/merge"; // 合并对象工具
 import { DefaultFilterList, DefaultLimitSize } from "@/common/js/const";
@@ -63,9 +63,9 @@ export default {
         about: About,
         // "friend-links": FriendLinks,
         "side-toc": SideToc,
-        "tag-wall": TagWall
-        // recommend: Recommend,
-        // "hot-read": HotRead
+        "tag-wall": TagWall,
+        recommend: Recommend,
+        "hot-read": HotRead
     },
     created: function() {
         let param = {};
