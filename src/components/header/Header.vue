@@ -9,33 +9,31 @@
         <transition name="slide-fade">
             <div id="header" v-show="show">
                 <router-link id="logo" to="/">
-                    <img src="../../assets/logo.png">
+                    <img src="../../assets/logo.png" />
                     <span class="title">DB's Blog</span>
                     <span class="motto">success belongs to the persevering</span>
                 </router-link>
                 <ul id="nav">
                     <li>
                         <form id="search-form" action="/articles/search">
-                            <span class="algolia-autocomplete"
-                                style="position: relative; display: inline-block; direction: ltr;">
-                                <input type="text" id="search-query-nav"
-                                    class="search-query st-default-search-input aa-input" name="keywords"
-                                    v-model="keywords" @keyup.enter="submit" autocomplete="off" spellcheck="false"
-                                    role="combobox" aria-autocomplete="list" aria-expanded="false"
-                                    aria-owns="algolia-autocomplete-listbox-0" dir="auto"
-                                    style="position: relative; vertical-align: top;">
-                                <pre aria-hidden="true"
-                                    style="position: absolute; visibility: hidden; white-space: pre; font-family: system-ui; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
-                                <span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0"
-                                    style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;">
+                            <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
+                                <input type="text" id="search-query-nav" class="search-query st-default-search-input aa-input" name="keywords" v-model="keywords" @keyup.enter="submit" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;" />
+                                <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: system-ui; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                                <span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;">
                                     <div class="aa-dataset-1"></div>
                                 </span></span>
                         </form>
                     </li>
 
-                    <li><a href="/articles" class="nav-link contribute">文章</a></li>
-                    <li><a href="/timeline" class="nav-link contribute">时光轴</a></li>
-                    <li><a href="/article/1" class="nav-link contribute">关于</a></li>
+                    <li>
+                        <a href="/articles" class="nav-link contribute">文章</a>
+                    </li>
+                    <li>
+                        <a href="/timeline" class="nav-link contribute">时光轴</a>
+                    </li>
+                    <li>
+                        <a href="/article/1" class="nav-link contribute">关于</a>
+                    </li>
                 </ul>
             </div>
         </transition>
@@ -45,8 +43,8 @@
 </template>
 
 <script>
-import SideBar from "@/components/header/SideBar";
-import { treeDataTranslate } from "@/util";
+import SideBar from '@/components/header/SideBar';
+import { treeDataTranslate } from '@/util';
 export default {
     components: {
         sidebar: SideBar
@@ -55,22 +53,22 @@ export default {
         return {
             show: true,
             articleCategoryList: [],
-            keywords: ""
+            keywords: ''
         };
     },
     created() {
         this.listCategory();
         this.keywords = this.$route.query.keywords;
     },
-    mounted: function() {
-        this.$nextTick(function() {
+    mounted: function () {
+        this.$nextTick(function () {
             this.initMobileMenu();
         });
         // 给页面绑定滑轮滚动事件
         if (document.addEventListener) {
             // firefox
             document.addEventListener(
-                "DOMMouseScroll",
+                'DOMMouseScroll',
                 this.watchScroll,
                 false
             );
@@ -82,7 +80,7 @@ export default {
         initMobileMenu() {
             // 显示手机端的菜单
             var sidebar = this.$refs.sidebar;
-            this.$refs.menubutton.addEventListener("click", function() {
+            this.$refs.menubutton.addEventListener('click', function () {
                 sidebar.toggleSideBar();
             });
         },
@@ -110,8 +108,8 @@ export default {
         },
         listCategory() {
             this.$http({
-                url: this.$http.adornUrl("/operation/categories"),
-                method: "get",
+                url: this.$http.adornUrl('/operation/categories'),
+                method: 'get',
                 params: this.$http.adornParams()
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
@@ -131,5 +129,5 @@ export default {
 </script>
 
 <style lang="less">
-@import "./css/header.less";
+@import './css/header.less';
 </style>
