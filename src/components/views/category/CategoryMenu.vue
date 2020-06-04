@@ -106,7 +106,7 @@ export default {
         setDefaultCategory(categoryId) {
             let recursiveCategorys = [];
             let recursiveCategoryIds = [];
-            let recursiveCategory = function(categorys, selectCategoryId) {
+            let recursiveCategory = function (categorys, selectCategoryId) {
                 if (
                     categoryId === null ||
                     categoryId === undefined ||
@@ -167,16 +167,16 @@ export default {
         }
     },
     watch: {
-        categorys: function(newCategorys) {
+        categorys: function (newCategorys) {
             console.log(newCategorys);
             if (newCategorys) {
                 this.setDefaultCategory(parseInt(this.defaultCategory));
             }
         },
-        defaultCategory: function(newDefaultCategory) {
+        defaultCategory: function (newDefaultCategory) {
             this.setDefaultCategory(parseInt(newDefaultCategory));
         },
-        selectedRecursiveCategorys: function(newSelectedRecursiveCategorys) {
+        selectedRecursiveCategorys: function (newSelectedRecursiveCategorys) {
             // 更新样式
             this.$nextTick(() => {
                 if (newSelectedRecursiveCategorys.length === 0) {
@@ -209,15 +209,20 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../../common/less/theme.less";
+@import '../../../common/less/theme.less';
 
 .classify-bar {
+    margin-bottom: 10px;
     .level {
         display: flex;
         padding: 10px 0;
         font-size: 15px;
         line-height: 22px;
-        border-bottom: 1px solid @default-border-color;
+        border-radius: 20px;
+        margin-bottom: 3px;
+        // border-bottom: 1px solid @default-border-color;
+        background-color: white;
+        padding-left: 10px;
 
         .title {
             display: inline-block;

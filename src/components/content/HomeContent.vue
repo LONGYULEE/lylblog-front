@@ -79,8 +79,8 @@ export default {
                 params: this.$http.adornParams(params, false),
                 method: "get"
             }).then(({ data }) => {
-                if (data && data.code === 200) {
-                    this.articleList = data.page.list;
+                if (data && data.code === 2000) {
+                    this.articleList = data.data.list;
                 }
             });
         }

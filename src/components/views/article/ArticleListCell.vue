@@ -10,8 +10,8 @@
                             <span class="special" v-if="article.top>0" title="置顶">置顶</span>
                         </h4>
                         <div class="tags">
-                            <a-tag :color="tag.id | mapTagColor" :key="tag.id" type="border"
-                                v-for="(tag) in article.tagList">{{tag.name}}</a-tag>
+                            <a-tag :color="tag.id | mapTagColor" :key="tag.id" type="border" v-for="(tag) in article.tagList">
+                                {{tag.name}}</a-tag>
                         </div>
                         <p class="desc">{{article.description | filterHtml | textLineBreak(70) }}<a
                                 :href="'/article/'+article.id"> 查看更多
@@ -53,13 +53,13 @@ export default {
     },
     mixins: [mixin],
     computed: {
-        textOrderType: function() {
+        textOrderType: function () {
             return this.article.coverType === ARTICLE_TYPE_BIG_IMAGE ? 2 : 1;
         },
-        imgOrderType: function() {
+        imgOrderType: function () {
             return this.article.coverType === ARTICLE_TYPE_BIG_IMAGE ? 1 : 2;
         },
-        textSpan: function() {
+        textSpan: function () {
             if (this.article.coverType === ARTICLE_TYPE_BIG_IMAGE) {
                 return 24;
             } else if (this.article.coverType === ARTICLE_TYPE_NO_IMAGE) {
@@ -68,7 +68,7 @@ export default {
                 return 17;
             }
         },
-        imgSpan: function() {
+        imgSpan: function () {
             if (this.article.coverType === ARTICLE_TYPE_BIG_IMAGE) {
                 return 24;
             } else if (this.article.coverType === ARTICLE_TYPE_NO_IMAGE) {
@@ -77,7 +77,7 @@ export default {
                 return 7;
             }
         },
-        themeClass: function() {
+        themeClass: function () {
             if (this.article.coverType === ARTICLE_TYPE_BIG_IMAGE) {
                 return "big-image";
             } else {
@@ -107,19 +107,22 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "../../../common/less/index.less";
+@import '../../../common/less/index.less';
 
 .article-cell {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    background-color: white;
 
     > a {
+        border-radius: 15px;
         display: block;
         cursor: default;
         border: 1px solid @color-border;
 
         &:hover {
             border: 1px solid @color-border-hover;
-            box-shadow: 2px 2px 3px @color-border;
+            box-shadow: 2px 2px 3px #c2c2c3;
         }
 
         .text-wrapper {

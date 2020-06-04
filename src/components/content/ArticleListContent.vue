@@ -4,8 +4,8 @@
             <a-col :xs="24" :sm="24" :md="24" :lg="17">
                 <div class="layout-left">
                     <article-list-header v-if="categoryList.length>0" @filterByMenu="filterByMenu"
-                        @filterByCategory="filterByCategory" :categorys="categoryList"
-                        :defaultCategory="selected_category" :mainTitle="'文章列表'" :sub-title="'Articles'">
+                        @filterByCategory="filterByCategory" :categorys="categoryList" :defaultCategory="selected_category"
+                        :mainTitle="'文章列表'" :sub-title="'Articles'">
                     </article-list-header>
                     <!-- <article-list-cell v-for="article in articleList" :article="article" :key="article.id">
                     </article-list-cell> -->
@@ -14,8 +14,8 @@
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
                 <div class="layout-right">
-                    <!-- <recommend></recommend>
-                    <tag-wall style="margin-top: 15px;"></tag-wall> -->
+                    <recommend></recommend>
+                    <tag-wall style="margin-top: 15px;"></tag-wall>
                 </div>
             </a-col>
         </a-row>
@@ -27,8 +27,8 @@ import ArticleListHeader from "@/components/views/Article/ArticleListHeader";
 // import ArticlePageContent from "@/components/views/Article/ArticlePageContent";
 // import ArticlePageFooter from "@/components/views/Article/ArticlePageFooter";
 // import ArticleListCell from "@/components/views/Article/ArticleListCell";
-// import Recommend from "@/components/views/Recommend";
-// import TagWall from "@/components/views/TagWall";
+import Recommend from "@/components/views/Recommend";
+import TagWall from "@/components/views/tag/TagWall";
 // import BrowseMore from "@/components/views/BrowseMore";
 import merge from "lodash/merge";
 import { treeDataTranslate } from "@/util";
@@ -136,12 +136,12 @@ export default {
         }
     },
     components: {
-        "article-list-header": ArticleListHeader
+        "article-list-header": ArticleListHeader,
         // "article-page-content": ArticlePageContent,
         // "article-page-footer": ArticlePageFooter,
         // "article-list-cell": ArticleListCell,
-        // recommend: Recommend,
-        // "tag-wall": TagWall,
+        recommend: Recommend,
+        "tag-wall": TagWall,
         // "browse-more": BrowseMore
     }
 };

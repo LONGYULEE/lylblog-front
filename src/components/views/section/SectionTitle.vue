@@ -29,6 +29,8 @@ export default {
 @import '../../../common/less/index.less';
 
 .section-title {
+    margin-bottom: 10px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     padding: 20px 10px;
