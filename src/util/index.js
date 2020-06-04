@@ -4,10 +4,11 @@ import { LineBreakMode } from '@/common/js/const';
  * [Datestr 时间戳转字符串格式]
  */
 export function socialDateFormat(date) {
+    let changeDate = new Date(date).getTime();
     // 获取js 时间戳
     var time = new Date().getTime();
     // 去掉 js 时间戳后三位
-    time = parseInt((time - date) / 1000);
+    time = parseInt((time - changeDate) / 1000);
     // 存储转换值
     var s;
     if (time < 60 * 10) {
@@ -27,7 +28,7 @@ export function socialDateFormat(date) {
         return s + '天前';
     } else {
         // 超过3天
-        date = new Date(parseInt(date));
+        date = new Date(parseInt(changeDate));
         return (
             date.getFullYear() +
             '-' +
