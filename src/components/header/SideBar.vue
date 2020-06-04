@@ -6,7 +6,7 @@
                     <img src="../../assets/background.jpg" alt="">
                     <div class="site-info">
                         <h1 class="site-name">HANLU</h1>
-                        <h1 class="site-desc">人的时间是有限的，但是bug是无限的</h1>
+                        <h1 class="site-desc">南波湾</h1>
                     </div>
                 </div>
                 <div class="sidebar-menus">

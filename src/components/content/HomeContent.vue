@@ -3,20 +3,19 @@
         <a-row>
             <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
                 <div class="layout-left">
-                    <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'"
-                        :tipHref="'/articles'">
-                        <title-menu-filter @filterByMenu="refreshArticle" slot="menu"
-                            :menu-filter-list="defaultFilterList"></title-menu-filter>
+                    <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'" :tipHref="'/articles'">
+                        <title-menu-filter @filterByMenu="refreshArticle" slot="menu" :menu-filter-list="defaultFilterList">
+                        </title-menu-filter>
                     </section-title>
-                    <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
-                        :type="'article'"></article-list-cell>
+                    <article-list-cell v-for="article in articleList" :article="article" :key="article.title" :type="'article'">
+                    </article-list-cell>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
                 <div class="layout-right">
                     <about></about>
-                    <recommend></recommend>
-                    <hot-read></hot-read>
+                    <recommend style="margin-top:15px"></recommend>
+                    <hot-read style="margin-top:15px"></hot-read>
                     <!--<friend-links style="margin-top:15px;"></friend-links> -->
                     <tag-wall style="margin-top: 15px;"></tag-wall>
                 </div>
@@ -67,7 +66,7 @@ export default {
         recommend: Recommend,
         "hot-read": HotRead
     },
-    created: function() {
+    created: function () {
         let param = {};
         param.latest = true;
         this.refreshArticle(param);

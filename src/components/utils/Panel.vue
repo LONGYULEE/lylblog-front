@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="less" scope>
-@import "../../common/less/theme.less";
+@import '../../common/less/theme.less';
 
 .panel {
     position: relative;
@@ -29,6 +29,7 @@ export default {
         line-height: 18px;
         text-align: left;
         border-left: 5px solid @default-link-hover-color;
+        background-color: rgba(43, 190, 255, 0.2);
     }
 }
 </style>

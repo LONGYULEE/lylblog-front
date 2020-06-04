@@ -8,7 +8,7 @@
 
 <style scoped>
 .main-wrapper {
-    background-color: #ffffff;
+    background-color: #f3f3f4;
     width: 100%;
     margin: 0 auto;
 }

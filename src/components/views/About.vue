@@ -3,7 +3,7 @@
         <img class="background" src="../../assets/background.jpg" alt="">
         <img class="avatar" src="../../assets/avatar.jpg" alt="">
         <p class="name">HANLU</p>
-        <p class="desc">人的时间是有限的，但是bug是无限的</p>
+        <p class="desc">南波湾</p>
         <ul class="social">
             <li><a href="#" target="_blank"><img src="../../assets/icon/GitHub.png" alt=""></a></li>
         </ul>
@@ -61,6 +61,7 @@ export default {};
     text-align: center;
     border: 1px solid @color-border;
     padding-bottom: 20px;
+    background-color: white;
 
     img.background {
         position: absolute;

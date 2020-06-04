@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../common/less/index.less";
+@import '../../common/less/index.less';
 
 .hotRead {
     .content {

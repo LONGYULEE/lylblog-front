@@ -15,15 +15,15 @@ export default {
 </script>
 
 <style scope lang="less">
-@import "../../common/less/theme.less";
+@import '../../common/less/theme.less';
 .common-footer {
     font-weight: 300;
     line-height: 25px;
     text-align: center;
     margin: 15px 0;
     color: @default-title-color;
-    border-top: 1px solid @default-border-color;
-    background: @default-background-color;
+    border-top: 1px solid #e8e8e8;
+    background: #f3f3f4;
     @media only screen and (max-width: @responsive-sm) {
         font-size: 13px;
     }
@@ -38,6 +38,7 @@ export default {
     }
     .copyright {
         margin: 10px 0;
+        background-color: #f3f3f4;
     }
 }
 </style>

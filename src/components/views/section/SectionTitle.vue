@@ -26,16 +26,17 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../../common/less/index.less";
+@import '../../../common/less/index.less';
 
 .section-title {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px 10px;
     height: 90px;
     line-height: 50px;
     text-align: left;
     box-sizing: border-box;
+    background-color: white;
     @media only screen and (max-width: 768px) {
         padding: 10px 0;
         height: 70px;
