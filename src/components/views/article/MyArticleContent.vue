@@ -245,7 +245,7 @@ export default {
 
 .content-wrap {
     background: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 30px;
     min-height: 50vh;
     font-size: 16px;

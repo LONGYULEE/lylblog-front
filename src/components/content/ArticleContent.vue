@@ -109,6 +109,7 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../common/less/theme.less';
 .article-content {
     width: auto;
 
@@ -127,6 +128,10 @@ export default {
     @media screen and (min-width: 1200px) {
         width: 1200px;
         margin: 15px auto 0;
+    }
+
+    .layout-left {
+        border-radius: @default-border-radius;
     }
 
     .layout-left,

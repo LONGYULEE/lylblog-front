@@ -1,6 +1,7 @@
 <template>
     <div class="article-list-year-title" :class="styleType">
-        <span class="date"><i class="ivu-icon" :class="iconType"></i></span>
+        <span class="date">
+            <a-icon :type="iconType" /></span>
         <span class="main-title">{{date}}</span>
         <span class="vertical-line"></span>
         <span class="sub-title">共 <a>{{count}}</a> 篇</span>
@@ -25,10 +26,12 @@ export default {
             return 'style-date-' + this.dateType
         },
         iconType() {
-            return {
-                'ivu-icon-calendar': this.dateType === 'year',
-                'ivu-icon-clock': this.dateType === 'month'
-            }
+            return this.dateType == 'year' ? 'calendar' : 'clock-circle';
+        }
+    },
+    watch: {
+        date(newval) {
+            console.log(newval)
         }
     }
 }
@@ -37,7 +40,6 @@ export default {
 <style lang="less">
 @import '../../../common/less/index.less';
 @import '../../../common/less/theme.less';
-
 .article-list-year-title {
     position: relative;
     text-align: left;

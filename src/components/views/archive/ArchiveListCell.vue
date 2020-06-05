@@ -44,6 +44,7 @@ export default {
 .archive-list-cell {
     position: relative;
     padding: 5px 0;
+    background-color: white;
 
     &::after {
         content: '';
@@ -69,6 +70,7 @@ export default {
 
         .time-tag {
             flex-shrink: 0;
+            cursor: pointer;
         }
 
         .base-info {

@@ -4,15 +4,17 @@
             <a-col :xs="24" :sm="24" :md="24" :lg="17">
                 <div class="layout-left">
                     <timeline-header></timeline-header>
-                    <div v-for="year in timelineList" :key="year.year">
-                        <div v-if="year.months.length > 0">
-                            <archive-list-time-title :date="year.year" :count="year.count"></archive-list-time-title>
-                            <div v-if="month.posts.length > 0">
+                    <div class="timeline-wrapper">
+                        <div v-for="year in timelineList" :key="year.year">
+                            <div v-if="year.months.length > 0">
+                                <archive-list-time-title :date="year.year" :count="year.count"></archive-list-time-title>
                                 <div v-for="month in year.months" :key="month.month">
-                                    <archive-list-time-title :date="month.month + '月'" :count="month.count" :dateType="'month'">
-                                    </archive-list-time-title>
-                                    <archive-list-cell v-for="post in month.posts" :post="post" :key="post.title">
-                                    </archive-list-cell>
+                                    <div v-if="month.posts.length > 0">
+                                        <archive-list-time-title :date="month.month + '月'" :count="month.count" :dateType="'month'">
+                                        </archive-list-time-title>
+                                        <archive-list-cell v-for="post in month.posts" :post="post" :key="post.title">
+                                        </archive-list-cell>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +62,7 @@ export default {
                 params: this.$http.adornParams()
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
-                    this.timelineList = data.timelineList
+                    this.timelineList = data.data
                 }
             })
         }
@@ -69,6 +71,7 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../common/less/theme.less';
 .timeline-content {
     width: auto;
 
@@ -108,6 +111,12 @@ export default {
 
         @media screen and (min-width: 1200px) {
             padding: 0 10px;
+        }
+
+        .timeline-wrapper {
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: @default-border-radius;
         }
     }
 }
