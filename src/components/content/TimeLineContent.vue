@@ -4,14 +4,19 @@
             <a-col :xs="24" :sm="24" :md="24" :lg="17">
                 <div class="layout-left">
                     <timeline-header></timeline-header>
-                    <!-- <div v-for="year in timelineList" :key="year.year" v-if="year.months.length > 0">
-                        <archive-list-time-title :date="year.year" :count="year.count"></archive-list-time-title>
-                        <div v-for="month in year.months" :key="month.month" v-if="month.posts.length > 0">
-                            <archive-list-time-title :date="month.month + '月'" :count="month.count" :dateType="'month'">
-                            </archive-list-time-title>
-                            <archive-list-cell v-for="post in month.posts" :post="post" :key="post.title"></archive-list-cell>
+                    <div v-for="year in timelineList" :key="year.year">
+                        <div v-if="year.months.length > 0">
+                            <archive-list-time-title :date="year.year" :count="year.count"></archive-list-time-title>
+                            <div v-if="month.posts.length > 0">
+                                <div v-for="month in year.months" :key="month.month">
+                                    <archive-list-time-title :date="month.month + '月'" :count="month.count" :dateType="'month'">
+                                    </archive-list-time-title>
+                                    <archive-list-cell v-for="post in month.posts" :post="post" :key="post.title">
+                                    </archive-list-cell>
+                                </div>
+                            </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
@@ -27,7 +32,7 @@
 <script>
 import TimeLineHeader from '@/components/views/timeline/TimeLineHeader'
 import ArchiveListCell from '@/components/views/archive/ArchiveListCell'
-// import ArchiveListTimeTitle from '@/components/views/Archive/ArchiveListTimeTitle'
+import ArchiveListTimeTitle from '@/components/views/Archive/ArchiveListTimeTitle'
 import Recommend from '@/components/views/Recommend'
 import TagWall from '@/components/views/tag/TagWall'
 
@@ -39,7 +44,7 @@ export default {
     },
     components: {
         'timeline-header': TimeLineHeader,
-        // 'archive-list-time-title': ArchiveListTimeTitle,
+        'archive-list-time-title': ArchiveListTimeTitle,
         'archive-list-cell': ArchiveListCell,
         'recommend': Recommend,
         'tag-wall': TagWall
