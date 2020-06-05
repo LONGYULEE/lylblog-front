@@ -5,7 +5,7 @@
                 <div class="top-area">
                     <img src="../../assets/background.jpg" alt="">
                     <div class="site-info">
-                        <h1 class="site-name">HANLU</h1>
+                        <h1 class="site-name">寒露</h1>
                         <h1 class="site-desc">南波湾</h1>
                     </div>
                 </div>

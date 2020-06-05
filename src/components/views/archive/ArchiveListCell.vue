@@ -1,7 +1,9 @@
 <template>
     <div class="archive-list-cell">
         <div class="info">
-            <a-tag class="time-tag border-tag">{{ post.createTime | socialDate }}</a-tag>
+            <div>
+                <a-tag class="time-tag border-tag">{{ post.createTime | socialDate }}</a-tag>
+            </div>
             <div class="base-info">
                 <a class="title" :href="'/' + post.postType + '/' + post.id">
                     {{post.title}}
@@ -71,6 +73,7 @@ export default {
         .time-tag {
             flex-shrink: 0;
             cursor: pointer;
+            margin: 2px 4px 2px 0;
         }
 
         .base-info {

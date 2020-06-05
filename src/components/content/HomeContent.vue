@@ -132,7 +132,7 @@ export default {
 @media screen and (min-width: 1200px) and (min-width: 992px) {
     .home-content .layout-left,
     .home-content .layout-right {
-        padding: 0 10px;
+        padding: 0;
     }
 }
 @media screen and (min-width: 1200px) and (min-width: 1200px) {
