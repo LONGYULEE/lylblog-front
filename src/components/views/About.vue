@@ -1,7 +1,7 @@
 <template>
     <div class="about">
         <img class="background" src="../../assets/background.jpg" alt="">
-        <img class="avatar" src="../../assets/avatar.jpg" alt="">
+        <img class="avatar" src="../../assets/web_avatar.jpg" alt="">
         <p class="name">HANLU</p>
         <p class="desc">南波湾</p>
         <ul class="social">
@@ -62,7 +62,7 @@ export default {};
     border: 1px solid @color-border;
     padding-bottom: 20px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: @default-border-radius;
 
     img.background {
         position: absolute;

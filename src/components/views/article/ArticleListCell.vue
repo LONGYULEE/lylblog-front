@@ -111,11 +111,11 @@ export default {
 
 .article-cell {
     margin-bottom: 10px;
-    border-radius: 15px;
+    border-radius: @default-border-radius;
     background-color: white;
 
     > a {
-        border-radius: 15px;
+        border-radius: @default-border-radius;
         display: block;
         cursor: default;
         border: 1px solid @color-border;

@@ -30,10 +30,10 @@ export default {
 
 .section-title {
     margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: @default-border-radius;
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 20px 20px;
     height: 90px;
     line-height: 50px;
     text-align: left;

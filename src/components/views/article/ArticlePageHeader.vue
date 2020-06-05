@@ -61,7 +61,7 @@ export default {
     text-align: left;
     padding: 25px 5px 10px 5px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: @default-border-radius;
 
     @media only screen and (max-width: 768px) {
         padding-top: 10px;

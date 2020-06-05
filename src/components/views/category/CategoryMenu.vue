@@ -218,7 +218,7 @@ export default {
         padding: 10px 0;
         font-size: 15px;
         line-height: 22px;
-        border-radius: 20px;
+        border-radius: @default-border-radius;
         margin-bottom: 3px;
         // border-bottom: 1px solid @default-border-color;
         background-color: white;

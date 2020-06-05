@@ -22,7 +22,7 @@ export default {
     position: relative;
     background: #fff;
     border-left: 1px solid @color-border;
-    border-radius: 10px;
+    border-radius: @default-border-radius;
 
     h4 {
         font-size: 18px;
