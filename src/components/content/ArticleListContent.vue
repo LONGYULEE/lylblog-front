@@ -7,9 +7,9 @@
                         @filterByCategory="filterByCategory" :categorys="categoryList" :defaultCategory="selected_category"
                         :mainTitle="'文章列表'" :sub-title="'Articles'">
                     </article-list-header>
-                    <!-- <article-list-cell v-for="article in articleList" :article="article" :key="article.id">
-                    </article-list-cell> -->
-                    <!-- <browse-more @browseMore="browseMore" :noMoreData="noMoreData" ref="browseMore"></browse-more> -->
+                    <article-list-cell v-for="article in articleList" :article="article" :key="article.id">
+                    </article-list-cell>
+                    <browse-more @browseMore="browseMore" :noMoreData="noMoreData" ref="browseMore"></browse-more>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
@@ -26,10 +26,10 @@
 import ArticleListHeader from "@/components/views/Article/ArticleListHeader";
 // import ArticlePageContent from "@/components/views/Article/ArticlePageContent";
 // import ArticlePageFooter from "@/components/views/Article/ArticlePageFooter";
-// import ArticleListCell from "@/components/views/Article/ArticleListCell";
+import ArticleListCell from "@/components/views/Article/ArticleListCell";
 import Recommend from "@/components/views/Recommend";
 import TagWall from "@/components/views/tag/TagWall";
-// import BrowseMore from "@/components/views/BrowseMore";
+import BrowseMore from "@/components/views/BrowseMore";
 import merge from "lodash/merge";
 import { treeDataTranslate } from "@/util";
 export default {
@@ -139,10 +139,10 @@ export default {
         "article-list-header": ArticleListHeader,
         // "article-page-content": ArticlePageContent,
         // "article-page-footer": ArticlePageFooter,
-        // "article-list-cell": ArticleListCell,
+        "article-list-cell": ArticleListCell,
         recommend: Recommend,
         "tag-wall": TagWall,
-        // "browse-more": BrowseMore
+        "browse-more": BrowseMore
     }
 };
 </script>
