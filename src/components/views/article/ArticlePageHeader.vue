@@ -55,11 +55,13 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../../common/less/index.less";
+@import '../../../common/less/index.less';
 
 .article-page-header {
     text-align: left;
     padding: 25px 5px 10px 5px;
+    background-color: white;
+    border-radius: 15px;
 
     @media only screen and (max-width: 768px) {
         padding-top: 10px;

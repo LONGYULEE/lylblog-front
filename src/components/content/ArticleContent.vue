@@ -1,26 +1,26 @@
 <template>
     <div class="article-content" v-cloak>
-        <iv-row>
-            <iv-col :xs="24" :sm="24" :md="24" :lg="17">
+        <a-row>
+            <a-col :xs="24" :sm="24" :md="24" :lg="17">
                 <div class="layout-left">
                     <article-page-header :article="article"></article-page-header>
                     <article-page-content>
-                        <article id="article-main-page" class="typo container" slot="content" ref="article"
+                        <!-- <article id="article-main-page" class="typo container" slot="content" ref="article"
                             v-html="article.contentFormat">
-                        </article>
+                        </article> -->
                     </article-page-content>
                     <article-page-footer :postId="article.id"></article-page-footer>
                 </div>
-            </iv-col>
-            <iv-col :xs="0" :sm="0" :md="0" :lg="7">
+            </a-col>
+            <a-col :xs="0" :sm="0" :md="0" :lg="7">
                 <div class="layout-right">
                     <recommend></recommend>
-                    <iv-affix :offset-top="60">
+                    <!-- <iv-affix :offset-top="60">
                         <side-toc style="margin-top: 15px;"></side-toc>
-                    </iv-affix>
+                    </iv-affix> -->
                 </div>
-            </iv-col>
-        </iv-row>
+            </a-col>
+        </a-row>
     </div>
 </template>
 <script type="text/ecmascript-6">
@@ -28,12 +28,12 @@ import ArticlePageHeader from '@/components/views/Article/ArticlePageHeader'
 import ArticlePageContent from '@/components/views/Article/ArticlePageContent'
 import ArticlePageFooter from '@/components/views/Article/ArticlePageFooter'
 import About from '@/components/views/About'
-import FriendLinks from '@/components/views/FriendLinks'
-import SideToc from '@/components/views/SideToc'
+// import FriendLinks from '@/components/views/FriendLinks'
+// import SideToc from '@/components/views/SideToc'
 import Recommend from '@/components/views/Recommend'
-import TOC from '@/common/js/MarkdownToc'
-// TOC滚动监听
-import TocScrollSpy from '@/common/js/TocScrollSpy'
+// import TOC from '@/common/js/MarkdownToc'
+// // TOC滚动监听
+// import TocScrollSpy from '@/common/js/TocScrollSpy'
 
 export default {
     data() {
@@ -46,8 +46,8 @@ export default {
         'article-page-content': ArticlePageContent,
         'article-page-footer': ArticlePageFooter,
         'about': About,
-        'friend-links': FriendLinks,
-        'side-toc': SideToc,
+        // 'friend-links': FriendLinks,
+        // 'side-toc': SideToc,
         'recommend': Recommend
     },
     created: function () {

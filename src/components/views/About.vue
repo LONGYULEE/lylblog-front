@@ -62,6 +62,7 @@ export default {};
     border: 1px solid @color-border;
     padding-bottom: 20px;
     background-color: white;
+    border-radius: 10px;
 
     img.background {
         position: absolute;
@@ -71,6 +72,8 @@ export default {};
         width: 100%;
         height: 125px;
         z-index: 1;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
     img.avatar {

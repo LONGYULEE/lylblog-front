@@ -22,6 +22,7 @@ export default {
     position: relative;
     background: #fff;
     border-left: 1px solid @color-border;
+    border-radius: 10px;
 
     h4 {
         font-size: 18px;
@@ -30,6 +31,7 @@ export default {
         text-align: left;
         border-left: 5px solid @default-link-hover-color;
         background-color: rgba(43, 190, 255, 0.2);
+        border-top-right-radius: 10px;
     }
 }
 </style>

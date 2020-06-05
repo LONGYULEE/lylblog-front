@@ -11,6 +11,7 @@ import Footer from '../components/footer/Footer';
 //首页
 import HomeContent from '../components/content/HomeContent';
 import ArticleListContent from '@/components/content/ArticleListContent';
+import ArticleContent from '@/components/content/ArticleContent';
 import TimeLineContent from '@/components/content/TimeLineContent';
 
 import NotFound from '@/components/views/404';
@@ -49,6 +50,15 @@ let router = new Router({
                     components: {
                         header: Header,
                         content: ArticleListContent,
+                        footer: Footer
+                    }
+                },
+                {
+                    path: 'article/:articleId',
+                    name: 'article',
+                    components: {
+                        header: Header,
+                        content: ArticleContent,
                         footer: Footer
                     }
                 },
