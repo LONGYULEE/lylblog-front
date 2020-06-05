@@ -3,13 +3,7 @@
         <a-row>
             <a-col :xs="24" :sm="24" :md="24" :lg="17">
                 <div class="layout-left">
-                    <article-page-header :article="article"></article-page-header>
-                    <article-page-content>
-                        <!-- <article id="article-main-page" class="typo container" slot="content" ref="article"
-                            v-html="article.contentFormat">
-                        </article> -->
-                    </article-page-content>
-                    <article-page-footer :postId="article.id"></article-page-footer>
+                    <my-article-content></my-article-content>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
@@ -34,6 +28,7 @@ import Recommend from '@/components/views/Recommend'
 // import TOC from '@/common/js/MarkdownToc'
 // // TOC滚动监听
 // import TocScrollSpy from '@/common/js/TocScrollSpy'
+import MyArticleContent from '@/components/views/article/MyArticleContent'
 
 export default {
     data() {
@@ -48,7 +43,8 @@ export default {
         'about': About,
         // 'friend-links': FriendLinks,
         // 'side-toc': SideToc,
-        'recommend': Recommend
+        'recommend': Recommend,
+        'my-article-content': MyArticleContent
     },
     created: function () {
         this.getArticle(this.$route.params.articleId)

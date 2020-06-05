@@ -62,6 +62,9 @@ export default {
     padding: 25px 5px 10px 5px;
     background-color: white;
     border-radius: @default-border-radius;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
 
     @media only screen and (max-width: 768px) {
         padding-top: 10px;
