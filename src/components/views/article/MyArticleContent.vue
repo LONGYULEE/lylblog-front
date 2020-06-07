@@ -7,24 +7,46 @@
                 </header>
                 <main class="article-main">
                     <!-- <article-content :html="article.html" /> -->
+                    <article-content />
                 </main>
-                <!-- <div class="license-wrap">
+                <div class="license-wrap">
                     <span>【END】</span>
-                    <p>本文链接：{{ postLink }}</p>
+                    <!-- <p>本文链接：{{ postLink }}</p> -->
+                    <p>本文链接：</p>
                     <p>
                         <span>版权声明：本博客所有文章除声明转载外，均采用</span>
                         <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">BY-NC-SA 3.0</a>
                         <span>许可协议。转载请注明来自</span>
-                        <a :href="website">{{ settings.blogName }}</a>。
+                        <!-- <a :href="website">{{ settings.blogName }}</a>。 -->
+                        <!-- <a :href="website">123</a>。 -->
+                        <a>123</a>。
                     </p>
-                </div> -->
-                <div class="end-wrap">
-                    <span>【END】</span>
                 </div>
+                <!-- <div class="end-wrap">
+                    <span>【END】</span>
+                </div> -->
                 <div class="article-views">
-                    <span>阅读 </span>
-                    <span class="split-line">|</span>
-                    <span>发布于 </span>
+                    <a-row>
+                        <a-col :xs="24" :sm="10" :md="10" :lg="10" style="padding-left: 0;padding-right: 0;">
+                            <!-- <p class="info"><span class="author">By / <a>{{article.author}}</a></span><span class="publish-time"> At
+                                    time / <a>{{article.createTime | socialDate}}</a></span></p> -->
+                            At time
+                        </a-col>
+                        <a-col :xs="24" :sm="14" :md="14" :lg="14" style="padding-left: 0;padding-right: 0;">
+                            <p class="operate_info">
+                                <span class="readings"><a>
+                                        <!-- <a-icon type="eye"></a-icon> {{article.readNum}} 阅读 -->
+                                        <a-icon type="eye"></a-icon> 阅读
+                                    </a></span> |
+                                <span class="likes">
+                                    <!-- <a @click="likePost(article)"> -->
+                                    <a>
+                                        <!-- <a-icon type="heart"></a-icon> {{article.likeNum}} 喜欢 -->
+                                        <a-icon type="heart"></a-icon> 喜欢
+                                    </a></span>
+                            </p>
+                        </a-col>
+                    </a-row>
                 </div>
             </div>
             <!-- <comment-list v-if="showComments" :from="2" :article-id="article._id" /> -->
@@ -63,13 +85,16 @@
 </template>
 <script>
 // import moment from 'moment';
-// import 'highlight.js/styles/tomorrow.css';
+import 'highlight.js/styles/tomorrow.css';
 // import CommentList from '@/components/CommentList.vue';
 // import PopArticles from '@/components/widgets/popArticles.vue';
-// import ArticleContent from '@/components/ArticleContent.vue';
+import MyActicleMain from '@/components/views/Article/MyArticleMain';
 // import { IPost, ISetting } from '@/types/schema';
 // import { Context } from '@nuxt/types/index';
 export default {
+    components: {
+        "article-content": MyActicleMain
+    }
     //     name: 'PageArticle',
     //     async asyncData({ $axios, params, error }: Context) {
     //         const alias = params.article;
@@ -231,6 +256,29 @@ export default {
 </script>
 
 <style scoped>
+.operate_info {
+    text-align: right;
+    font-size: 14px;
+}
+@media only screen and (max-width: 768px) {
+    .operate_info {
+        text-align: left;
+    }
+}
+.operate_info span {
+    margin-right: 10px;
+}
+.operate_info span + span {
+    margin-left: 10px;
+}
+.operate_info span a {
+    cursor: pointer;
+}
+.operate_info span a:hover {
+    color: #409eff;
+    text-decoration: underline;
+}
+
 .post-detail-wrap {
     display: flex;
     justify-content: center;
