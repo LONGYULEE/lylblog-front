@@ -74,7 +74,7 @@ export default {
                 params: this.$http.adornParams()
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
-                    this.recommendList = data.recommendList;
+                    this.recommendList = data.data;
                     this.topRecommend = this.recommendList.shift();
                 }
             });

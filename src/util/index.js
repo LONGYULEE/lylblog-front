@@ -45,13 +45,13 @@ export function socialDateFormat(date) {
 export function mapTagColor(index) {
     switch (index % 4) {
         case 0:
-            return 'blue';
+            return '#2db7f5';
         case 1:
-            return 'green';
+            return '#108ee9';
         case 2:
-            return 'red';
+            return '#f50';
         case 3:
-            return 'yellow';
+            return '#87d068';
     }
 }
 

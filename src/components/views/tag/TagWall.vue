@@ -2,8 +2,8 @@
     <div class="tag-wall">
         <panel :title="'标签墙'">
             <div slot="content" class="content">
-                <a-tag v-for="(tag, index) in tagList" type="dot" :color="index | mapTagColor" :key="index"
-                    style="margin: 0 5px 5px 0;" class="dot-tag">{{ tag.name +' ['+ tag.linkNum + ']'}}
+                <a-tag v-for="(tag, index) in tagList" type="dot" :color="index | mapTagColor" 
+                    :key="index" style="margin: 0 5px 5px 0;" class="dot-tag">{{ tag.name +' ['+ tag.linkNum + ']'}}
                 </a-tag>
             </div>
         </panel>
@@ -33,8 +33,8 @@ export default {
                 method: "get",
                 params: this.$http.adornParams()
             }).then(({ data }) => {
-                if (data && data.code === 200) {
-                    this.tagList = data.tagList;
+                if (data && data.code === 2000) {
+                    this.tagList = data.tagVOList;
                 }
             });
         }
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../../common/less/index.less";
+@import '../../../common/less/index.less';
 
 .tag-wall {
     .content {
