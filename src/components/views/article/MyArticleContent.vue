@@ -3,255 +3,107 @@
         <article class="left-wrap">
             <div class="content-wrap">
                 <header class="article-title">
-                    <h1>一个测试标题</h1>
+                    <h1>{{article.title}}</h1>
                 </header>
                 <main class="article-main">
-                    <!-- <article-content :html="article.html" /> -->
-                    <article-content />
+                    <article-content :html="article.contentFormat" />
                 </main>
-                <div class="license-wrap">
+                <!-- <div class="license-wrap">
                     <span>【END】</span>
-                    <!-- <p>本文链接：{{ postLink }}</p> -->
+                    <p>本文链接：{{ postLink }}</p>
                     <p>本文链接：</p>
                     <p>
                         <span>版权声明：本博客所有文章除声明转载外，均采用</span>
                         <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">BY-NC-SA 3.0</a>
                         <span>许可协议。转载请注明来自</span>
-                        <!-- <a :href="website">{{ settings.blogName }}</a>。 -->
-                        <!-- <a :href="website">123</a>。 -->
+                        <a :href="website">{{ settings.blogName }}</a>。
+                        <a :href="website">123</a>。
                         <a>123</a>。
                     </p>
-                </div>
-                <!-- <div class="end-wrap">
-                    <span>【END】</span>
                 </div> -->
+                <div class="end-wrap">
+                    <span>【END】</span>
+                </div>
                 <div class="article-views">
                     <a-row>
                         <a-col :xs="24" :sm="10" :md="10" :lg="10" style="padding-left: 0;padding-right: 0;">
-                            <!-- <p class="info"><span class="author">By / <a>{{article.author}}</a></span><span class="publish-time"> At
-                                    time / <a>{{article.createTime | socialDate}}</a></span></p> -->
-                            At time
+                            <p class="info">
+                                <span class="author">By / <a>{{article.author}}</a>
+                                </span>
+                                <span>&nbsp;&nbsp;&nbsp;</span>
+                                <span class="publish-time">
+                                    At time / <a>{{article.createTime | socialDate}}</a>
+                                </span>
+                            </p>
                         </a-col>
                         <a-col :xs="24" :sm="14" :md="14" :lg="14" style="padding-left: 0;padding-right: 0;">
                             <p class="operate_info">
                                 <span class="readings"><a>
-                                        <!-- <a-icon type="eye"></a-icon> {{article.readNum}} 阅读 -->
-                                        <a-icon type="eye"></a-icon> 阅读
+                                        <a-icon type="eye"></a-icon> {{article.readNum}} 阅读
                                     </a></span> |
                                 <span class="likes">
-                                    <!-- <a @click="likePost(article)"> -->
-                                    <a>
-                                        <!-- <a-icon type="heart"></a-icon> {{article.likeNum}} 喜欢 -->
-                                        <a-icon type="heart"></a-icon> 喜欢
+                                    <a @click="likePost(article)">
+                                        <a-icon type="heart"></a-icon> {{article.likeNum}} 喜欢
                                     </a></span>
                             </p>
                         </a-col>
                     </a-row>
                 </div>
             </div>
-            <!-- <comment-list v-if="showComments" :from="2" :article-id="article._id" /> -->
         </article>
-        <!-- <aside class="side-wrap">
-            <div class="side-block-container">
-                <div class="side-title">
-                    分类
-                </div>
-                <div class="category-title">
-                    <img :src="article.category.img">
-                    <span>{{ article.category.cateName }}</span>
-                </div>
-                <nuxt-link class="ant-btn ant-btn-dashed" :to="`/blog/${article.category.alias}`">
-                    全部
-                    <span class="posts-count">{{ postsCount }}</span>
-                    篇文章
-                </nuxt-link>
-            </div>
-            <div :class="{ 'sticky-wrap': menuShow }">
-                <div v-show="menuShow" class="side-block-container">
-                    <div class="side-title">
-                        目录
-                    </div>
-                    <a-anchor :affix="false" :show-ink-in-fixed="true" :offset-top="75" :bounds="10">
-                        <a-anchor-link v-for="(item1, index1) in menus" :key="index1" :href="item1.href" :title="item1.title">
-                            <a-anchor-link v-for="(item2, index2) in item1.subs" :key="index2" :href="item2.href"
-                                :title="item2.title" />
-                        </a-anchor-link>
-                    </a-anchor>
-                </div>
-                <pop-articles />
-            </div>
-        </aside> -->
     </div>
 </template>
+
 <script>
-// import moment from 'moment';
 import 'highlight.js/styles/tomorrow.css';
-// import CommentList from '@/components/CommentList.vue';
-// import PopArticles from '@/components/widgets/popArticles.vue';
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
-// import { IPost, ISetting } from '@/types/schema';
-// import { Context } from '@nuxt/types/index';
+import { mixin } from "@/util";
 export default {
     components: {
         "article-content": MyActicleMain
-    }
-    //     name: 'PageArticle',
-    //     async asyncData({ $axios, params, error }: Context) {
-    //         const alias = params.article;
-    //         const { code, data: article } = await $axios.$get('/api/article', {
-    //             params: {
-    //                 alias
-    //             }
-    //         });
-    //         if (code === 1 && article) {
-    //             return {
-    //                 article
-    //             };
-    //         } else {
-    //             error({
-    //                 statusCode: 404,
-    //                 message: '未找到该页面'
-    //             });
-    //         }
-    //     },
-    //     data() {
-    //         return {
-    //             settings: this.$store.state.settings as ISetting,
-    //             article: {} as IPost,
-    //             menus: [] as Array<IHeading2>,
-    //             menuShow: false,
-    //             postsCount: 0
-    //         };
-    //     },
-    //     computed: {
-    //         postLink() {
-    //             if (process.client) {
-    //                 return (
-    //                     location.protocol + '//' + location.host + location.pathname
-    //                 );
-    //             }
-    //             return '';
-    //         },
-    //         website() {
-    //             if (process.client) {
-    //                 return location.protocol + '//' + location.host;
-    //             }
-    //             return '';
-    //         },
-    //         stickyCls() {
-    //             if (this.menuShow) {
-    //                 return {
-    //                     position: 'sticky',
-    //                     top: '90px'
-    //                 };
-    //             }
-    //             return {
-    //                 position: 'relative'
-    //             };
-    //         },
-    //         publishDate(): string {
-    //             return moment(this.article.publishTime).format('YYYY-MM-DD');
-    //         },
-    //         showComments(): boolean {
-    //             if (this.article.commentsFlag === 1) {
-    //                 return true;
-    //             }
-    //             if (this.article.commentsFlag === -1) {
-    //                 return false;
-    //             }
-    //             return this.settings.enableComments;
-    //         }
-    //     },
-    //     async created() {
-    //         const { code, data } = await this.$axios.$get('/api/postsCountByCate', {
-    //             params: {
-    //                 category: this.article.category._id
-    //             }
-    //         });
-    //         if (code === 1) {
-    //             this.postsCount = data;
-    //         }
-    //     },
-    //     mounted() {
-    //         this.scrollByHash();
-    //         window.addEventListener('hashchange', () => {
-    //             this.scrollByHash();
-    //         });
-    //         this.generateMenu();
-
-    //         // 文章浏览数+1
-    //         this.$axios.$put('/api/increaseViews', {
-    //             postID: this.article._id
-    //         });
-    //     },
-    //     methods: {
-    //         generateMenu() {
-    //             const result: Array<IHeading2> = [];
-    //             const content = document.querySelector(
-    //                 '.article-content'
-    //             ) as HTMLElement;
-    //             const h2All = content.querySelectorAll('h2');
-    //             h2All.forEach(h2 => {
-    //                 const anchor = h2.querySelector('a');
-    //                 if (anchor) {
-    //                     const h2Item: IHeading2 = {
-    //                         href: `#${anchor.id}`,
-    //                         title: h2.textContent as string,
-    //                         subs: []
-    //                     };
-    //                     let nextEl = h2.nextElementSibling;
-    //                     while (nextEl && nextEl.nodeName !== 'H2') {
-    //                         if (nextEl.nodeName === 'H3') {
-    //                             const anchor = nextEl.querySelector('a');
-    //                             if (anchor) {
-    //                                 h2Item.subs.push({
-    //                                     href: `#${anchor.id}`,
-    //                                     title: nextEl.textContent as string
-    //                                 });
-    //                             }
-    //                         }
-    //                         nextEl = nextEl.nextElementSibling;
-    //                     }
-    //                     result.push(h2Item);
-    //                 }
-    //             });
-    //             if (result.length) {
-    //                 this.menus = result;
-    //                 this.menuShow = true;
-    //             }
-    //         },
-    //         scrollByHash() {
-    //             cons                    -';
-    //                    decodeURIComponent(location.hash);
-    //             if (hash && hash.length > 0) {
-    //                 hash = hash.substring(1);
-    //             }
-    //             if (hash.indexOf(prefix) === 0) {
-    //                 history.replaceState(
-    //                     null,
-    //                     '',
-    //                     location.href.replace(/#.*/, '') +
-    //                                                         ix, '')
-    //                 );
-    //             } else {
-    //                 const anchor = document.querySelector(`#${prefix}${hash}`);
-    //                 if (anchor) {
-    //                     window.scrollTo(
-    //                         window.scrollX,
-    //                         anchor.getBoundingClientRect().top + window.scrollY - 75
-    //                     );
-    //                 }
-    //             }
-    //         }
-    //     },
-    //     head(this: any) {
-    //         const article = this.article as IPost;
-    //         const content = article.html
-    //             .replace(/<[^>]*>/g, '')
-    //             .replace(/\r?\n/g, ' ');
-    //         const desc =
-    //             content.length > 170 ? content.substring(0, 170) + '...' : content;
-    //         let keywi aekllb; {i.e  ft   't     
+    },
+    mixins: [mixin],
+    data() {
+        return {
+            article: {}
+        };
+    },
+    methods: {
+        getArticle(articleId) {
+            this.$http({
+                url: this.$http.adornUrl('/article/' + articleId),
+                method: 'get'
+            }).then(({ data }) => {
+                if (data && data.code === 2000) {
+                    this.article = data.data
+                    // 更新目录、高亮代码
+                    this.$nextTick(function () {
+                        // this.addCodeLineNumber()
+                        // this.refreshDiectory()
+                        // this.refreshMobileDirectory()
+                        // document.title = this.article.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+                    })
+                }
+            })
+        },
+        likePost(post) {
+            this.$http({
+                url: this.$http.adornUrl("/article/like/" + post.id),
+                method: "put",
+                data: this.$http.adornData()
+            }).then(({ data }) => {
+                if (data && data.code === 2000) {
+                    post.likeNum += 1;
+                    this.$message.success("点赞成功");
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+        }
+    },
+    created: function () {
+        this.getArticle(this.$route.params.articleId)
+    },
 };
 </script>
 

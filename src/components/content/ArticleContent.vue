@@ -108,7 +108,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import '../../common/less/theme.less';
 .article-content {
     width: auto;
