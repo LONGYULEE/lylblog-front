@@ -28,23 +28,6 @@
                     </a-progress>
                 </a-col>
             </a-row>
-            <a-row :gutter="20">
-                <a-col :span="6">
-                    <p class="title">Go</p>
-                </a-col>
-                <a-col :span="18">
-                    <a-progress :hide-info="true" :stroke-width="8" :percent="10" class="bar" />
-                </a-col>
-            </a-row>
-            <a-row :gutter="20">
-                <a-col :span="6">
-                    <p class="title">Cloud</p>
-                </a-col>
-                <a-col :span="18">
-                    <a-progress :hide-info="true" :stroke-width="8" :percent="30" class="bar">
-                    </a-progress>
-                </a-col>
-            </a-row>
         </div>
     </div>
 </template>
