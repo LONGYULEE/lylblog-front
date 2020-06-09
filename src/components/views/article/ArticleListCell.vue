@@ -93,9 +93,9 @@ export default {
                 data: this.$http.adornData()
             })
                 .then(({ data }) => {
-                    if (data && data.code === 200) {
+                    if (data && data.code === 2000) {
                         post.likeNum += 1;
-                        this.$Message.success("点赞成功");
+                        this.$message.success("点赞成功");
                     }
                 })
                 .catch(error => {

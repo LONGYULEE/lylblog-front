@@ -14,9 +14,9 @@
                             <span class="likes"><a>
                                     <a-icon type="heart" /> {{topRecommend.likeNum}}
                                 </a></span>
-                            <span class="comments"><a>
+                            <!-- <span class="comments"><a>
                                     <a-icon type="edit" /> {{topRecommend.commentNum}}
-                                </a></span>
+                                </a></span> -->
                             <span class="readings"><a>
                                     <a-icon type="eye" /> {{topRecommend.readNum}}
                                 </a></span>
@@ -36,9 +36,9 @@
                                 <span class="likes"><a>
                                         <a-icon type="heart" /> {{recommend.likeNum}}
                                     </a></span>
-                                <span class="comments"><a>
+                                <!-- <span class="comments"><a>
                                         <a-icon type="edit" /> {{recommend.commentNum}}
-                                    </a></span>
+                                    </a></span> -->
                                 <span class="readings"><a>
                                         <a-icon type="eye" /> {{recommend.readNum}}
                                     </a></span>

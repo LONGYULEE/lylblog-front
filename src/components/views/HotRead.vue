@@ -14,9 +14,9 @@
                             <span class="likes"><a>
                                     <a-icon type="heart" /> {{topHotRead.likeNum}}
                                 </a></span>
-                            <span class="comments"><a>
+                            <!-- <span class="comments"><a>
                                     <a-icon type="edit" /> {{topHotRead.commentNum}}
-                                </a></span>
+                                </a></span> -->
                             <span class="readings"><a>
                                     <a-icon type="eye" /> {{topHotRead.readNum}}
                                 </a></span>
@@ -36,9 +36,9 @@
                                 <span class="likes"><a>
                                         <a-icon type="heart" /> {{hotRead.likeNum}}
                                     </a></span>
-                                <span class="comments"><a>
+                                <!-- <span class="comments"><a>
                                         <a-icon type="edit" /> {{hotRead.commentNum}}
-                                    </a></span>
+                                    </a></span> -->
                                 <span class="readings"><a>
                                         <a-icon type="eye" /> {{hotRead.readNum}}
                                     </a></span>
@@ -73,8 +73,8 @@ export default {
                 method: "get",
                 params: this.$http.adornParams()
             }).then(({ data }) => {
-                if (data && data.code === 200) {
-                    this.hotReadList = data.hotReadList;
+                if (data && data.code === 2000) {
+                    this.hotReadList = data.data;
                     this.topHotRead = this.hotReadList.shift();
                 }
             });
