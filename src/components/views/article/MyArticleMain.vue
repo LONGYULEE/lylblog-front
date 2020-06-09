@@ -1,6 +1,6 @@
 <template>
     <!-- eslint-disable-next-line vue/no-v-html -->
-    <div class="article-content" v-html="html" />
+    <div class="myarticle-content" v-html="html" />
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
             type: String,
             default: ''
         }
-    }
+    },
 };
 </script>
 

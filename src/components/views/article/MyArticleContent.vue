@@ -6,7 +6,7 @@
                     <h1>{{article.title}}</h1>
                 </header>
                 <main class="article-main">
-                    <article-content :html="article.contentFormat" />
+                    <article-content :html="article.contentFormat" ref="article" />
                 </main>
                 <!-- <div class="license-wrap">
                     <span>【END】</span>
@@ -65,7 +65,8 @@ export default {
     mixins: [mixin],
     data() {
         return {
-            article: {}
+            article: {},
+            menu: []
         };
     },
     methods: {
@@ -78,7 +79,7 @@ export default {
                     this.article = data.data
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
-                        // this.addCodeLineNumber()
+                        this.addCodeLineNumber()
                         // this.refreshDiectory()
                         // this.refreshMobileDirectory()
                         // document.title = this.article.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
@@ -99,11 +100,58 @@ export default {
             }).catch(error => {
                 console.log(error);
             });
-        }
+        },
+        generateMenu() {
+            const result = [];
+            const content = document.querySelector('.myarticle-content');
+            const h2All = content.querySelectorAll('h2');
+            console.log(h2All)
+            h2All.forEach(h2 => {
+                const anchor = h2.querySelector('a');
+                if (anchor) {
+                    const h2Item = {
+                        href: `#${anchor.id}`,
+                        title: h2.textContent,
+                        subs: []
+                    };
+                    let nextEl = h2.nextElementSibling;
+                    while (nextEl && nextEl.nodeName !== 'H2') {
+                        if (nextEl.nodeName === 'H3') {
+                            const anchor = nextEl.querySelector('a');
+                            if (anchor) {
+                                h2Item.subs.push({
+                                    href: `#${anchor.id}`,
+                                    title: nextEl.textContent
+                                });
+                            }
+                        }
+                        nextEl = nextEl.nextElementSibling;
+                    }
+                    result.push(h2Item);
+                }
+            });
+            if (result.length) {
+                this.menus = result;
+                this.menuShow = true;
+            }
+        },
+        addCodeLineNumber() {
+            // console.log(this.$refs.article)
+            // // 添加行号
+            // let blocks = this.$refs.article.querySelectorAll('pre code')
+            // blocks.forEach((block) => {
+            //     window.hljs.highlightBlock(block)
+            //     // 去前后空格并添加行号
+            //     block.innerHTML = '<ul><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ul>'
+            // })
+        },
     },
     created: function () {
         this.getArticle(this.$route.params.articleId)
     },
+    mounted() {
+        this.generateMenu();
+    }
 };
 </script>
 
@@ -166,7 +214,7 @@ export default {
     font-weight: 500;
 }
 
-.article-content {
+.myarticle-content {
     min-height: 60vh;
 }
 
