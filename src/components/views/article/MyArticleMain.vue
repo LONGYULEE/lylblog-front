@@ -14,6 +14,6 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @import '../../../common/less/article.less';
 </style>

@@ -102,6 +102,7 @@ export default {
             });
         },
         generateMenu() {
+            // console.log(this.$refs.article.querySelectorAll('pre code'))
             const result = [];
             const content = document.querySelector('.myarticle-content');
             const h2All = content.querySelectorAll('h2');
@@ -150,7 +151,10 @@ export default {
         this.getArticle(this.$route.params.articleId)
     },
     mounted() {
-        this.generateMenu();
+        setTimeout(() => {
+            this.generateMenu();
+
+        }, 5000);
     }
 };
 </script>
