@@ -42,6 +42,9 @@ let router = new Router({
                         header: Header,
                         content: HomeContent,
                         footer: Footer
+                    },
+                    meta: {
+                        title: '寒露'
                     }
                 },
                 {
@@ -51,6 +54,9 @@ let router = new Router({
                         header: Header,
                         content: ArticleListContent,
                         footer: Footer
+                    },
+                    meta: {
+                        title: '文章列表 - 寒露'
                     }
                 },
                 {
@@ -69,6 +75,9 @@ let router = new Router({
                         header: Header,
                         content: ArticleListContent,
                         footer: Footer
+                    },
+                    meta: {
+                        title: '分类 - 寒露'
                     }
                 },
                 {
@@ -78,6 +87,9 @@ let router = new Router({
                         header: Header,
                         content: TimeLineContent,
                         footer: Footer
+                    },
+                    meta: {
+                        title: '时间线 - 寒露'
                     }
                 }
             ]
@@ -96,6 +108,11 @@ let router = new Router({
 
 router.beforeEach((to, from, next) => {
     NProgress.start();
+
+    //网站 title
+    if (to.meta.title) {
+        document.title = to.meta.title;
+    }
     next();
 });
 

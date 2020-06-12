@@ -64,14 +64,14 @@ export default {
                 url: this.$http.adornUrl('/article/' + articleId),
                 method: 'get'
             }).then(({ data }) => {
-                if (data && data.code === 200) {
-                    this.article = data.article
+                if (data && data.code === 2000) {
+                    this.article = data.data
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
-                        this.addCodeLineNumber()
-                        this.refreshDiectory()
-                        this.refreshMobileDirectory()
-                        document.title = this.article.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+                        // this.addCodeLineNumber()
+                        // this.refreshDiectory()
+                        // this.refreshMobileDirectory()
+                        document.title = this.article.title + ' - 寒露'
                     })
                 }
             })
