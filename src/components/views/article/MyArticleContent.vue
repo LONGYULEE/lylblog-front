@@ -86,7 +86,6 @@ export default {
                     this.article = data.data
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
-                        // this.addCodeLineNumber()
 
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
@@ -103,8 +102,6 @@ export default {
                             //加新节点插入到指定位置
                             item.insertBefore(tmp, item.childNodes[0]);
                         })
-                        // this.refreshDiectory()
-                        // this.refreshMobileDirectory()
                         document.title = this.article.title + ' - 寒露';
                     })
                 }
@@ -124,51 +121,6 @@ export default {
                 console.log(error);
             });
         },
-        generateMenu() {
-            // console.log(this.$refs.article.querySelectorAll('pre code'))
-            const result = [];
-            const content = document.querySelector('.myarticle-content');
-            const h2All = content.querySelectorAll('h2');
-            // console.log(h2All)
-            h2All.forEach(h2 => {
-                const anchor = h2.querySelector('a');
-                if (anchor) {
-                    const h2Item = {
-                        href: `#${anchor.id}`,
-                        title: h2.textContent,
-                        subs: []
-                    };
-                    let nextEl = h2.nextElementSibling;
-                    while (nextEl && nextEl.nodeName !== 'H2') {
-                        if (nextEl.nodeName === 'H3') {
-                            const anchor = nextEl.querySelector('a');
-                            if (anchor) {
-                                h2Item.subs.push({
-                                    href: `#${anchor.id}`,
-                                    title: nextEl.textContent
-                                });
-                            }
-                        }
-                        nextEl = nextEl.nextElementSibling;
-                    }
-                    result.push(h2Item);
-                }
-            });
-            if (result.length) {
-                this.menus = result;
-                this.menuShow = true;
-            }
-        },
-        addCodeLineNumber() {
-            // console.log(this.$refs.article)
-            // // 添加行号
-            // let blocks = this.$refs.article.querySelectorAll('pre code')
-            // blocks.forEach((block) => {
-            //     window.hljs.highlightBlock(block)
-            //     // 去前后空格并添加行号
-            //     block.innerHTML = '<ul><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ul>'
-            // })
-        },
         getUpCaseClass(data) {
             var str = '';
             data.forEach(item => {
@@ -182,9 +134,6 @@ export default {
     },
     mounted() {
         highlightCode();
-        setTimeout(() => {
-            this.generateMenu();
-        }, 5000);
     },
     updated() {
         highlightCode()

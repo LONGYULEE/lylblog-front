@@ -8,26 +8,13 @@
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="6">
                 <div class="layout-right">
-                    <!-- <recommend></recommend> -->
-                    <!-- <iv-affix :offset-top="60">
-                        <side-toc style="margin-top: 15px;"></side-toc>
-                    </iv-affix> -->
+                    
                 </div>
             </a-col>
         </a-row>
     </div>
 </template>
 <script type="text/ecmascript-6">
-import ArticlePageHeader from '@/components/views/Article/ArticlePageHeader'
-import ArticlePageContent from '@/components/views/Article/ArticlePageContent'
-import ArticlePageFooter from '@/components/views/Article/ArticlePageFooter'
-import About from '@/components/views/About'
-// import FriendLinks from '@/components/views/FriendLinks'
-// import SideToc from '@/components/views/SideToc'
-import Recommend from '@/components/views/Recommend'
-// import TOC from '@/common/js/MarkdownToc'
-// // TOC滚动监听
-// import TocScrollSpy from '@/common/js/TocScrollSpy'
 import MyArticleContent from '@/components/views/article/MyArticleContent'
 
 export default {
@@ -37,72 +24,12 @@ export default {
         }
     },
     components: {
-        'article-page-header': ArticlePageHeader,
-        'article-page-content': ArticlePageContent,
-        'article-page-footer': ArticlePageFooter,
-        'about': About,
-        // 'friend-links': FriendLinks,
-        // 'side-toc': SideToc,
-        'recommend': Recommend,
         'my-article-content': MyArticleContent
     },
     created: function () {
-        // this.getArticle(this.$route.params.articleId)
     },
     methods: {
-        // addCodeLineNumber() {
-        //     // 添加行号
-        //     let blocks = this.$refs.article.querySelectorAll('pre code')
-        //     blocks.forEach((block) => {
-        //         window.hljs.highlightBlock(block)
-        //         // 去前后空格并添加行号
-        //         block.innerHTML = '<ul><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ul>'
-        //     })
-        // },
-        // getArticle(articleId) {
-        //     this.$http({
-        //         url: this.$http.adornUrl('/article/' + articleId),
-        //         method: 'get'
-        //     }).then(({ data }) => {
-        //         if (data && data.code === 2000) {
-        //             this.article = data.data
-        //             // 更新目录、高亮代码
-        //             this.$nextTick(function () {
-        //                 // this.addCodeLineNumber()
-        //                 // this.refreshDiectory()
-        //                 // this.refreshMobileDirectory()
-        //                 document.title = this.article.title + ' - 寒露'
-        //             })
-        //         }
-        //     })
-        // },
-        // refreshDiectory() {
-        //     /* eslint-disable*/
-        //     new TOC('article-main-page', {
-        //         'level': 5,
-        //         'top': 200,
-        //         'class': 'list',
-        //         'targetId': 'side-toc'
-        //     })
-        //     /* eslint-disable */
-        //     new TocScrollSpy('article-main-page', 'side-toc', {
-        //         'spayLevel': 5,
-        //         'articleMarginTop': 0
-        //     })
-        // },
-        // refreshMobileDirectory() {
-        //     /* eslint-disable */
-        //     new TOC('article-main-page', {
-        //         'level': 5,
-        //         'top': 200,
-        //         'class': 'list',
-        //         'targetId': 'sidebar-toc'
-        //     })
-        //     new TocScrollSpy('article-main-page', 'sidebar-toc', {
-        //         'spayLevel': 5,
-        //         'articleMarginTop': 15
-        //     })
-        // }
+
     }
 
 }
