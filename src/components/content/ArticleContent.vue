@@ -1,14 +1,14 @@
 <template>
     <div class="article-content" v-cloak>
         <a-row>
-            <a-col :xs="24" :sm="24" :md="24" :lg="17">
+            <a-col :xs="24" :sm="24" :md="24" :lg="18">
                 <div class="layout-left">
                     <my-article-content></my-article-content>
                 </div>
             </a-col>
-            <a-col :xs="0" :sm="0" :md="0" :lg="7">
+            <a-col :xs="0" :sm="0" :md="0" :lg="6">
                 <div class="layout-right">
-                    <recommend></recommend>
+                    <!-- <recommend></recommend> -->
                     <!-- <iv-affix :offset-top="60">
                         <side-toc style="margin-top: 15px;"></side-toc>
                     </iv-affix> -->

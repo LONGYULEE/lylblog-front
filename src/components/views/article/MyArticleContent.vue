@@ -55,9 +55,17 @@
 </template>
 
 <script>
+import hljs from 'highlight.js'
 import 'highlight.js/styles/tomorrow.css';
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
+const highlightCode = () => {
+    const preEl = document.querySelectorAll('pre')
+    console.log(preEl)
+    preEl.forEach((el) => {
+        hljs.highlightBlock(el)
+    })
+}
 export default {
     components: {
         "article-content": MyActicleMain
@@ -106,7 +114,7 @@ export default {
             const result = [];
             const content = document.querySelector('.myarticle-content');
             const h2All = content.querySelectorAll('h2');
-            console.log(h2All)
+            // console.log(h2All)
             h2All.forEach(h2 => {
                 const anchor = h2.querySelector('a');
                 if (anchor) {
@@ -151,10 +159,13 @@ export default {
         this.getArticle(this.$route.params.articleId)
     },
     mounted() {
+        highlightCode();
         setTimeout(() => {
             this.generateMenu();
-
         }, 5000);
+    },
+    updated() {
+        highlightCode()
     }
 };
 </script>
