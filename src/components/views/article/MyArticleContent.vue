@@ -61,7 +61,6 @@ import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
 const highlightCode = () => {
     const preEl = document.querySelectorAll('pre')
-    console.log(preEl)
     preEl.forEach((el) => {
         hljs.highlightBlock(el)
     })
@@ -88,9 +87,27 @@ export default {
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
                         this.addCodeLineNumber()
+
+                        //代码框添加代码类型显示
+                        let preEl = document.querySelectorAll('pre');
+                        preEl.forEach(item => {
+
+                            console.log(this.getUpCaseClass(item.childNodes))
+                            let str = this.getUpCaseClass(item.childNodes);
+                            debugger
+                            // this.getUpCaseClass(item.childNodes)
+                            //创建一个节点
+                            var tmp = document.createElement('div');
+                            //向节点中写入需要添加的内容
+                            tmp.innerHTML = '<div class="pre-header">' +
+                                '<div class="pre-header-left"><div></div><div></div><div></div></div>' +
+                                `<div class="pre-header-right">${str}</div></div>`;
+                            //加新节点插入到指定位置
+                            item.insertBefore(tmp, item.childNodes[0]);
+                        })
                         // this.refreshDiectory()
                         // this.refreshMobileDirectory()
-                        // document.title = this.article.title + ' | Bobbi的个人博客 | 一个努力成长中的Java后端程序猿'
+                        document.title = this.article.title + ' - 寒露';
                     })
                 }
             })
@@ -154,6 +171,15 @@ export default {
             //     block.innerHTML = '<ul><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ul>'
             // })
         },
+        getUpCaseClass(data) {
+            var str = '';
+            data.forEach(item => {
+                str.substring(item.className.length - 4);
+                console.log(item.className.length)
+                str = item.className;
+            })
+            return str;
+        }
     },
     created: function () {
         this.getArticle(this.$route.params.articleId)

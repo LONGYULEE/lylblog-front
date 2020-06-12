@@ -47,62 +47,62 @@ export default {
         'my-article-content': MyArticleContent
     },
     created: function () {
-        this.getArticle(this.$route.params.articleId)
+        // this.getArticle(this.$route.params.articleId)
     },
     methods: {
-        addCodeLineNumber() {
-            // 添加行号
-            let blocks = this.$refs.article.querySelectorAll('pre code')
-            blocks.forEach((block) => {
-                window.hljs.highlightBlock(block)
-                // 去前后空格并添加行号
-                block.innerHTML = '<ul><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ul>'
-            })
-        },
-        getArticle(articleId) {
-            this.$http({
-                url: this.$http.adornUrl('/article/' + articleId),
-                method: 'get'
-            }).then(({ data }) => {
-                if (data && data.code === 2000) {
-                    this.article = data.data
-                    // 更新目录、高亮代码
-                    this.$nextTick(function () {
-                        // this.addCodeLineNumber()
-                        // this.refreshDiectory()
-                        // this.refreshMobileDirectory()
-                        document.title = this.article.title + ' - 寒露'
-                    })
-                }
-            })
-        },
-        refreshDiectory() {
-            /* eslint-disable*/
-            new TOC('article-main-page', {
-                'level': 5,
-                'top': 200,
-                'class': 'list',
-                'targetId': 'side-toc'
-            })
-            /* eslint-disable */
-            new TocScrollSpy('article-main-page', 'side-toc', {
-                'spayLevel': 5,
-                'articleMarginTop': 0
-            })
-        },
-        refreshMobileDirectory() {
-            /* eslint-disable */
-            new TOC('article-main-page', {
-                'level': 5,
-                'top': 200,
-                'class': 'list',
-                'targetId': 'sidebar-toc'
-            })
-            new TocScrollSpy('article-main-page', 'sidebar-toc', {
-                'spayLevel': 5,
-                'articleMarginTop': 15
-            })
-        }
+        // addCodeLineNumber() {
+        //     // 添加行号
+        //     let blocks = this.$refs.article.querySelectorAll('pre code')
+        //     blocks.forEach((block) => {
+        //         window.hljs.highlightBlock(block)
+        //         // 去前后空格并添加行号
+        //         block.innerHTML = '<ul><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ul>'
+        //     })
+        // },
+        // getArticle(articleId) {
+        //     this.$http({
+        //         url: this.$http.adornUrl('/article/' + articleId),
+        //         method: 'get'
+        //     }).then(({ data }) => {
+        //         if (data && data.code === 2000) {
+        //             this.article = data.data
+        //             // 更新目录、高亮代码
+        //             this.$nextTick(function () {
+        //                 // this.addCodeLineNumber()
+        //                 // this.refreshDiectory()
+        //                 // this.refreshMobileDirectory()
+        //                 document.title = this.article.title + ' - 寒露'
+        //             })
+        //         }
+        //     })
+        // },
+        // refreshDiectory() {
+        //     /* eslint-disable*/
+        //     new TOC('article-main-page', {
+        //         'level': 5,
+        //         'top': 200,
+        //         'class': 'list',
+        //         'targetId': 'side-toc'
+        //     })
+        //     /* eslint-disable */
+        //     new TocScrollSpy('article-main-page', 'side-toc', {
+        //         'spayLevel': 5,
+        //         'articleMarginTop': 0
+        //     })
+        // },
+        // refreshMobileDirectory() {
+        //     /* eslint-disable */
+        //     new TOC('article-main-page', {
+        //         'level': 5,
+        //         'top': 200,
+        //         'class': 'list',
+        //         'targetId': 'sidebar-toc'
+        //     })
+        //     new TocScrollSpy('article-main-page', 'sidebar-toc', {
+        //         'spayLevel': 5,
+        //         'articleMarginTop': 15
+        //     })
+        // }
     }
 
 }
