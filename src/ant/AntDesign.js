@@ -6,7 +6,8 @@ import {
     Tag,
     Col,
     Progress,
-    Result
+    Result,
+    Anchor,
 } from 'ant-design-vue';
 
 const ant = {
@@ -19,7 +20,9 @@ const ant = {
         Vue.component(Col.name, Col);
         Vue.component(Progress.name, Progress);
         Vue.component(Result.name, Result);
+        Vue.component(Anchor.name, Anchor);
+        Vue.component(Anchor.Link.name, Anchor);
         Vue.prototype.$message = message;
-    }
+    },
 };
-export default ant
+export default ant;
