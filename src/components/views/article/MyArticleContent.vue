@@ -86,15 +86,13 @@ export default {
                     this.article = data.data
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
-                        this.addCodeLineNumber()
+                        // this.addCodeLineNumber()
 
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
                         preEl.forEach(item => {
 
-                            console.log(this.getUpCaseClass(item.childNodes))
                             let str = this.getUpCaseClass(item.childNodes);
-                            debugger
                             // this.getUpCaseClass(item.childNodes)
                             //创建一个节点
                             var tmp = document.createElement('div');
@@ -174,11 +172,9 @@ export default {
         getUpCaseClass(data) {
             var str = '';
             data.forEach(item => {
-                str.substring(item.className.length - 4);
-                console.log(item.className.length)
-                str = item.className;
+                str = item.className.substring(9);;
             })
-            return str;
+            return str.toUpperCase();
         }
     },
     created: function () {
