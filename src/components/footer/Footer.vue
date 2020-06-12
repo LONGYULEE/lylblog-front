@@ -23,7 +23,7 @@ export default {
     margin: 15px 0;
     color: @default-title-color;
     border-top: 1px solid #e8e8e8;
-    background: #f3f3f4;
+    background: @default-background-color;
     @media only screen and (max-width: @responsive-sm) {
         font-size: 13px;
     }
@@ -38,7 +38,7 @@ export default {
     }
     .copyright {
         margin: 10px 0;
-        background-color: #f3f3f4;
+        background-color: @default-background-color;
     }
 }
 </style>

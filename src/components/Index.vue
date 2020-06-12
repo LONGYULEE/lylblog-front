@@ -6,9 +6,10 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
+@import '../common/less/theme.less';
 .main-wrapper {
-    background-color: #f3f3f4;
+    background-color: @default-background-color;
     width: 100%;
     margin: 0 auto;
 }
