@@ -8,19 +8,31 @@
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="6">
                 <div class="layout-right">
-                    
+                    <a-anchor :wrapperStyle="myStyle">
+                        <a-anchor-link href="#components-anchor-demo-basic" title="Basic demo" />
+                        <a-anchor-link href="#components-anchor-demo-static" title="Static demo" />
+                        <a-anchor-link href="#components-anchor-demo-basic" title="Basic demo with Target"
+                            target="_blank" />
+                        <a-anchor-link href="#API" title="API">
+                            <a-anchor-link href="#Anchor-Props" title="Anchor Props" />
+                            <a-anchor-link href="#Link-Props" title="Link Props" />
+                        </a-anchor-link>
+                    </a-anchor>
                 </div>
             </a-col>
         </a-row>
     </div>
 </template>
-<script type="text/ecmascript-6">
+<script>
 import MyArticleContent from '@/components/views/article/MyArticleContent'
 
 export default {
     data() {
         return {
-            article: {}
+            article: {},
+            myStyle: {
+                'background-color': 'inherit'
+            }
         }
     },
     components: {
@@ -55,10 +67,6 @@ export default {
     @media screen and (min-width: 1200px) {
         width: 1200px;
         margin: 15px auto 0;
-    }
-
-    .layout-left {
-        border-radius: @default-border-radius;
     }
 
     .layout-left,
