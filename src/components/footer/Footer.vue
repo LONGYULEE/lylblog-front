@@ -1,44 +1,47 @@
 <template>
-    <div class="common-footer">
-        <p class="copyright">
-            power by 123
-        </p>
+    <div class="layout-footer">
+        {{ year }} © Powered by
+        <a href="#" target="_blank">lylBlog</a>
+        <span class="record-info">
+            |
+            <a href="http://www.beian.miit.gov.cn">{{ beianhao }}</a>
+        </span>
     </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 export default {
     data() {
-        return {};
+        return {
+            year: new Date().getFullYear(),
+            beianhao: '渝ICP备20007141号'
+        };
     }
 };
 </script>
 
-<style scope lang="less">
+<style scoped lang="less">
 @import '../../common/less/theme.less';
-.common-footer {
-    font-weight: 300;
-    line-height: 25px;
+.layout-footer {
     text-align: center;
-    margin: 15px 0;
-    color: @default-title-color;
-    border-top: 1px solid #e8e8e8;
-    background: @default-background-color;
-    @media only screen and (max-width: @responsive-sm) {
-        font-size: 13px;
+    color: #888;
+    user-select: none;
+    padding: 24px 0;
+
+    a {
+        color: @color-typegraphy-title-hover;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
-    @media screen and (min-width: @responsive-sm) {
-        font-size: 14px;
-    }
-    @media screen and (min-width: @responsive-md) {
-        font-size: 15px;
-    }
-    @media screen and (min-width: @responsive-lg) {
-        font-size: 15px;
-    }
-    .copyright {
-        margin: 10px 0;
-        background-color: @default-background-color;
+}
+
+@media (max-width: 576px) {
+    .record-info,
+    .admin-link {
+        display: none;
     }
 }
 </style>
