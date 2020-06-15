@@ -10,7 +10,10 @@
                 <div class="layout-right">
                     <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true">
                         <a-anchor-link v-for="item in menus" v-bind:key="item.href" :href="item.href"
-                            :title="item.title" />
+                            :title="item.title">
+                            <a-anchor-link v-for="item01 in item.children" v-bind:key="item01.href" :href="item01.href"
+                                :title="item01.title" />
+                        </a-anchor-link>
                     </a-anchor>
                 </div>
             </a-col>

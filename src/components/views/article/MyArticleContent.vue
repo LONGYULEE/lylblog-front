@@ -134,14 +134,28 @@ export default {
         changeData(data) {
             //h2
             data.forEach(item => {
-                console.log(item)
                 let aEl = item.getElementsByTagName('a')
-
-                this.menus.push({
+                const result = {
                     href: '#' + aEl[0].getAttribute('id'),
-                    title: item.innerHTML.substring(item.innerHTML.lastIndexOf('>') + 1)
-                })
+                    title: item.innerHTML.substring(item.innerHTML.lastIndexOf('>') + 1),
+                    children: []
+                };
+                let nextEl = item.nextElementSibling;
+                while (nextEl && nextEl.nodeName !== 'H2') {
+                    if (nextEl.nodeName === 'H3') {
+                        const anchor = nextEl.querySelector('a');
+                        if (anchor) {
+                            result.children.push({
+                                href: `#${anchor.id}`,
+                                title: nextEl.textContent
+                            });
+                        }
+                    }
+                    nextEl = nextEl.nextElementSibling;
+                }
+                this.menus.push(result)
             })
+            console.log(this.menus)
             this.$emit('getMenus', this.menus);
         }
     },
