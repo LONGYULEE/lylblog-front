@@ -91,25 +91,15 @@ export default {
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
                         let h2El = document.querySelectorAll('h2');
-                        this.changeData(h2El);
-                        preEl.forEach(item => {
-
-                            let str = this.getUpCaseClass(item.childNodes);
-                            // this.getUpCaseClass(item.childNodes)
-                            //创建一个节点
-                            var tmp = document.createElement('div');
-                            //向节点中写入需要添加的内容
-                            tmp.innerHTML = '<div class="pre-header">' +
-                                '<div class="pre-header-left"><div></div><div></div><div></div></div>' +
-                                `<div class="pre-header-right">${str}</div></div>`;
-                            //加新节点插入到指定位置
-                            item.insertBefore(tmp, item.childNodes[0]);
-                        })
+                        this.createMenus(h2El);
+                        this.createCodeHeader(preEl);
+                        //文章页面网页 title
                         document.title = this.article.title + ' - 寒露';
                     })
                 }
             })
         },
+        //点赞
         likePost(post) {
             this.$http({
                 url: this.$http.adornUrl("/article/like/" + post.id),
@@ -126,12 +116,27 @@ export default {
         },
         getUpCaseClass(data) {
             var str = '';
-            data.forEach(item => {
-                str = item.className.substring(5);
-            })
+            if (data.length != 0) {
+                str = data[0].getAttribute('class').substring(5);
+            }
             return str.toUpperCase();
         },
-        changeData(data) {
+        //创建代码框头部显示
+        createCodeHeader(data) {
+            data.forEach(item => {
+                let str = this.getUpCaseClass(item.getElementsByTagName('code'));
+                //创建一个节点
+                var tmp = document.createElement('div');
+                //向节点中写入需要添加的内容
+                tmp.innerHTML = '<div class="pre-header">' +
+                    '<div class="pre-header-left"><div></div><div></div><div></div></div>' +
+                    `<div class="pre-header-right">${str}</div></div>`;
+                //加新节点插入到指定位置
+                item.insertBefore(tmp, item.childNodes[0]);
+            })
+        },
+        //创建目录
+        createMenus(data) {
             //h2
             data.forEach(item => {
                 let aEl = item.getElementsByTagName('a')
@@ -155,7 +160,6 @@ export default {
                 }
                 this.menus.push(result)
             })
-            console.log(this.menus)
             this.$emit('getMenus', this.menus);
         }
     },
