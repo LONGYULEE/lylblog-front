@@ -73,7 +73,7 @@ export default {
     data() {
         return {
             article: {},
-            menu: []
+            menus: []
         };
     },
     methods: {
@@ -90,6 +90,8 @@ export default {
 
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
+                        let h2El = document.querySelectorAll('h2');
+                        this.changeData(h2El);
                         preEl.forEach(item => {
 
                             let str = this.getUpCaseClass(item.childNodes);
@@ -129,10 +131,18 @@ export default {
             })
             return str.toUpperCase();
         },
-        generateMenu() {
-            const content = document.querySelector('.article-content');
-            const h2All = content.querySelectorAll('h2');
-            console.log(h2All)
+        changeData(data) {
+            //h2
+            data.forEach(item => {
+                console.log(item)
+                let aEl = item.getElementsByTagName('a')
+
+                this.menus.push({
+                    href: '#' + aEl[0].getAttribute('id'),
+                    title: item.innerHTML.substring(item.innerHTML.lastIndexOf('>') + 1)
+                })
+            })
+            this.$emit('getMenus', this.menus);
         }
     },
     created: function () {
@@ -140,7 +150,6 @@ export default {
     },
     mounted() {
         highlightCode();
-        this.generateMenu();
     },
     updated() {
         highlightCode()

@@ -3,20 +3,14 @@
         <a-row>
             <a-col :xs="24" :sm="24" :md="24" :lg="18">
                 <div class="layout-left">
-                    <my-article-content ref="article"></my-article-content>
+                    <my-article-content ref="article" @getMenus="getArticleMenus"></my-article-content>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="6">
                 <div class="layout-right">
                     <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true">
-                        <a-anchor-link href="#components-anchor-demo-basic" title="Basic demo" />
-                        <a-anchor-link href="#components-anchor-demo-static" title="Static demo" />
-                        <a-anchor-link href="#components-anchor-demo-basic" title="Basic demo with Target"
-                            target="_blank" />
-                        <a-anchor-link href="#API" title="API">
-                            <a-anchor-link href="#Anchor-Props" title="Anchor Props" />
-                            <a-anchor-link href="#Link-Props" title="Link Props" />
-                        </a-anchor-link>
+                        <a-anchor-link v-for="item in menus" v-bind:key="item.href" :href="item.href"
+                            :title="item.title" />
                     </a-anchor>
                 </div>
             </a-col>
@@ -32,7 +26,8 @@ export default {
             article: {},
             myStyle: {
                 'background-color': 'inherit'
-            }
+            },
+            menus: []
         }
     },
     components: {
@@ -41,13 +36,12 @@ export default {
     created: function () {
     },
     methods: {
-
+        getArticleMenus(data) {
+            this.menus = data;
+        }
     },
     mounted() {
-        // const content = document.querySelector('.article-content')
-        // const h2All = content.querySelectorAll('h2');
-        // console.log(this.$refs.article)
-        // console.log('我是父组件mounted')
+
     },
 
 
