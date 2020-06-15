@@ -3,12 +3,12 @@
         <a-row>
             <a-col :xs="24" :sm="24" :md="24" :lg="18">
                 <div class="layout-left">
-                    <my-article-content></my-article-content>
+                    <my-article-content ref="article"></my-article-content>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="6">
                 <div class="layout-right">
-                    <a-anchor :wrapperStyle="myStyle">
+                    <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true">
                         <a-anchor-link href="#components-anchor-demo-basic" title="Basic demo" />
                         <a-anchor-link href="#components-anchor-demo-static" title="Static demo" />
                         <a-anchor-link href="#components-anchor-demo-basic" title="Basic demo with Target"
@@ -42,7 +42,14 @@ export default {
     },
     methods: {
 
-    }
+    },
+    mounted() {
+        // const content = document.querySelector('.article-content')
+        // const h2All = content.querySelectorAll('h2');
+        // console.log(this.$refs.article)
+        // console.log('我是父组件mounted')
+    },
+
 
 }
 </script>

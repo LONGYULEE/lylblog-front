@@ -84,6 +84,7 @@ export default {
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
                     this.article = data.data
+
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
 
@@ -124,9 +125,14 @@ export default {
         getUpCaseClass(data) {
             var str = '';
             data.forEach(item => {
-                str = item.className.substring(9);;
+                str = item.className.substring(5);
             })
             return str.toUpperCase();
+        },
+        generateMenu() {
+            const content = document.querySelector('.article-content');
+            const h2All = content.querySelectorAll('h2');
+            console.log(h2All)
         }
     },
     created: function () {
@@ -134,6 +140,7 @@ export default {
     },
     mounted() {
         highlightCode();
+        this.generateMenu();
     },
     updated() {
         highlightCode()
