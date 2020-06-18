@@ -1,7 +1,7 @@
 <template>
     <div class="section-title">
         <div class="title">
-            <span class="square"></span>
+            <a-icon type="slack-circle" theme="filled" class="square" />
             <span class="main-title">{{mainTitle}}</span>
             <span class="vertical-line"></span>
             <span class="sub-title">{{subTitle}}</span>
@@ -29,7 +29,7 @@ export default {
 @import '../../../common/less/index.less';
 
 .section-title {
-    margin-bottom: 10px;
+    margin: 10px 0;
     border-radius: @default-border-radius;
     display: flex;
     justify-content: space-between;
@@ -45,10 +45,8 @@ export default {
     }
     .title {
         .square {
-            display: inline-block;
-            height: 30px;
-            width: 30px;
-            background: #000000;
+            vertical-align: middle;
+            font-size: 30px;
             vertical-align: middle;
             @media only screen and (max-width: 768px) {
                 display: none;
@@ -59,6 +57,9 @@ export default {
             vertical-align: middle;
             font-size: 22px;
             padding: 0 10px;
+            @media only screen and (max-width: 768px) {
+                padding: 0 15px;
+            }
         }
         .vertical-line {
             display: inline-block;

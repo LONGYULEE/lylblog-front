@@ -1,7 +1,7 @@
 <template>
     <div class="layout-footer">
         {{ year }} © Powered by
-        <a href="#" target="_blank">lylBlog</a>
+        <a href="https://gitee.com/lihanly10979/temp-fontend" target="_blank">lylBlog</a>
         <span class="record-info">
             |
             <a href="http://www.beian.miit.gov.cn">{{ beianhao }}</a>

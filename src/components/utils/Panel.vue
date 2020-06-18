@@ -31,7 +31,7 @@ export default {
         text-align: left;
         border-left: 5px solid @default-link-hover-color;
         background-color: rgba(43, 190, 255, 0.2);
-        border-top-right-radius: 10px;
+        border-top-right-radius: @default-border-radius;
     }
 }
 </style>

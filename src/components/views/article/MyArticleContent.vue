@@ -175,7 +175,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+@import '../../../common/less/theme.less';
 .operate_info {
     text-align: right;
     font-size: 14px;
@@ -204,7 +205,7 @@ export default {
     justify-content: center;
     /* margin-top: 30px; */
     background-color: white;
-    border-radius: 10px;
+    border-radius: @default-border-radius;
 }
 
 .left-wrap {
