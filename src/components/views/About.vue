@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <img class="background" src="../../assets/background.jpg" alt="">
+        <img class="background" src="../../assets/AK-02.jpg" alt="">
         <img class="avatar" src="../../assets/web_avatar.jpg" alt="">
         <p class="name">HANLU</p>
         <p class="desc">南波湾</p>
@@ -53,10 +53,10 @@ export default {};
         left: 0;
         right: 0;
         width: 100%;
-        height: 125px;
         z-index: 1;
         border-top-left-radius: @default-border-radius;
         border-top-right-radius: @default-border-radius;
+        clip: rect(0 1000px 125px 0);
     }
 
     img.avatar {

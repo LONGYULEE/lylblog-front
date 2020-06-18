@@ -3,7 +3,7 @@
         <div class="main-area">
             <div class="top-wrapper" @touchmove.stop>
                 <div class="top-area">
-                    <img src="../../assets/background.jpg" alt="">
+                    <img src="../../assets/AK-02.jpg" alt="">
                     <div class="site-info">
                         <h1 class="site-name">寒露</h1>
                         <h1 class="site-desc">南波湾</h1>
@@ -18,18 +18,24 @@
                     </div>
                     <ul class="nav-menu">
                         <!-- 类别导航 -->
-                        <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList" :key="category_level1.id">
+                        <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
+                            :key="category_level1.id">
                             <a-icon type="plus-circle" />&nbsp;
-                            <a class="nav-link" :href="'/articles/category/'+category_level1.id">{{category_level1.name}}<span class="arrow"></span>
+                            <a class="nav-link"
+                                :href="'/articles/category/'+category_level1.id">{{category_level1.name}}<span
+                                    class="arrow"></span>
                             </a>
                             <ul class="nav-dropdown">
                                 <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
                                     <a-icon type="plus" />
-                                    <a class="nav-link" :href="'/articles/category/'+category_level2.id">{{ category_level2.name}}</a>
+                                    <a class="nav-link"
+                                        :href="'/articles/category/'+category_level2.id">{{ category_level2.name}}</a>
                                     <ul class="nav-dropdown">
-                                        <li v-for="category_level3 in category_level2.children" :key="category_level3.id">
+                                        <li v-for="category_level3 in category_level2.children"
+                                            :key="category_level3.id">
                                             <a-icon type="minus" />&nbsp;
-                                            <a class="nav-link" :href="'/articles/category/'+category_level3.id">{{ category_level3.name }}</a>
+                                            <a class="nav-link"
+                                                :href="'/articles/category/'+category_level3.id">{{ category_level3.name }}</a>
                                         </li>
                                     </ul>
                                 </li>
