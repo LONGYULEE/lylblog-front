@@ -7,10 +7,12 @@
                     <div class="timeline-wrapper">
                         <div v-for="year in timelineList" :key="year.year">
                             <div v-if="year.months.length > 0">
-                                <archive-list-time-title :date="year.year" :count="year.count"></archive-list-time-title>
+                                <archive-list-time-title :date="year.year" :count="year.count">
+                                </archive-list-time-title>
                                 <div v-for="month in year.months" :key="month.month">
                                     <div v-if="month.posts.length > 0">
-                                        <archive-list-time-title :date="month.month + '月'" :count="month.count" :dateType="'month'">
+                                        <archive-list-time-title :date="month.month + '月'" :count="month.count"
+                                            :dateType="'month'">
                                         </archive-list-time-title>
                                         <archive-list-cell v-for="post in month.posts" :post="post" :key="post.title">
                                         </archive-list-cell>
@@ -114,7 +116,7 @@ export default {
         }
 
         .timeline-wrapper {
-            background-color: white;
+            background-color: @default-background-image;
             padding: 10px 15px;
             border-radius: @default-border-radius;
         }

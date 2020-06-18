@@ -60,7 +60,7 @@ export default {
 .article-page-header {
     text-align: left;
     padding: 25px 5px 10px 5px;
-    background-color: white;
+    background-color: @default-background-image;
     border-radius: @default-border-radius;
     position: absolute;
     bottom: 0px;

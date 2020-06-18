@@ -112,7 +112,7 @@ export default {
 .article-cell {
     margin-bottom: 10px;
     border-radius: @default-border-radius;
-    background-color: white;
+    background-color: @default-background-image;
 
     > a {
         border-radius: @default-border-radius;

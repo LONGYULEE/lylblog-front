@@ -204,7 +204,7 @@ export default {
     display: flex;
     justify-content: center;
     /* margin-top: 30px; */
-    background-color: white;
+    background-color: @default-background-image;
     border-radius: @default-border-radius;
 }
 

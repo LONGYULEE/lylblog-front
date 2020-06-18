@@ -46,7 +46,7 @@ export default {
 .archive-list-cell {
     position: relative;
     padding: 5px 0;
-    background-color: white;
+    background-color: @default-background-image;
 
     &::after {
         content: '';
