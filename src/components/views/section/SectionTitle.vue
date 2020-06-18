@@ -29,7 +29,7 @@ export default {
 @import '../../../common/less/index.less';
 
 .section-title {
-    margin: 10px 0;
+    margin-bottom: 10px;
     border-radius: @default-border-radius;
     display: flex;
     justify-content: space-between;
