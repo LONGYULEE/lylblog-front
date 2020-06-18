@@ -2,12 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-import router from './router';
 import http from '@/util/request.js';
 import '@/common/less/index.less';
 
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
+import router from './router';
 
 Vue.use(Antd);
 
