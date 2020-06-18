@@ -3,11 +3,14 @@
         <a-row>
             <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
                 <div class="layout-left">
-                    <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'" :tipHref="'/articles'">
-                        <title-menu-filter @filterByMenu="refreshArticle" slot="menu" :menu-filter-list="defaultFilterList">
+                    <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'"
+                        :tipHref="'/articles'">
+                        <title-menu-filter @filterByMenu="refreshArticle" slot="menu"
+                            :menu-filter-list="defaultFilterList">
                         </title-menu-filter>
                     </section-title>
-                    <article-list-cell v-for="article in articleList" :article="article" :key="article.title" :type="'article'">
+                    <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
+                        :type="'article'">
                     </article-list-cell>
                 </div>
             </a-col>
@@ -117,28 +120,8 @@ export default {
         padding: 0;
     }
 }
-@media only screen and (min-width: 1200px) and (max-width: 768px) {
-    .home-content .layout-left,
-    .home-content .layout-right {
-        padding: 0;
-    }
-}
-@media screen and (min-width: 1200px) and (min-width: 768px) {
-    .home-content .layout-left,
-    .home-content .layout-right {
-        padding: 0;
-    }
-}
-@media screen and (min-width: 1200px) and (min-width: 992px) {
-    .home-content .layout-left,
-    .home-content .layout-right {
-        padding: 0;
-    }
-}
-@media screen and (min-width: 1200px) and (min-width: 1200px) {
-    .home-content .layout-left,
-    .home-content .layout-right {
-        padding: 0 10px;
-    }
+.home-content .layout-left,
+.home-content .layout-right {
+    padding: 0 10px;
 }
 </style>

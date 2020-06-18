@@ -28,7 +28,8 @@ export default {
         return {
             article: {},
             myStyle: {
-                'background-color': 'inherit'
+                'background-color': 'inherit',
+                'min-width': '250px'
             },
             menus: []
         }

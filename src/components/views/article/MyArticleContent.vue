@@ -91,8 +91,8 @@ export default {
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
                         let h2El = document.querySelectorAll('h2');
-                        this.createMenus(h2El);
                         this.createCodeHeader(preEl);
+                        this.createMenus(h2El);
                         //文章页面网页 title
                         document.title = this.article.title + ' - 寒露';
                     })
@@ -139,7 +139,7 @@ export default {
         createMenus(data) {
             //h2
             data.forEach(item => {
-                let aEl = item.getElementsByTagName('a')
+                let aEl = item.getElementsByTagName('a');
                 const result = {
                     href: '#' + aEl[0].getAttribute('id'),
                     title: item.innerHTML.substring(item.innerHTML.lastIndexOf('>') + 1),

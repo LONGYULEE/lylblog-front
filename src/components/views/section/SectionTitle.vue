@@ -50,6 +50,9 @@ export default {
             width: 30px;
             background: #000000;
             vertical-align: middle;
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
         }
         .main-title {
             display: inline-block;
