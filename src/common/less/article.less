@@ -1,7 +1,10 @@
 .myarticle-content {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.8;
     word-wrap: break-word;
+    ::selection {
+        background: lightpink;
+    }
 
     * {
         box-sizing: border-box;
@@ -77,6 +80,12 @@
     blockquote {
         padding-left: 1rem;
         border-left: 0.25rem solid #e9ecef;
+        min-height: 40px;
+        margin: 3px 0px;
+
+        display: flex;
+        align-items: center;
+        background-color: #f9f9f9;
     }
 
     ul,

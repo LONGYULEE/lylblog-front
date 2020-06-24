@@ -10,7 +10,8 @@
                             <span class="special" v-if="article.top>0" title="置顶">置顶</span>
                         </h4>
                         <div class="tags">
-                            <a-tag :color="tag.id | mapTagColor" :key="tag.id" type="border" v-for="(tag) in article.tagList">
+                            <a-tag :color="tag.id | mapTagColor" :key="tag.id" type="border"
+                                v-for="(tag) in article.tagList">
                                 {{tag.name}}</a-tag>
                         </div>
                         <p class="desc">{{article.description | filterHtml | textLineBreak(70) }}<a
@@ -128,6 +129,7 @@ export default {
         .text-wrapper {
             padding: 20px 20px 0 20px;
             text-align: left;
+            min-height: 120px;
 
             @media only screen and (max-width: 768px) {
                 padding: 15px 15px 0 15px;
@@ -217,6 +219,8 @@ export default {
             .operate_info {
                 font-size: 14px;
                 margin: 15px 0 20px;
+                position: absolute;
+                bottom: 0px;
 
                 span {
                     margin-right: 8px;
