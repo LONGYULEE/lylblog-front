@@ -90,7 +90,7 @@ export default {};
 
         > li {
             padding: 8px;
-
+            list-style: none;
             a {
                 display: block;
                 width: 44px;

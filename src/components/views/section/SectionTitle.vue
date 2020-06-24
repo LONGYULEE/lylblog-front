@@ -1,7 +1,7 @@
 <template>
     <div class="section-title">
         <div class="title">
-            <a-icon type="slack-circle" theme="filled" class="square" />
+            <a-icon type="smile" class="square" theme="twoTone" two-tone-color="#eb2f96" />
             <span class="main-title">{{mainTitle}}</span>
             <span class="vertical-line"></span>
             <span class="sub-title">{{subTitle}}</span>

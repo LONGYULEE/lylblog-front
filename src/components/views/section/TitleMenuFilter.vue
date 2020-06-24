@@ -48,13 +48,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "../../../common/less/theme.less";
+@import '../../../common/less/theme.less';
 .title-menu-timeline {
     display: flex;
     ul {
         li {
             float: left;
             margin: 0 6px;
+            list-style: none;
             a {
                 padding: 6px 0;
                 &:hover,

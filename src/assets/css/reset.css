@@ -29,6 +29,10 @@ footer, header, menu, nav, section {
   display: block;
 }
 
+::selection {
+  background: lightpink;
+}
+
 body {
   line-height: 1;
 }
