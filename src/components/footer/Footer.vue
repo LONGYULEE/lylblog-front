@@ -6,6 +6,10 @@
             |
             <a href="http://www.beian.miit.gov.cn">{{ beianhao }}</a>
         </span>
+        <span class="record-info">
+            |
+            <a href="http://132.232.87.31:8080/manage/#/login">后台管理</a>
+        </span>
     </div>
 </template>
 
