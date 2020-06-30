@@ -30,7 +30,8 @@ footer, header, menu, nav, section {
 }
 
 ::selection {
-  background: lightpink;
+  background: pink !important;
+  color: #000000 !important;
 }
 
 body {
