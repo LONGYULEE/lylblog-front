@@ -96,7 +96,9 @@ export const mixin = {
         },
         // 去除html标签
         filterHtml: function(richText) {
-            return richText.replace(/<.+?>/g, '');
+            if (richText != null) {
+                return richText.replace(/<.+?>/g, '');
+            }
         },
         // 用于处理行尾省略号的过滤器
         textLineBreak: function(text, maxLength, lineBreakMode) {
