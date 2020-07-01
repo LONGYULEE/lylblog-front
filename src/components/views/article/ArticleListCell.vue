@@ -246,6 +246,7 @@ export default {
             width: 100%;
             height: 0;
             overflow: hidden;
+            border-radius: @border-radius;
 
             &.big-image {
                 padding-bottom: 26%;
