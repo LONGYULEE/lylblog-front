@@ -1,7 +1,7 @@
 <template>
     <div class="about">
-        <img class="background" src="../../assets/AK-02.jpg" alt="">
-        <img class="avatar" src="../../assets/web_avatar.jpg" alt="">
+        <img class="background" src="http://img.lylblog.xyz/AK-02.jpg" alt="">
+        <img class="avatar" src="http://img.lylblog.xyz/web_avatar.jpg" alt="">
         <p class="name">HANLU</p>
         <p class="desc">南波湾</p>
         <ul class="social">

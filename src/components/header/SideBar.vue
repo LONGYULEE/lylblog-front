@@ -3,7 +3,7 @@
         <div class="main-area">
             <div class="top-wrapper" @touchmove.stop>
                 <div class="top-area">
-                    <img src="../../assets/AK-02.jpg" alt="">
+                    <img src="http://img.lylblog.xyz/AK-02.jpg" alt="">
                     <div class="site-info">
                         <h1 class="site-name">寒露</h1>
                         <h1 class="site-desc">南波湾</h1>
