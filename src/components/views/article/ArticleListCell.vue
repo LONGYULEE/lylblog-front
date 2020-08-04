@@ -114,6 +114,9 @@ export default {
     margin-bottom: 10px;
     border-radius: @default-border-radius;
     background-color: @default-background-image;
+    @media only screen and (max-width: 768px) {
+        margin-bottom: 5px;
+    }
 
     > a {
         border-radius: @default-border-radius;

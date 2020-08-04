@@ -32,6 +32,10 @@ export default {
     user-select: none;
     padding: 24px 0;
 
+    @media only screen and (max-width: 768px) {
+        padding: 5px 0px 15px 0px;
+    }
+
     a {
         color: @color-typegraphy-title-hover;
         cursor: pointer;

@@ -26,7 +26,7 @@
                 </div>
                 <div class="article-views">
                     <a-row>
-                        <a-col :xs="24" :sm="10" :md="10" :lg="10" style="padding-left: 0;padding-right: 0;">
+                        <a-col :xs="12" :sm="12" :md="12" :lg="12" style="padding-left: 0;padding-right: 0;">
                             <p class="info">
                                 <span class="author">By / <a>{{article.author}}</a>
                                 </span>
@@ -36,7 +36,7 @@
                                 </span>
                             </p>
                         </a-col>
-                        <a-col :xs="24" :sm="14" :md="14" :lg="14" style="padding-left: 0;padding-right: 0;">
+                        <a-col :xs="12" :sm="12" :md="12" :lg="12" style="padding-left: 0;padding-right: 0;">
                             <p class="operate_info">
                                 <span class="readings"><a>
                                         <a-icon type="eye"></a-icon> {{article.readNum}} 阅读
@@ -181,11 +181,11 @@ export default {
     text-align: right;
     font-size: 14px;
 }
-@media only screen and (max-width: 768px) {
-    .operate_info {
-        text-align: left;
-    }
-}
+// @media only screen and (max-width: 768px) {
+//     .operate_info {
+//         text-align: left;
+//     }
+// }
 .operate_info span {
     margin-right: 10px;
 }

@@ -97,7 +97,7 @@ export default {
 }
 @media only screen and (max-width: 768px) {
     .home-content {
-        margin: 5px 5px 10px 5px;
+        margin: 0px 5px 10px 5px;
     }
 }
 @media screen and (min-width: 768px) {
@@ -109,19 +109,21 @@ export default {
     .home-content {
         margin: 15px 35px 50px 35px;
     }
+
+    .home-content .layout-left,
+    .home-content .layout-right {
+        padding: 0 10px;
+    }
 }
 @media screen and (min-width: 1200px) {
     .home-content {
         width: 1200px;
         margin: 15px auto 0;
     }
+
     .home-content .layout-left,
     .home-content .layout-right {
-        padding: 0;
+        padding: 0 10px;
     }
-}
-.home-content .layout-left,
-.home-content .layout-right {
-    padding: 0 10px;
 }
 </style>

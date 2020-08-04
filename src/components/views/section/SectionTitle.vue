@@ -41,6 +41,7 @@ export default {
     background-color: @default-background-image;
     @media only screen and (max-width: 768px) {
         padding: 10px 0;
+        margin-bottom: 5px;
         height: 70px;
     }
     .title {
