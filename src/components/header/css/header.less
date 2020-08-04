@@ -134,7 +134,7 @@ body.docs {
     -moz-osx-font-smoothing: grayscale;
     background-color: @default-background-color;
     margin: 0;
-    padding-top: @header-height;
+    padding-top: 70px;
 
     @media screen and (min-width: 992px) {
         padding-top: 60px;
@@ -267,11 +267,12 @@ body.docs {
     font-family: @logo-font;
     font-weight: 500;
 
-    img {
+    .icon-class {
         vertical-align: middle;
         margin-right: 6px;
         width: @header-height;
         height: @header-height;
+        display: inline-block;
     }
 }
 
@@ -280,7 +281,7 @@ body.docs {
     top: 0;
     left: 0;
     width: 100%;
-    height: @header-height;
+    height: 60px;
     background-color: #fff;
     z-index: 11;
     display: none;
@@ -291,22 +292,32 @@ body.docs {
         cursor: pointer;
         width: 24px;
         height: 24px;
-        top: 8px;
-        left: 12px;
+        top: 18px;
+        left: 20px;
         background: url(./../../../assets/menu.png) center center no-repeat;
         background-size: 24px;
     }
 
-    .logo {
+    .mobile-icon-class{
+        width: 24px;
+        height: 24px;
         position: absolute;
-        width: 30px;
-        height: 30px;
-        background: url(./../../../assets/logo.png) center center no-repeat;
-        top: 5px;
-        left: 50%;
-        margin-left: -15px;
-        background-size: 30px;
+        cursor: pointer;
+        top: 18px;
+        right: 20px;
+        background-size: 24px;
     }
+
+    // .logo {
+    //     position: absolute;
+    //     width: 30px;
+    //     height: 30px;
+    //     background: url(./../../../assets/logo.png) center center no-repeat;
+    //     top: 5px;
+    //     left: 50%;
+    //     margin-left: -15px;
+    //     background-size: 30px;
+    // }
 }
 
 /* offline menu */

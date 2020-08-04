@@ -3,13 +3,16 @@
         <transition name="slide-fade">
             <div id="mobile-bar" v-show="show">
                 <a class="menu-button" ref="menubutton"></a>
-                <router-link class="logo" to="/"></router-link>
+                <router-link to="/">
+                    <PandaIcon class="mobile-icon-class"></PandaIcon>
+                </router-link>
             </div>
         </transition>
         <transition name="slide-fade">
             <div id="header" v-show="show">
                 <router-link id="logo" to="/">
-                    <img src="../../assets/logo.png" />
+                    <!-- <img src="../../assets/logo.png" /> -->
+                    <PandaIcon class="icon-class"></PandaIcon>
                     <span class="title">寒露</span>
                     <span class="motto">fighting</span>
                 </router-link>
@@ -52,10 +55,12 @@
 
 <script>
 import SideBar from '@/components/header/SideBar';
+import PandaIcon from '@/components/utils/PandaIcon';
 import { treeDataTranslate } from '@/util';
 export default {
     components: {
-        sidebar: SideBar
+        sidebar: SideBar,
+        PandaIcon: PandaIcon
     },
     data() {
         return {
@@ -73,16 +78,16 @@ export default {
             this.initMobileMenu();
         });
         // 给页面绑定滑轮滚动事件
-        if (document.addEventListener) {
-            // firefox
-            document.addEventListener(
-                'DOMMouseScroll',
-                this.watchScroll,
-                false
-            );
-        }
-        // 滚动滑轮触发scrollFunc方法  //ie 谷歌
-        window.onmousewheel = document.onmousewheel = this.watchScroll;
+        // if (document.addEventListener) {
+        //     // firefox
+        //     document.addEventListener(
+        //         'DOMMouseScroll',
+        //         this.watchScroll,
+        //         false
+        //     );
+        // }
+        // // 滚动滑轮触发scrollFunc方法  //ie 谷歌
+        // window.onmousewheel = document.onmousewheel = this.watchScroll;
     },
     methods: {
         initMobileMenu() {
