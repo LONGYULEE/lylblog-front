@@ -147,8 +147,8 @@ export default {
                     padding: 3px 5px;
                     margin-left: 1px;
                     vertical-align: top;
-                    color: @default-background-color;
-                    background: @warning-color;
+                    color: white;
+                    background: #83c695;
                     cursor: pointer;
                 }
 

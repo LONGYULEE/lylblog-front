@@ -93,6 +93,21 @@ export default {
         @media screen and (min-width: 1200px) {
             padding: 0 10px;
         }
+
+        /deep/ .ant-anchor-link-title-active {
+            color: @color-main-primary;
+        }
+
+        /deep/ .ant-anchor-ink-ball {
+            // position: absolute;
+            // left: 50%;
+            // display: none;
+            // width:8px;
+            // height: 8px;
+            // background-color: #fff;
+            // border: 2
+            border: 2px solid @color-main-primary;
+        }
     }
 }
 </style>

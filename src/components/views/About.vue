@@ -15,7 +15,7 @@
                     <p class="title">Java</p>
                 </a-col>
                 <a-col :span="18">
-                    <a-progress :hide-info="true" :stroke-width="8" :percent="60" class="bar">
+                    <a-progress :hide-info="true" :stroke-width="8" :percent="60" class="bar" strokeColor="#75cce8">
                     </a-progress>
                 </a-col>
             </a-row>
@@ -24,7 +24,7 @@
                     <p class="title">Vue</p>
                 </a-col>
                 <a-col :span="18">
-                    <a-progress :hide-info="true" :stroke-width="8" :percent="40" class="bar">
+                    <a-progress :hide-info="true" :stroke-width="8" :percent="40" class="bar" strokeColor="#80beaf">
                     </a-progress>
                 </a-col>
             </a-row>
@@ -42,7 +42,7 @@ export default {};
 .about {
     position: relative;
     text-align: center;
-    border: 1px solid @color-border;
+    // border: 1px solid @color-border;
     padding-bottom: 20px;
     background-color: @default-background-image;
     border-radius: @default-border-radius;
@@ -64,7 +64,7 @@ export default {};
         margin: 75px auto 15px;
         width: 100px;
         height: 100px;
-        border: 5px solid @color-gradually-gray-91;
+        border: 5px solid #f2a490;
         border-radius: 50%;
         z-index: 9;
     }

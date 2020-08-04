@@ -21,7 +21,7 @@ export default {
 .panel {
     position: relative;
     background: #fff;
-    border-left: 1px solid @color-border;
+    // border-left: 1px solid @color-border;
     border-radius: @default-border-radius;
 
     h4 {
@@ -29,9 +29,9 @@ export default {
         padding: 13px 20px 13px;
         line-height: 18px;
         text-align: left;
-        border-left: 5px solid @default-link-hover-color;
-        background-color: rgba(43, 190, 255, 0.2);
+        background-color: rgba(#ec6091, 0.5);
         border-top-right-radius: @default-border-radius;
+        border-top-left-radius: @default-border-radius;
     }
 }
 </style>
