@@ -48,7 +48,6 @@ module.exports = {
          */
 
         productionSourceMap: false,
-        productionGzipExtensions: ['js', 'css', 'svg'],
         // https://webpack.js.org/configuration/devtool/#production
         devtool: '#source-map',
 
