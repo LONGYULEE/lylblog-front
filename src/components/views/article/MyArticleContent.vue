@@ -6,7 +6,7 @@
                     <h1>{{article.title}}</h1>
                 </header>
                 <main class="article-main">
-                    <article-content :html="article.contentFormat" ref="article" />
+                    <article-content id="article-main-page" :html="article.contentFormat" ref="article" />
                 </main>
                 <!-- <div class="license-wrap">
                     <span>【END】</span>
@@ -59,6 +59,8 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/tomorrow.css';
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
+import TOC from '@/common/js/MarkdownToc'
+import TocScrollSpy from '@/common/js/TocScrollSpy'
 const highlightCode = () => {
     const preEl = document.querySelectorAll('pre')
     preEl.forEach((el) => {
@@ -87,7 +89,7 @@ export default {
 
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
-
+                        this.refreshMobileDirectory();
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
                         let h2El = document.querySelectorAll('h2');
@@ -161,6 +163,18 @@ export default {
                 this.menus.push(result)
             })
             this.$emit('getMenus', this.menus);
+        },
+        refreshMobileDirectory() {
+            new TOC('article-main-page', {
+                'level': 5,
+                'top': 200,
+                'class': 'list',
+                'targetId': 'sidebar-toc'
+            })
+            new TocScrollSpy('article-main-page', 'sidebar-toc', {
+                'spayLevel': 5,
+                'articleMarginTop': 15
+            })
         }
     },
     created: function () {

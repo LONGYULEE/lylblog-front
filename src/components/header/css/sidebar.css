@@ -37,7 +37,8 @@ body .main-area .top-wrapper {
     top: 0;
     width: 290px;
     bottom: 0;
-    background: #fff;
+    background-color: #fff;
+    background-image: linear-gradient(to bottom right, #141e18, #141b18);
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -97,13 +98,13 @@ body .main-area .top-wrapper .sidebar-menus .site-nav {
     align-items: center;
     height: 42px;
     padding: 8px 15px;
-    border-bottom: 1px solid #eee;
-    background: #ddd;
+    background-color: #141b18;
+    background-image: linear-gradient(to bottom right, #141e18, #141b18);
 }
 
 body .main-area .top-wrapper .sidebar-menus .site-nav > p {
     font-size: 16px;
-    color: #888;
+    color: white;
 }
 
 body .main-area .top-wrapper .sidebar-menus ul {
@@ -150,12 +151,13 @@ body .main-area .top-wrapper .sidebar-menus ul.nav-menu li > ul > li > a {
 
 body .main-area .top-wrapper .sidebar-menus ul.nav-menu .nav-link {
     text-decoration: none;
+    color: white;
 }
 
 body .main-area .top-wrapper .sidebar-menus ul.nav-menu .nav-link.active,
 body .main-area .top-wrapper .sidebar-menus ul.nav-menu .nav-link:hover {
     text-decoration: underline;
-    color: #409eff;
+    color: #fa897b;
 }
 
 body .main-area .top-wrapper .sidebar-menus .sidebar-toc-list .menu-root {
@@ -259,13 +261,13 @@ body.dark .side-bar .top-wrapper .top-area .site-info .site-name {
 
 body.dark .main-area .top-wrapper .sidebar-menus .site-nav,
 body.dark .side-bar .top-wrapper .sidebar-menus .site-nav {
-    border-bottom: 1px solid #2f2f2f;
-    background: #2c2c2c;
+    /* border-bottom: 1px solid #2f2f2f; */
+    background: #1c261e;
 }
 
 body.dark .main-area .top-wrapper .sidebar-menus .site-nav > p,
 body.dark .side-bar .top-wrapper .sidebar-menus .site-nav > p {
-    color: #969696;
+    color: white;
 }
 
 body.dark .main-area .top-wrapper .sidebar-menus ul.nav-menu li > a,

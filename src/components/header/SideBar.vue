@@ -12,7 +12,7 @@
                 <div class="sidebar-menus">
                     <div class="site-nav">
                         <p>
-                            <a-icon type="bars" />
+                            <a-icon type="appstore" />
                             文章导航
                         </p>
                     </div>
@@ -20,20 +20,20 @@
                         <!-- 类别导航 -->
                         <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
                             :key="category_level1.id">
-                            <a-icon type="plus-circle" />&nbsp;
+                            <a-icon type="plus-circle" class="sideIcon" />&nbsp;
                             <a class="nav-link"
                                 :href="'/articles/category/'+category_level1.id">{{category_level1.name}}<span
                                     class="arrow"></span>
                             </a>
                             <ul class="nav-dropdown">
                                 <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
-                                    <a-icon type="plus" />
+                                    <a-icon type="plus" class="sideIcon" />
                                     <a class="nav-link"
                                         :href="'/articles/category/'+category_level2.id">{{ category_level2.name}}</a>
                                     <ul class="nav-dropdown">
                                         <li v-for="category_level3 in category_level2.children"
                                             :key="category_level3.id">
-                                            <a-icon type="minus" />&nbsp;
+                                            <a-icon type="minus" class="sideIcon" />&nbsp;
                                             <a class="nav-link"
                                                 :href="'/articles/category/'+category_level3.id">{{ category_level3.name }}</a>
                                         </li>
@@ -42,6 +42,15 @@
                             </ul>
                         </li>
                     </ul>
+                    <div class="sidebar-toc-list" ref="list">
+                        <div class="site-nav">
+                            <p>
+                                <a-icon type="menu" />
+                                文章目录
+                            </p>
+                        </div>
+                        <div id="sidebar-toc" class="list" @click.prevent></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,6 +101,6 @@ export default {
 };
 </script>
 
-<style scope>
-@import './css/sidebar.css';
+<style lang="less" scope>
+@import './css/sidebar.less';
 </style>
