@@ -13,9 +13,10 @@
                 <router-link id="logo" to="/">
                     <!-- <img src="../../assets/logo.png" /> -->
                     <PandaIcon class="icon-class"></PandaIcon>
-                    <span class="title">寒露</span>
-                    <span class="motto">fighting</span>
                 </router-link>
+                <span class="title">寒露</span>
+                <span class="motto">FIGHTING</span>
+
                 <ul id="nav">
                     <li>
                         <form id="search-form" action="/articles/search">

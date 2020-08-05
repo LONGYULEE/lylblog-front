@@ -4,19 +4,6 @@
             <div class="title-wrapper">
                 <hr class="title-hr">
                 <div class="title-text">
-                    <span>关于网站</span>
-                    <span>ABOUT WEBSITE</span>
-                </div>
-                <hr class="title-hr">
-            </div>
-            <div class="content-wrapper">
-
-            </div>
-        </div>
-        <div class="container">
-            <div class="title-wrapper">
-                <hr class="title-hr">
-                <div class="title-text">
                     <span>关于我</span>
                     <span>ABOUT ME</span>
                 </div>
@@ -27,7 +14,7 @@
                     <li class="timeline-li">
                         <div class="timeline-div">
                             <div class="left-box">
-                                <p>李白</p>
+                                <p>2019.04 - 至今</p>
                             </div>
                             <div class="right-box">
                                 <p>绿水曲</p>
@@ -41,18 +28,35 @@
                     <li class="timeline-li">
                         <div class="timeline-div" style="background:#f2f2f2">
                             <div class="sec-left-box">
-                                <p>绿水曲</p>
+                                <p>重庆理工大学</p>
                                 <div class="sec-right-div">
                                     <span>渌水明秋月，南湖采白蘋。<br>
                                         荷花娇欲语，愁杀荡舟人。</span>
                                 </div>
                             </div>
                             <div class="sec-right-box">
-                                <p>李白</p>
+                                <p>2015.09 - 2019.07</p>
                             </div>
                         </div>
                     </li>
                 </ul>
+            </div>
+        </div>
+        <div class="backgroud-div">
+            <div class="modal-div">
+                <div class="container">
+                    <div class="title-wrapper">
+                        <hr class="title-hr">
+                        <div class="title-text">
+                            <span>关于网站</span>
+                            <span>ABOUT WEBSITE</span>
+                        </div>
+                        <hr class="title-hr">
+                    </div>
+                    <div class="content-wrapper">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -109,15 +113,40 @@ export default {
     width: 100%;
     min-height: 500px;
     background-color: white;
-    padding: 70px 0px;
+    padding-top: 70px;
     @media screen and (max-width: 992px) {
         margin-top: -10px;
         margin-bottom: 10px;
     }
-
+    .backgroud-div {
+        margin-top: 70px;
+        background-image: url(http://img.lylblog.xyz/006yt1Omgy1gdyaq4glp9j31hc0py7nw.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 500px;
+        .modal-div {
+            background: rgba(0, 0, 0, 0.6);
+            height: 100%;
+            .title-wrapper {
+                padding-top: 40px;
+                .title-hr {
+                    border: 1px dashed rgba(white, 0.6);
+                }
+                .title-text {
+                    color: rgba(white, 0.8);
+                }
+            }
+        }
+    }
     .container {
         margin: 0px 94px;
         padding: 0px 15px;
+        max-width: 1200px;
+        left: 0;
+        right: 0;
+        margin: auto;
         @media screen and (max-width: 992px) {
             margin: 0px;
         }
@@ -162,6 +191,7 @@ export default {
                     min-height: 80px;
                     .timeline-div {
                         display: flex;
+                        border-radius: 10px;
                         &:hover {
                             transform: rotate(0deg) scale(1) translate(0%, 0%);
                             transition: all 0.3s ease;
@@ -220,10 +250,10 @@ export default {
                         .sec-right-box {
                             flex: 1 !important;
                             p {
-                                font-family: georgia;
+                                font-family: Georgia, 'Times New Roman', Times, serif;
                                 margin: 10px 30px 10px 30px;
-                                font-weight: normal;
-                                font-size: 18px;
+                                font-weight: 300;
+                                font-size: 21px;
                             }
                         }
                     }

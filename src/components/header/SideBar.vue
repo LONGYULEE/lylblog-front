@@ -3,10 +3,10 @@
         <div class="main-area">
             <div class="top-wrapper" @touchmove.stop>
                 <div class="top-area">
-                    <img src="http://img.lylblog.xyz/AK-02.jpg" alt="">
+                    <img src="http://img.lylblog.xyz/006yt1Omgy1gfwu9s7amaj31kw0vab2a.jpg" alt="">
                     <div class="site-info">
                         <h1 class="site-name">寒露</h1>
-                        <h1 class="site-desc">南波湾</h1>
+                        <h1 class="site-desc">FIGHTING</h1>
                     </div>
                 </div>
                 <div class="sidebar-menus">
@@ -20,20 +20,20 @@
                         <!-- 类别导航 -->
                         <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
                             :key="category_level1.id">
-                            <a-icon type="plus" class="sideIcon" />&nbsp;
+                            &nbsp;
                             <a class="nav-link"
                                 :href="'/articles/category/'+category_level1.id">{{category_level1.name}}<span
                                     class="arrow"></span>
                             </a>
                             <ul class="nav-dropdown">
                                 <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
-                                    <a-icon type="minus" class="sideIcon" />&nbsp;
+                                    &nbsp;
                                     <a class="nav-link"
                                         :href="'/articles/category/'+category_level2.id">{{ category_level2.name}}</a>
                                     <ul class="nav-dropdown">
                                         <li v-for="category_level3 in category_level2.children"
                                             :key="category_level3.id">
-                                            <a-icon type="dash" class="sideIcon" />&nbsp;
+                                            &nbsp;
                                             <a class="nav-link"
                                                 :href="'/articles/category/'+category_level3.id">{{ category_level3.name }}</a>
                                         </li>

@@ -28,12 +28,7 @@ body {
             top: 0;
             width: 290px;
             bottom: 0px;
-            background-color: @default-background-color;
-            background-image: linear-gradient(
-                to bottom right,
-                #141e18,
-                #141b18
-            );
+            background-color: black;
             overflow-x: hidden;
             overflow-y: auto;
             .top-area {
@@ -50,6 +45,7 @@ body {
                     right: 0;
                     bottom: 0;
                     left: 0;
+                    background: rgba(0, 0, 0, 0.4);
                     padding: @mobile-header-height + 5 0 0 15px;
                     .site-name {
                         font-size: 1.6em;
@@ -81,15 +77,11 @@ body {
                     height: 42px;
                     padding: 8px 8px;
                     // border-bottom: 1px solid @default-border-color;
-                    background-color: @default-border-hover-color;
-                    background-image: linear-gradient(
-                        to bottom right,
-                        #141e18,
-                        #141b18
-                    );
+                    background-color: black;
                     > p {
-                        font-size: 20px;
-                        color: #de5b6d;
+                        font-size: 18px;
+                        color: rgba(white, 0.8);
+                        font-family: monospace;
                     }
                 }
                 ul {
@@ -102,9 +94,6 @@ body {
                     transition: all 0.7s;
                     max-height: 300px;
                     overflow: hidden;
-                    .sideIcon {
-                        color: #b9d4d8;
-                    }
                     &.hide {
                         padding: 0 15px;
                         max-height: 0;
@@ -129,7 +118,8 @@ body {
                     }
                     .nav-link {
                         text-decoration: none;
-                        color: #b9d4d8;
+                        color: rgba(@default-link-color, 0.8);
+                        font-family: serif;
                         &:hover,
                         &.active {
                             text-decoration: underline;
