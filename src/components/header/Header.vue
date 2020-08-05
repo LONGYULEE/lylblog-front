@@ -43,7 +43,7 @@
                         <a href="/timeline" class="nav-link contribute">时间线</a>
                     </li>
                     <li>
-                        <a href="/article/1" class="nav-link contribute">关于</a>
+                        <a href="/showme" class="nav-link contribute">关于</a>
                     </li>
                 </ul>
             </div>

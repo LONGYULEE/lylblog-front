@@ -26,6 +26,8 @@ Router.prototype.push = function push(location) {
     return originalPush.call(this, location).catch(err => err);
 };
 
+const ShowMe = () => import('@/components/views/ShowMe');
+
 let router = new Router({
     mode: 'history',
     scrollBehavior: () => ({ y: 0 }),
@@ -90,6 +92,18 @@ let router = new Router({
                     },
                     meta: {
                         title: '时间线 - 寒露'
+                    }
+                },
+                {
+                    path: 'showme',
+                    name: 'showme',
+                    components: {
+                        header: Header,
+                        content: ShowMe,
+                        footer: Footer
+                    },
+                    meta: {
+                        title: '关于 - 寒露'
                     }
                 }
             ]
