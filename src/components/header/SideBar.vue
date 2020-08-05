@@ -13,27 +13,27 @@
                     <div class="site-nav">
                         <p>
                             <a-icon type="appstore" />
-                            文章导航
+                            文章分类
                         </p>
                     </div>
                     <ul class="nav-menu">
                         <!-- 类别导航 -->
                         <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
                             :key="category_level1.id">
-                            <a-icon type="plus-circle" class="sideIcon" />&nbsp;
+                            <a-icon type="plus" class="sideIcon" />&nbsp;
                             <a class="nav-link"
                                 :href="'/articles/category/'+category_level1.id">{{category_level1.name}}<span
                                     class="arrow"></span>
                             </a>
                             <ul class="nav-dropdown">
                                 <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
-                                    <a-icon type="plus" class="sideIcon" />
+                                    <a-icon type="minus" class="sideIcon" />&nbsp;
                                     <a class="nav-link"
                                         :href="'/articles/category/'+category_level2.id">{{ category_level2.name}}</a>
                                     <ul class="nav-dropdown">
                                         <li v-for="category_level3 in category_level2.children"
                                             :key="category_level3.id">
-                                            <a-icon type="minus" class="sideIcon" />&nbsp;
+                                            <a-icon type="dash" class="sideIcon" />&nbsp;
                                             <a class="nav-link"
                                                 :href="'/articles/category/'+category_level3.id">{{ category_level3.name }}</a>
                                         </li>

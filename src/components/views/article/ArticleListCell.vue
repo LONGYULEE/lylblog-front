@@ -132,10 +132,11 @@ export default {
         .text-wrapper {
             padding: 20px 20px 0 20px;
             text-align: left;
-            min-height: 130px;
+            min-height: 120px;
 
             @media only screen and (max-width: 768px) {
                 padding: 15px 15px 0 15px;
+                min-height: 110px;
             }
 
             .title {
@@ -222,8 +223,8 @@ export default {
             .operate_info {
                 font-size: 14px;
                 margin: 15px 0 10px;
-                position: absolute;
-                bottom: 0px;
+                // position: absolute;
+                // bottom: 0px;
 
                 span {
                     margin-right: 8px;
