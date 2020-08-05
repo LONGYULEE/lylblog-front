@@ -14,7 +14,7 @@
                     <p>本文链接：</p>
                     <p>
                         <span>版权声明：本博客所有文章除声明转载外，均采用</span>
-                        <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">BY-NC-SA 3.0</a>
+                        <a href="" target="_blank">BY-NC-SA 3.0</a>
                         <span>许可协议。转载请注明来自</span>
                         <a :href="website">{{ settings.blogName }}</a>。
                         <a :href="website">123</a>。
@@ -334,7 +334,7 @@ export default {
 .end-wrap {
     position: relative;
     border-top: 1px solid #ddd;
-    margin: 40px 0 70px;
+    margin: 60px 0 40px;
 }
 
 .sticky-wrap {
