@@ -66,8 +66,9 @@ export default {
         margin-left: 45px;
         cursor: pointer;
 
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 768px) {
             font-size: 13px;
+            display: block;
         }
 
         .time-tag {
@@ -77,12 +78,21 @@ export default {
         }
 
         .base-info {
+            @media only screen and (max-width: 768px) {
+                &::before {
+                    content: '';
+                    height: 10px;
+                    width: 10px;
+                    background: lightpink;
+                    display: inline-block;
+                    border-radius: 5px;
+                }
+            }
             a.title {
                 margin-left: 5px;
                 font-weight: 300;
                 color: @default-title-color;
                 cursor: pointer;
-
                 &:hover {
                     color: @default-title-hover-color;
                 }

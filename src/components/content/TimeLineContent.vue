@@ -78,7 +78,7 @@ export default {
     width: auto;
 
     @media only screen and (max-width: 768px) {
-        margin: 5px 5px 10px 5px;
+        margin: -3px 5px 10px 5px;
     }
 
     @media screen and (min-width: 768px) {

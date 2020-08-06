@@ -3,6 +3,14 @@
         <transition name="slide-fade">
             <div id="mobile-bar" v-show="show">
                 <a class="menu-button" ref="menubutton"></a>
+                <router-link to="/timeline">
+                    <TimeIcon class="mobile-time-class"></TimeIcon>
+                </router-link>
+                <router-link to="/showme">
+                    <InfoIcon class="mobile-info-class"></InfoIcon>
+                </router-link>
+                <div style="position: absolute;right: 64px;height: 20px;width: 2px;background: #f0f0f0;top: 20px;">
+                </div>
                 <router-link to="/">
                     <PandaIcon class="mobile-icon-class"></PandaIcon>
                 </router-link>
@@ -57,11 +65,15 @@
 <script>
 import SideBar from '@/components/header/SideBar';
 import PandaIcon from '@/components/utils/PandaIcon';
+import InfoIcon from '@/components/utils/InfoIcon';
+import TimeIcon from '@/components/utils/TimeIcon';
 import { treeDataTranslate } from '@/util';
 export default {
     components: {
         sidebar: SideBar,
-        PandaIcon: PandaIcon
+        PandaIcon: PandaIcon,
+        InfoIcon: InfoIcon,
+        TimeIcon: TimeIcon
     },
     data() {
         return {

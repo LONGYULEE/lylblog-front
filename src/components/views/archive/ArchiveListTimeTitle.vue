@@ -40,6 +40,7 @@ export default {
 <style lang="less">
 @import '../../../common/less/index.less';
 @import '../../../common/less/theme.less';
+@only-back-color: #409eff;
 .article-list-year-title {
     position: relative;
     text-align: left;
@@ -64,7 +65,7 @@ export default {
                 top: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @color-main-primary;
+                background-color: @only-back-color;
                 height: 20%;
                 border-radius: 0 0 2px 2px;
             }
@@ -75,7 +76,7 @@ export default {
                 bottom: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @color-main-primary;
+                background-color: @only-back-color;
                 height: 20%;
                 border-radius: 2px 2px 0 0;
             }
@@ -142,7 +143,7 @@ export default {
                 top: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @color-main-primary;
+                background-color: @only-back-color;
                 height: 20%;
                 border-radius: 0 0 2px 2px;
             }
@@ -153,7 +154,7 @@ export default {
                 bottom: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @color-main-primary;
+                background-color: @only-back-color;
                 height: 20%;
                 border-radius: 2px 2px 0 0;
             }

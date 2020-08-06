@@ -14,7 +14,7 @@
                     <li class="timeline-li">
                         <div class="timeline-div">
                             <div class="left-box">
-                                <p>2019.04 - 至今</p>
+                                <p>2019.04 - now</p>
                             </div>
                             <div class="right-box">
                                 <p>绿水曲</p>
@@ -192,6 +192,11 @@ export default {
                     .timeline-div {
                         display: flex;
                         border-radius: 10px;
+                        @media screen and (max-width: 768px) {
+                            display: block;
+                            position: relative;
+                            border-radius: 0px;
+                        }
                         &:hover {
                             transform: rotate(0deg) scale(1) translate(0%, 0%);
                             transition: all 0.3s ease;
@@ -200,29 +205,47 @@ export default {
                         .left-box {
                             flex: 1 1 0%;
                             width: 100%;
+                            @media screen and (max-width: 768px) {
+                                position: absolute;
+                            }
                             p {
                                 font-family: georgia;
                                 text-align: right;
                                 margin: 10px 30px 10px 30px;
                                 font-weight: normal;
                                 font-size: 18px;
+                                @media screen and (max-width: 768px) {
+                                    margin-right: 10px;
+                                }
                             }
                         }
                         .right-box {
                             flex: 1 !important;
                             p {
                                 .content-box();
+                                @media screen and (max-width: 768px) {
+                                    margin-left: 10px;
+                                }
                                 &::before {
                                     .content-afterorbefore();
                                     left: -40px;
+                                    @media screen and (max-width: 768px) {
+                                        content: none;
+                                    }
                                 }
                             }
                             .right-div {
                                 span {
                                     .content-div-box();
+                                    @media screen and (max-width: 768px) {
+                                        margin-left: 10px;
+                                    }
                                     &::before {
                                         .content-div-afterorbefore();
                                         left: -31px;
+                                        @media screen and (max-width: 768px) {
+                                            content: none;
+                                        }
                                     }
                                 }
                             }
@@ -232,28 +255,48 @@ export default {
                             text-align: right;
                             p {
                                 .content-box();
+                                @media screen and (max-width: 768px) {
+                                    margin-right: 10px;
+                                }
                                 &::before {
                                     .content-afterorbefore();
                                     right: -40px;
+                                    @media screen and (max-width: 768px) {
+                                        content: none;
+                                    }
                                 }
                             }
                             .sec-right-div {
                                 span {
                                     .content-div-box();
+                                    @media screen and (max-width: 768px) {
+                                        margin-right: 10px;
+                                    }
                                     &::before {
                                         .content-div-afterorbefore();
                                         right: -31px;
+                                        @media screen and (max-width: 768px) {
+                                            content: none;
+                                        }
                                     }
                                 }
                             }
                         }
                         .sec-right-box {
                             flex: 1 !important;
+                            @media screen and (max-width: 768px) {
+                                position: absolute;
+                                top: 0;
+                            }
                             p {
-                                font-family: Georgia, 'Times New Roman', Times, serif;
+                                font-family: Georgia, 'Times New Roman', Times,
+                                    serif;
                                 margin: 10px 30px 10px 30px;
                                 font-weight: 300;
-                                font-size: 21px;
+                                font-size: 18px;
+                                @media screen and (max-width: 768px) {
+                                    margin-left: 10px;
+                                }
                             }
                         }
                     }
