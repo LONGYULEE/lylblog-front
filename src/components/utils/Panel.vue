@@ -29,7 +29,7 @@ export default {
         padding: 13px 20px 13px;
         line-height: 18px;
         text-align: left;
-        background-color: rgba(#ec6091, 0.5);
+        background-color: rgba(#75cce8, 0.5);
         border-top-right-radius: @default-border-radius;
         border-top-left-radius: @default-border-radius;
     }

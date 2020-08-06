@@ -126,6 +126,7 @@ export default {
         background-attachment: fixed;
         background-size: cover;
         height: 500px;
+
         .modal-div {
             background: rgba(0, 0, 0, 0.6);
             height: 100%;
@@ -137,6 +138,18 @@ export default {
                 .title-text {
                     color: rgba(white, 0.8);
                 }
+            }
+            &::before {
+                content: '';
+                position: fixed;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-size: cover;
+                background: url(http://img.lylblog.xyz/006yt1Omgy1gdyaq4glp9j31hc0py7nw.jpg)
+                    center 0 no-repeat;
             }
         }
     }
