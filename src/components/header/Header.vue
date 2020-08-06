@@ -9,7 +9,7 @@
                 <router-link to="/showme">
                     <InfoIcon class="mobile-info-class"></InfoIcon>
                 </router-link>
-                <div style="position: absolute;right: 64px;height: 20px;width: 2px;background: #f0f0f0;top: 20px;">
+                <div style="position: absolute;right: 54px;height: 20px;width: 2px;background: #f0f0f0;top: 20px;">
                 </div>
                 <router-link to="/">
                     <PandaIcon class="mobile-icon-class"></PandaIcon>

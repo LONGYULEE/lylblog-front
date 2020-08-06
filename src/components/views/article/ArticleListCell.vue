@@ -122,11 +122,12 @@ export default {
         border-radius: @default-border-radius;
         display: block;
         cursor: default;
-        border: 1px solid @color-border;
+        // border-bottom: 1px solid @color-border;
 
         &:hover {
-            border: 1px solid @color-border-hover;
-            box-shadow: 2px 2px 3px #c2c2c3;
+            transform: rotate(0deg) scale(1) translate(0%, 0%);
+            transition: all 0.3s ease;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
         }
 
         .text-wrapper {
