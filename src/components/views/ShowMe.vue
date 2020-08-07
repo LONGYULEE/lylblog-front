@@ -54,7 +54,9 @@
                         <hr class="title-hr">
                     </div>
                     <div class="content-wrapper">
+                        <p>
 
+                        </p>
                     </div>
                 </div>
             </div>
@@ -138,18 +140,6 @@ export default {
                 .title-text {
                     color: rgba(white, 0.8);
                 }
-            }
-            &::before {
-                content: '';
-                position: fixed;
-                z-index: -1;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-size: cover;
-                background: url(http://img.lylblog.xyz/006yt1Omgy1gdyaq4glp9j31hc0py7nw.jpg)
-                    center 0 no-repeat;
             }
         }
     }
@@ -315,6 +305,11 @@ export default {
                     }
                 }
             }
+        }
+
+        .content-wrapper {
+            color: rgba(255, 255, 255, 0.8);
+            text-indent: 25px;
         }
     }
 }
