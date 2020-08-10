@@ -4,6 +4,7 @@
             <a-col :xs="24" :sm="24" :md="24" :lg="18">
                 <div class="layout-left">
                     <my-article-content ref="article" @getMenus="getArticleMenus"></my-article-content>
+                    <a-back-top />
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="6">
