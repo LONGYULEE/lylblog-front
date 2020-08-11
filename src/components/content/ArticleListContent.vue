@@ -4,8 +4,8 @@
             <a-col :xs="24" :sm="24" :md="24" :lg="17">
                 <div class="layout-left">
                     <article-list-header v-if="categoryList.length>0" @filterByMenu="filterByMenu"
-                        @filterByCategory="filterByCategory" :categorys="categoryList" :defaultCategory="selected_category"
-                        :mainTitle="'文章列表'" :sub-title="'Articles'">
+                        @filterByCategory="filterByCategory" :categorys="categoryList"
+                        :defaultCategory="selected_category" :mainTitle="'文章列表'" :sub-title="'Articles'">
                     </article-list-header>
                     <article-list-cell v-for="article in articleList" :article="article" :key="article.id">
                     </article-list-cell>
@@ -37,7 +37,7 @@ export default {
         return {
             articleList: [],
             categoryList: [],
-            selected_category: this.$route.query.categoryId,
+            selected_category: '',
             currentPage: 1,
             pageSize: 15,
             categoryId: this.$route.query.categoryId,
@@ -83,7 +83,7 @@ export default {
                 params: this.$http.adornParams(params)
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
-                    console.log(data.data);
+                    // console.log(data.data);
                     this.categoryList = treeDataTranslate(data.data);
                 }
             });
@@ -143,6 +143,12 @@ export default {
         recommend: Recommend,
         "tag-wall": TagWall,
         "browse-more": BrowseMore
+    },
+    watch: {
+        $route() {
+            //监听路由变化，更新数据，避免路由参数变化组件不刷新
+            this.selected_category = this.$route.query.categoryId;
+        }
     }
 };
 </script>

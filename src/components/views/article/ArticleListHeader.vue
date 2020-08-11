@@ -42,7 +42,7 @@ export default {
     },
     watch: {
         categorys(newval) {
-            console.log(newval);
+            // console.log(newval);
         }
     }
 };

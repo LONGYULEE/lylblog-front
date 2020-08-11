@@ -27,7 +27,8 @@
                             <ul class="nav-dropdown">
                                 <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
                                     &nbsp;
-                                    <router-link class="nav-link" :to="{path:'articles',query:{categoryId:category_level2.id}}">
+                                    <router-link class="nav-link"
+                                        :to="{path:'articles',query:{categoryId:category_level2.id}}">
                                         {{ category_level2.name}}</router-link>
                                     <ul class="nav-dropdown">
                                         <li v-for="category_level3 in category_level2.children"
