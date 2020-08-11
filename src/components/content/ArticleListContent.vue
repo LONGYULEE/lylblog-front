@@ -40,7 +40,7 @@ export default {
             selected_category: '',
             currentPage: 1,
             pageSize: 15,
-            categoryId: this.$route.query.categoryId,
+            categoryId: '',
             menuParams: {
                 latest: true
             },
@@ -148,6 +148,8 @@ export default {
         $route() {
             //监听路由变化，更新数据，避免路由参数变化组件不刷新
             this.selected_category = this.$route.query.categoryId;
+            this.categoryId = this.$route.query.categoryId;
+            this.listArticle();
         }
     }
 };

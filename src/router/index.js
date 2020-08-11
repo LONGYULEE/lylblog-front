@@ -72,7 +72,7 @@ let router = new Router({
                 },
                 {
                     path: 'articles',
-                    name: 'articles',
+                    name: 'categroies',
                     components: {
                         header: Header,
                         content: ArticleListContent,
