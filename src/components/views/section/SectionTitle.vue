@@ -5,8 +5,8 @@
             <span class="main-title">{{mainTitle}}</span>
             <span class="vertical-line"></span>
             <span class="sub-title">{{subTitle}}</span>
-            <span class="view-more"><a :href="tipHref" v-if="tipText">{{tipText}}
-                    <a-icon type="caret-right" /></a></span>
+            <span class="view-more"><router-link :to="tipHref" v-if="tipText">{{tipText}}
+                    <a-icon type="caret-right" /></router-link></span>
         </div>
         <div class="menu">
             <slot name="menu"></slot>

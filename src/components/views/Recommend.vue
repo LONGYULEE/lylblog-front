@@ -3,7 +3,7 @@
         <panel :title="'推荐阅读'">
             <div slot="content" class="content">
                 <div class="top" v-if="topRecommend">
-                    <a :href="'/' + topRecommend.urlType + '/' + topRecommend.linkId">
+                    <router-link :to="'/' + topRecommend.urlType + '/' + topRecommend.linkId">
                         <p class="title">{{topRecommend.title}}</p>
                         <div class="tags">
                             <a-tag :color="tag.id | mapTagColor" v-for="(tag) in topRecommend.tagList" :key="tag.id">
@@ -25,11 +25,11 @@
                         <!--<img :src="topRecommend.cover" alt="">-->
                         <!--</div>-->
                         <p class="desc">{{topRecommend.description | textLineBreak(60)}}</p>
-                    </a>
+                    </router-link>
                 </div>
                 <ul class="others">
                     <li v-for="recommend in recommendList" :key="recommend.id">
-                        <a :href="'/' + recommend.urlType + '/' +recommend.linkId">
+                        <router-link :to="'/' + recommend.urlType + '/' +recommend.linkId">
                             <p class="title">{{recommend.title}}</p>
                             <p class="info">
                                 <span class="time">{{recommend.createTime | socialDate }}</span>
@@ -43,7 +43,7 @@
                                         <a-icon type="eye" /> {{recommend.readNum}}
                                     </a></span>
                             </p>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </div>

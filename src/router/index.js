@@ -71,8 +71,8 @@ let router = new Router({
                     }
                 },
                 {
-                    path: 'articles/category/:id',
-                    name: 'articles/category',
+                    path: 'articles',
+                    name: 'articles',
                     components: {
                         header: Header,
                         content: ArticleListContent,

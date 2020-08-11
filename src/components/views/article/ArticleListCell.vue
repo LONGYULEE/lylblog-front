@@ -6,7 +6,7 @@
                     style="padding-left: 0;padding-right: 0;">
                     <div class="text-wrapper">
                         <h4 class="title">
-                            <a :href="'/article/'+article.id">{{article.title}}</a>
+                            <router-link :to="'/article/'+article.id">{{article.title}}</router-link>
                             <span class="special" v-if="article.top>0" title="置顶">置顶</span>
                         </h4>
                         <div class="tags">
@@ -14,10 +14,10 @@
                                 v-for="(tag) in article.tagList">
                                 {{tag.name}}</a-tag>
                         </div>
-                        <p class="desc">{{article.description | filterHtml | textLineBreak(70) }}<a
-                                :href="'/article/'+article.id"> 查看更多
+                        <p class="desc">{{article.description | filterHtml | textLineBreak(70) }}<router-link
+                                :to="'/article/'+article.id"> 查看更多
                                 <a-icon type="caret-right" />
-                            </a></p>
+                            </router-link></p>
                         <p class="operate_info">
                             <span class="publish-time">At time / <a>{{article.createTime | socialDate}}</a></span>
                             <span class="readings"><a>

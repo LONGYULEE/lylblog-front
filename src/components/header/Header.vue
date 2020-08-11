@@ -46,13 +46,13 @@
                     </li>
 
                     <li>
-                        <a href="/articles" class="nav-link contribute">文章</a>
+                        <router-link to="/articles" class="nav-link contribute">文章</router-link>
                     </li>
                     <li>
-                        <a href="/timeline" class="nav-link contribute">时间线</a>
+                        <router-link to="/timeline" class="nav-link contribute">时间线</router-link>
                     </li>
                     <li>
-                        <a href="/showme" class="nav-link contribute">关于</a>
+                        <router-link to="/showme" class="nav-link contribute">关于</router-link>
                     </li>
                 </ul>
             </div>

@@ -5,9 +5,9 @@
                 <a-tag class="time-tag border-tag">{{ post.createTime | socialDate }}</a-tag>
             </div>
             <div class="base-info">
-                <a class="title" :href="'/' + post.postType + '/' + post.id">
+                <router-link class="title" :to="'/' + post.postType + '/' + post.id">
                     {{post.title}}
-                </a>
+                </router-link>
                 <a class="see-desc" @click.stop="seeDesc" :class="{show: showDesc}">查看简介&nbsp;&nbsp;
                     <a-icon type="down-circle" /></a>
                 <p class="desc" :class="{show: showDesc}">{{post.description}}</p>

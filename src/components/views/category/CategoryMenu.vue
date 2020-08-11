@@ -168,7 +168,6 @@ export default {
     },
     watch: {
         categorys: function (newCategorys) {
-            console.log(newCategorys);
             if (newCategorys) {
                 this.setDefaultCategory(parseInt(this.defaultCategory));
             }

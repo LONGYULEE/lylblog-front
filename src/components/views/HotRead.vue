@@ -3,7 +3,7 @@
         <panel :title="'最热阅读'">
             <div slot="content" class="content">
                 <div class="top">
-                    <a :href="'/' + topHotRead.urlType + '/' + topHotRead.linkId">
+                    <router-link :to="'/' + topHotRead.urlType + '/' + topHotRead.linkId">
                         <p class="title">{{topHotRead.title}}</p>
                         <div class="tags">
                             <a-tag :color="tag.id | mapTagColor" v-for="(tag)  in topHotRead.tagList" :key="tag.id">
@@ -25,11 +25,11 @@
                         <!--<img :src="topHotRead.cover" alt="">-->
                         <!--</div>-->
                         <p class="desc">{{topHotRead.description | textLineBreak(60)}}</p>
-                    </a>
+                    </router-link>
                 </div>
                 <ul class="others">
                     <li v-for="hotRead in hotReadList" :key="hotRead.id">
-                        <a :href="'/' + hotRead.urlType + '/' +hotRead.linkId">
+                        <router-link :to="'/' + hotRead.urlType + '/' +hotRead.linkId">
                             <p class="title">{{hotRead.title}}</p>
                             <p class="info">
                                 <span class="time">{{hotRead.createTime | socialDate }}</span>
@@ -43,7 +43,7 @@
                                         <a-icon type="eye" /> {{hotRead.readNum}}
                                     </a></span>
                             </p>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </div>
