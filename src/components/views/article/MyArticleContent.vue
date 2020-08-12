@@ -89,7 +89,6 @@ export default {
 
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
-                        this.refreshMobileDirectory();
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
                         let h2El = document.querySelectorAll('h2');
@@ -97,6 +96,7 @@ export default {
                         this.createMenus(h2El);
                         //文章页面网页 title
                         document.title = this.article.title + ' - 寒露';
+                        this.refreshMobileDirectory();
                     })
                 }
             })
@@ -185,6 +185,9 @@ export default {
     },
     updated() {
         highlightCode()
+    },
+    beforeDestroy() {
+        document.getElementById('sidebar-toc').innerHTML = '';
     }
 };
 </script>
