@@ -66,6 +66,14 @@ const highlightCode = () => {
     preEl.forEach((el) => {
         hljs.highlightBlock(el)
     })
+
+    // 添加行号
+    //TODO: 待做
+    // let blocks = document.querySelectorAll('pre code')
+    // blocks.forEach((block) => {
+    //     // 去前后空格并添加行号
+    //     block.innerHTML = '<ol><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ol>'
+    // })
 }
 export default {
     components: {
