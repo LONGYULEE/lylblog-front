@@ -17,10 +17,13 @@
                                 <p>2019.04 - now</p>
                             </div>
                             <div class="right-box">
-                                <p>绿水曲</p>
+                                <p>工作</p>
                                 <div class="right-div">
-                                    <span>渌水明秋月，南湖采白蘋。<br>
-                                        荷花娇欲语，愁杀荡舟人。</span>
+                                    <span>从事JAVA与前端开发。<br>
+                                        刚进公司进行JAVA开发，前端人不够，转到前端开发。
+                                        <br />
+                                        目前主要进行前端开发，平时结合公司项目加上自主学习JAVA知识。
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -30,8 +33,12 @@
                             <div class="sec-left-box">
                                 <p>重庆理工大学</p>
                                 <div class="sec-right-div">
-                                    <span>渌水明秋月，南湖采白蘋。<br>
-                                        荷花娇欲语，愁杀荡舟人。</span>
+                                    <span>电子信息工程专业。
+                                        <br />
+                                        主修计算机基础，Android程序开发技术，程序设计基础C。
+                                        <br />
+                                        扩展JAVA自主学习。
+                                    </span>
                                 </div>
                             </div>
                             <div class="sec-right-box">
@@ -55,7 +62,37 @@
                     </div>
                     <div class="content-wrapper">
                         <p>
+                            网站采用前后端分离模式，主要是为了串起所学的知识。整合为一个整体。
+                            <br />
+                            <br />
+                            后端采用
+                            <br /><span>SPRINGBOOT</span> + <span>MYBATIS</span>+ <span>MYBATIS-PLUS</span>
+                            <br /><span>MYSQL</span> + <span>REDIS</span>+ <span>SHIRO</span>
+                            <br />
+                            <br />
+                            前端采用
+                            <br /><span>VUE全家桶</span> + <span>AXIOS</span>+ <span>ELEMENT-UI(后台)</span>
+                            <br /><span>Ant Design of Vue(前台)</span>
+                            <br />
+                            <br />
+                            项目搭建在腾讯云服务器上。Mysql 与 Redis 部署在docker容器上。<br />
+                            前台部署在 Nginx 上，后台部署在 Tomcat 上。项目集成持续性开发 Jenkins
+                            。但由于服务器性能原因，采用手动部署项目。
+                            <br />
+                            <br />
 
+                        </p>
+                        <p class="help">
+                            <span>项目借鉴了</span>
+                            <br />
+                            <a href="https://github.com/llldddbbb/dbblog" target="_blank">dbblog</a>
+                            <br />
+                            <a href="https://github.com/eshengsky/iBlog" target="_blank">
+                                iBlog</a> <br />
+                            <a href="https://github.com/LONGYULEE/vue-element-admin" target="_blank">
+                                vue-element-admin</a>
+                            <br />
+                            感谢这些大佬的开源项目
                         </p>
                     </div>
                 </div>
@@ -127,7 +164,10 @@ export default {
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
-        height: 500px;
+        height: 700px;
+        @media screen and (max-width: 992px) {
+            height: 800px;
+        }
 
         .modal-div {
             background: rgba(0, 0, 0, 0.6);
@@ -310,6 +350,28 @@ export default {
         .content-wrapper {
             color: rgba(255, 255, 255, 0.8);
             text-indent: 25px;
+            line-height: 1.8em;
+            text-align: center;
+            span {
+                background-color: rgba(255, 182, 193, 0.8);
+                padding: 2px 4px;
+                margin: 0px 2px;
+                color: white;
+                border-radius: 5px;
+            }
+            .help {
+                margin-top: 30px;
+                span {
+                    font-size: 18px;
+                    color: rgba(255, 255, 255, 0.8);
+                    background: none;
+                    margin-left: -40px;
+                }
+                a {
+                    font-size: 16px;
+                    margin: 0px 20px 20px 0px;
+                }
+            }
         }
     }
 }
