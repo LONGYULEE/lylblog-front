@@ -97,7 +97,7 @@ export default {
 }
 @media only screen and (max-width: 768px) {
     .home-content {
-        margin: 0px 5px 10px 5px;
+        margin: -5px 3px 10px 3px;
     }
 }
 @media screen and (min-width: 768px) {

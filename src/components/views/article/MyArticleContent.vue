@@ -83,7 +83,8 @@ export default {
     data() {
         return {
             article: {},
-            menus: []
+            menus: [],
+            toc: null
         };
     },
     methods: {
@@ -179,7 +180,7 @@ export default {
                 'class': 'list',
                 'targetId': 'sidebar-toc'
             })
-            new TocScrollSpy('article-main-page', 'sidebar-toc', {
+            this.toc = new TocScrollSpy('article-main-page', 'sidebar-toc', {
                 'spayLevel': 5,
                 'articleMarginTop': 15
             })

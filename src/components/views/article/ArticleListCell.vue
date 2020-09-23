@@ -17,7 +17,8 @@
                         <p class="desc">{{article.description | filterHtml | textLineBreak(70) }}<router-link
                                 :to="'/article/'+article.id"> 查看更多
                                 <a-icon type="caret-right" />
-                            </router-link></p>
+                            </router-link>
+                        </p>
                         <p class="operate_info">
                             <span class="publish-time">At time / <a>{{article.createTime | socialDate}}</a></span>
                             <span class="readings"><a>
@@ -115,7 +116,7 @@ export default {
     border-radius: @default-border-radius;
     background-color: @default-background-image;
     @media only screen and (max-width: 768px) {
-        margin-bottom: 5px;
+        margin-bottom: 3px;
     }
 
     > a {

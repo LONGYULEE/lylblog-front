@@ -41,7 +41,8 @@
                                 <span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0"
                                     style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;">
                                     <div class="aa-dataset-1"></div>
-                                </span></span>
+                                </span>
+                            </span>
                         </form>
                     </li>
 
@@ -91,16 +92,16 @@ export default {
             this.initMobileMenu();
         });
         // 给页面绑定滑轮滚动事件
-        // if (document.addEventListener) {
-        //     // firefox
-        //     document.addEventListener(
-        //         'DOMMouseScroll',
-        //         this.watchScroll,
-        //         false
-        //     );
-        // }
-        // // 滚动滑轮触发scrollFunc方法  //ie 谷歌
-        // window.onmousewheel = document.onmousewheel = this.watchScroll;
+        if (document.addEventListener) {
+            // firefox
+            document.addEventListener(
+                'DOMMouseScroll',
+                this.watchScroll,
+                false
+            );
+        }
+        // 滚动滑轮触发scrollFunc方法  //ie 谷歌
+        window.onmousewheel = document.onmousewheel = this.watchScroll;
     },
     methods: {
         initMobileMenu() {
