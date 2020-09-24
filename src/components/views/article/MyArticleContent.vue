@@ -378,7 +378,7 @@ export default {
     }
 
     .content-wrap {
-        padding: 15px;
+        padding: 25px;
     }
 }
 </style>

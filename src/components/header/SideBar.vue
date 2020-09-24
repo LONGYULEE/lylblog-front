@@ -114,7 +114,7 @@ export default {
 .anchorDiv {
     margin-left: -5px;
     .ant-anchor-link-title {
-        color: white;
+        color: darkgray;
         &:active {
             color: #fa897b;
         }

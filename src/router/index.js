@@ -9,12 +9,12 @@ import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
 //首页
-import HomeContent from '../components/content/HomeContent';
-import ArticleListContent from '@/components/content/ArticleListContent';
-import ArticleContent from '@/components/content/ArticleContent';
-import TimeLineContent from '@/components/content/TimeLineContent';
+// import HomeContent from '../components/content/HomeContent';
+// import ArticleListContent from '@/components/content/ArticleListContent';
+// import ArticleContent from '@/components/content/ArticleContent';
+// import TimeLineContent from '@/components/content/TimeLineContent';
 
-import NotFound from '@/components/views/404';
+// import NotFound from '@/components/views/404';
 
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
@@ -27,6 +27,12 @@ Router.prototype.push = function push(location) {
 };
 
 const ShowMe = () => import('@/components/views/ShowMe');
+const HomeContent = () => import('@/components/content/HomeContent');
+const ArticleListContent = () =>
+    import('@/components/content/ArticleListContent');
+const ArticleContent = () => import('@/components/content/ArticleContent');
+const TimeLineContent = () => import('@/components/content/TimeLineContent');
+const NotFound = () => import('@/components/views/404');
 
 let router = new Router({
     mode: 'history',
