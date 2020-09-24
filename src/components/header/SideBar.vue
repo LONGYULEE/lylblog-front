@@ -53,7 +53,7 @@
                         </div>
                         <!-- <div id="sidebar-toc" class="list" @click.prevent></div> -->
                         <div class="anchorDiv">
-                            <my-anchor></my-anchor>
+                            <my-anchor @getClose="getClose"></my-anchor>
                         </div>
                     </div>
                 </div>
@@ -85,6 +85,11 @@ export default {
         next();
     },
     methods: {
+        getClose(data) {
+            setTimeout(() => {
+                this.show = false;
+            }, 300)
+        },
         rootRouterLink(category) {
             let router = {};
             router.name = category.category_type;

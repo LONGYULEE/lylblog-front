@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true">
+        <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true" @click="closeSide">
             <a-anchor-link v-for="item in menus" v-bind:key="item.href" :href="item.href" :title="item.title">
                 <a-anchor-link v-for="item01 in item.children" v-bind:key="item01.href" :href="item01.href"
                     :title="item01.title">
@@ -26,6 +26,11 @@ export default {
     computed: {
         menus() {
             return this.$store.state.menus;
+        }
+    },
+    methods: {
+        closeSide() {
+            this.$emit('getClose', false);
         }
     }
 }
