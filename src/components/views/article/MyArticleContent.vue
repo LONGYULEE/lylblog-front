@@ -158,12 +158,22 @@ export default {
                 };
                 let nextEl = item.nextElementSibling;
                 while (nextEl && nextEl.nodeName !== 'H2') {
-                    if (nextEl.nodeName === 'H3') {
+                    if (nextEl.nodeName === 'H4') {
+                        let anchor = nextEl.querySelector('a');
+                        if (anchor) {
+                            let l = result.children.length;
+                            result.children[l - 1].children.push({
+                                href: `#${anchor.id}`,
+                                title: nextEl.textContent,
+                            })
+                        }
+                    } else if (nextEl.nodeName === 'H3') {
                         const anchor = nextEl.querySelector('a');
                         if (anchor) {
                             result.children.push({
                                 href: `#${anchor.id}`,
-                                title: nextEl.textContent
+                                title: nextEl.textContent,
+                                children: []
                             });
                         }
                     }

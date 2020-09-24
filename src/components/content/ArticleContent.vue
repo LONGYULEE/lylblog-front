@@ -1,24 +1,30 @@
 <template>
     <div class="article-content" v-cloak>
-        <a-row>
-            <a-col :xs="24" :sm="24" :md="24" :lg="18">
-                <div class="layout-left">
-                    <my-article-content ref="article" @getMenus="getArticleMenus"></my-article-content>
-                    <a-back-top />
-                </div>
-            </a-col>
-            <a-col :xs="0" :sm="0" :md="0" :lg="6">
-                <div class="layout-right">
-                    <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true">
-                        <a-anchor-link v-for="item in menus" v-bind:key="item.href" :href="item.href"
-                            :title="item.title">
-                            <a-anchor-link v-for="item01 in item.children" v-bind:key="item01.href" :href="item01.href"
-                                :title="item01.title" />
-                        </a-anchor-link>
-                    </a-anchor>
-                </div>
-            </a-col>
-        </a-row>
+        <a-spin :spinning="spinning" tip="Loading..." size="large">
+            <a-row>
+                <a-col :xs="24" :sm="24" :md="24" :lg="18">
+                    <div class="layout-left">
+                        <my-article-content ref="article" @getMenus="getArticleMenus"></my-article-content>
+                        <a-back-top />
+                    </div>
+                </a-col>
+                <a-col :xs="0" :sm="0" :md="0" :lg="6">
+                    <div class="layout-right">
+                        <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true">
+                            <a-anchor-link v-for="item in menus" v-bind:key="item.href" :href="item.href"
+                                :title="item.title">
+                                <a-anchor-link v-for="item01 in item.children" v-bind:key="item01.href"
+                                    :href="item01.href" :title="item01.title">
+                                    <a-anchor-link v-for="item02 in item01.children" v-bind:key="item02.href"
+                                        :href="item02.href" :title="item02.title">
+                                    </a-anchor-link>
+                                </a-anchor-link>
+                            </a-anchor-link>
+                        </a-anchor>
+                    </div>
+                </a-col>
+            </a-row>
+        </a-spin>
     </div>
 </template>
 <script>
@@ -32,7 +38,8 @@ export default {
                 'background-color': 'inherit',
                 'min-width': '250px'
             },
-            menus: []
+            menus: [],
+            spinning: true,
         }
     },
     components: {
@@ -43,6 +50,9 @@ export default {
     methods: {
         getArticleMenus(data) {
             this.menus = data;
+            this.$nextTick(() => {
+                this.spinning = false;
+            })
         }
     },
     mounted() {

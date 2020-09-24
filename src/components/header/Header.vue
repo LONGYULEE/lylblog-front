@@ -80,7 +80,9 @@ export default {
         return {
             show: true,
             articleCategoryList: [],
-            keywords: ''
+            keywords: '',
+            startY: '',
+            endY: ''
         };
     },
     created() {
@@ -102,6 +104,8 @@ export default {
         }
         // 滚动滑轮触发scrollFunc方法  //ie 谷歌
         window.onmousewheel = document.onmousewheel = this.watchScroll;
+        document.addEventListener('touchstart', this.watchTouchStart, false);
+        document.addEventListener('touchend', this.watchTouchEnd, false);
     },
     methods: {
         initMobileMenu() {
@@ -131,6 +135,18 @@ export default {
                     // 当滑轮向下滚动
                     this.show = false;
                 }
+            }
+        },
+        watchTouchStart(e) {
+            this.startY = e.touches[0].pageY;
+        },
+        watchTouchEnd(e) {
+            this.endY = e.changedTouches[0].pageY;
+            let se = this.startY - this.endY;
+            if (se > 0) {
+                this.show = false;
+            } else {
+                this.show = true;
             }
         },
         listCategory() {
