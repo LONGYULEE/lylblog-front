@@ -59,8 +59,6 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/tomorrow.css';
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
-import TOC from '@/common/js/MarkdownToc'
-import TocScrollSpy from '@/common/js/TocScrollSpy'
 const highlightCode = () => {
     const preEl = document.querySelectorAll('pre')
     preEl.forEach((el) => {
@@ -181,19 +179,11 @@ export default {
                 }
                 this.menus.push(result)
             })
-            this.$emit('getMenus', this.menus);
+            this.$emit('getMenus', false);
+            this.$store.commit('setMenus', this.menus);
         },
         refreshMobileDirectory() {
-            new TOC('article-main-page', {
-                'level': 5,
-                'top': 200,
-                'class': 'list',
-                'targetId': 'sidebar-toc'
-            })
-            this.toc = new TocScrollSpy('article-main-page', 'sidebar-toc', {
-                'spayLevel': 5,
-                'articleMarginTop': 15
-            })
+
         }
     },
     created: function () {
@@ -206,7 +196,7 @@ export default {
         highlightCode()
     },
     beforeDestroy() {
-        document.getElementById('sidebar-toc').innerHTML = '';
+        this.$store.commit('setMenus', []);
     }
 };
 </script>

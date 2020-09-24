@@ -51,7 +51,10 @@
                                 文章目录
                             </p>
                         </div>
-                        <div id="sidebar-toc" class="list" @click.prevent></div>
+                        <!-- <div id="sidebar-toc" class="list" @click.prevent></div> -->
+                        <div class="anchorDiv">
+                            <my-anchor></my-anchor>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,7 +65,7 @@
 
 <script>
 import { mixin } from "@/util";
-
+import MyAnchor from '@/components/views/anchor'
 export default {
     name: "side-bar",
     data() {
@@ -70,6 +73,9 @@ export default {
             show: false,
             showNav: false
         };
+    },
+    components: {
+        'my-anchor': MyAnchor
     },
     props: {
         articleCategoryList: Array
@@ -105,4 +111,16 @@ export default {
 
 <style lang="less" scope>
 @import './css/sidebar.less';
+.anchorDiv {
+    margin-left: -5px;
+    .ant-anchor-link-title {
+        color: white;
+        &:active {
+            color: #fa897b;
+        }
+    }
+    .ant-anchor-link-title-active {
+        color: #fa897b;
+    }
+}
 </style>

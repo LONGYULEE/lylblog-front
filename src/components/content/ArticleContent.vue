@@ -10,17 +10,7 @@
                 </a-col>
                 <a-col :xs="0" :sm="0" :md="0" :lg="6">
                     <div class="layout-right">
-                        <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true">
-                            <a-anchor-link v-for="item in menus" v-bind:key="item.href" :href="item.href"
-                                :title="item.title">
-                                <a-anchor-link v-for="item01 in item.children" v-bind:key="item01.href"
-                                    :href="item01.href" :title="item01.title">
-                                    <a-anchor-link v-for="item02 in item01.children" v-bind:key="item02.href"
-                                        :href="item02.href" :title="item02.title">
-                                    </a-anchor-link>
-                                </a-anchor-link>
-                            </a-anchor-link>
-                        </a-anchor>
+                        <my-anchor></my-anchor>
                     </div>
                 </a-col>
             </a-row>
@@ -29,37 +19,25 @@
 </template>
 <script>
 import MyArticleContent from '@/components/views/article/MyArticleContent'
-
+import MyAnchor from '@/components/views/anchor'
 export default {
     data() {
         return {
             article: {},
-            myStyle: {
-                'background-color': 'inherit',
-                'min-width': '250px'
-            },
-            menus: [],
             spinning: true,
         }
     },
     components: {
-        'my-article-content': MyArticleContent
-    },
-    created: function () {
+        'my-article-content': MyArticleContent,
+        'my-anchor': MyAnchor
     },
     methods: {
         getArticleMenus(data) {
-            this.menus = data;
             this.$nextTick(() => {
-                this.spinning = false;
+                this.spinning = data;
             })
         }
-    },
-    mounted() {
-
-    },
-
-
+    }
 }
 </script>
 

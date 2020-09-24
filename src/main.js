@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import http from '@/util/request.js';
+import store from './store/index';
 import '@/common/less/index.less';
 
 import Antd from 'ant-design-vue';
@@ -49,6 +50,7 @@ Vue.directive('title', {
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 });
