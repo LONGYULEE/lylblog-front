@@ -21,21 +21,21 @@
                         <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
                             :key="category_level1.id">
                             &nbsp;
-                            <router-link class="nav-link"
+                            <router-link class="nav-link" @click.native="getClose"
                                 :to="{name:'categroies',query:{categoryId:category_level1.id}}">
                                 {{category_level1.name}}<span class="arrow"></span>
                             </router-link>
                             <ul class="nav-dropdown">
                                 <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
                                     &nbsp;
-                                    <router-link class="nav-link"
+                                    <router-link class="nav-link" @click.native="getClose"
                                         :to="{name:'categroies',query:{categoryId:category_level2.id}}">
                                         {{ category_level2.name}}</router-link>
                                     <ul class="nav-dropdown">
                                         <li v-for="category_level3 in category_level2.children"
                                             :key="category_level3.id">
                                             &nbsp;
-                                            <router-link class="nav-link"
+                                            <router-link class="nav-link" @click.native="getClose"
                                                 :to="{name:'categroies',query:{categoryId:category_level3.id}}">
                                                 {{ category_level3.name }}</router-link>
                                         </li>
