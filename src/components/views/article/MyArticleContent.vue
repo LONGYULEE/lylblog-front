@@ -59,6 +59,8 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/tomorrow.css';
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
+import Viewer from 'viewerjs';
+import 'viewerjs/dist/viewer.css';
 const highlightCode = () => {
     const preEl = document.querySelectorAll('pre')
     preEl.forEach((el) => {
@@ -104,9 +106,27 @@ export default {
                         //文章页面网页 title
                         document.title = this.article.title + ' - 寒露';
                         this.refreshMobileDirectory();
+                        this.setViewer();
                     })
                 }
             })
+        },
+        //为图片添加点击事件
+        setViewer() {
+            const imgDom = document.getElementsByTagName('img');
+            let viewWidth = document.body.offsetWidth;
+            for (let i = 0; i < imgDom.length; i++) {
+                if (viewWidth < 768) {
+                    new Viewer(imgDom[i], {
+                        navbar: false,
+                        toolbar: false
+                    });
+                } else {
+                    new Viewer(imgDom[i], {
+                        navbar: false,
+                    });
+                }
+            }
         },
         //点赞
         likePost(post) {
