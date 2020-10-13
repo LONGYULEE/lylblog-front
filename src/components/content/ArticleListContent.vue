@@ -103,6 +103,7 @@ export default {
         },
         browseMore() {
             this.currentPage++;
+            debugger
             let params = {
                 categoryId: this.categoryId,
                 limit: this.pageSize,
@@ -116,13 +117,13 @@ export default {
             })
                 .then(({ data }) => {
                     if (data && data.code === 2000) {
-                        if (data.page.totalPage <= data.page.currPage) {
+                        if (data.data.totalPage <= data.data.currPage) {
                             this.noMoreData = true;
                         } else {
                             this.noMoreData = false;
                         }
                         this.articleList = this.articleList.concat(
-                            data.page.list
+                            data.data.list
                         );
                     }
                 })

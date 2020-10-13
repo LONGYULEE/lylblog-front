@@ -8,7 +8,7 @@
                         <a-back-top />
                     </div>
                 </a-col>
-                <a-col :xs="0" :sm="0" :md="0" :lg="6">
+                <a-col :xs="0" :sm="0" :md="0" :lg="4">
                     <div class="layout-right">
                         <my-anchor></my-anchor>
                     </div>

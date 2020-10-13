@@ -22,9 +22,11 @@
                             <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
                                 :key="category_level1.id">
                                 &nbsp;
+                                <a-icon type="right-circle" style="color:rgba(white,0.7)" />
                                 <router-link class="nav-link" @click.native="getClose"
                                     :to="{name:'categroies',query:{categoryId:category_level1.id}}">
-                                    {{category_level1.name}}<span class="arrow"></span>
+                                    {{category_level1.name}}
+                                    <span class="arrow"></span>
                                 </router-link>
                                 <ul class="nav-dropdown">
                                     <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
@@ -46,7 +48,7 @@
                             </li>
                         </ul>
                     </transition>
-                    <div class="sidebar-toc-list" ref="list">
+                    <div class="sidebar-toc-list" ref="list" v-if="tocShow">
                         <div class="site-nav" @click="showOrHide('2')">
                             <p>
                                 <a-icon type="menu" />
@@ -56,7 +58,7 @@
                         <!-- <div id="sidebar-toc" class="list" @click.prevent></div> -->
                         <transition name="menus-fade">
                             <div class="anchorDiv" v-if="menusShow">
-                                <my-anchor @getClose="getClose"></my-anchor>
+                                <my-anchor :setHeight="myHeight" @getClose="getClose"></my-anchor>
                             </div>
                         </transition>
                     </div>
@@ -77,7 +79,9 @@ export default {
             show: false,
             showNav: false,
             categoryShow: true,
-            menusShow: false
+            menusShow: false,
+            myHeight: 'calc(100vh - 270px)',
+            tocShow: false
         };
     },
     components: {
@@ -134,9 +138,11 @@ export default {
                 if (n.length == 0) {
                     this.categoryShow = true;
                     this.menusShow = false;
+                    this.tocShow = false;
                 } else {
                     this.categoryShow = false;
                     this.menusShow = true;
+                    this.tocShow = true;
                 }
             },
             deep: true

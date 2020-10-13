@@ -15,6 +15,10 @@
 
 <script>
 export default {
+    props: {
+        setHeight: String,
+        required: false
+    },
     data() {
         return {
             myStyle: {
@@ -31,6 +35,11 @@ export default {
     methods: {
         closeSide() {
             this.$emit('getClose', false);
+        }
+    },
+    created() {
+        if (this.setHeight) {
+            this.myStyle.maxHeight = this.setHeight;
         }
     }
 }
