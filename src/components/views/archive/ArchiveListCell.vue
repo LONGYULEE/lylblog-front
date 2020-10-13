@@ -78,16 +78,16 @@ export default {
         }
 
         .base-info {
-            @media only screen and (max-width: 768px) {
-                &::before {
-                    content: '';
-                    height: 10px;
-                    width: 10px;
-                    background: lightpink;
-                    display: inline-block;
-                    border-radius: 5px;
-                }
-            }
+            // @media only screen and (max-width: 768px) {
+            //     &::before {
+            //         content: '';
+            //         height: 10px;
+            //         width: 10px;
+            //         background: lightpink;
+            //         display: inline-block;
+            //         border-radius: 5px;
+            //     }
+            // }
             a.title {
                 margin-left: 5px;
                 font-weight: 300;

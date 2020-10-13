@@ -389,7 +389,7 @@ body.docs {
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
     body {
         -webkit-text-size-adjust: none;
         font-size: 14px;
@@ -435,5 +435,27 @@ body.docs {
 .slide-fade-enter {
     /* .slide-fade-leave-active for below version 2.1.8 */
     transform: translateY(-70px);
+    opacity: 0;
+}
+
+.menus-fade-enter-active,
+.menus-fade-leave-active {
+    transition: all 0.3s ease;
+}
+
+.menus-fade-leave-to,
+.menus-fade-enter {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+.category-fade-enter-active,
+.category-fade-leave-active {
+    transition: all 0.3s ease;
+}
+
+.category-fade-leave-to,
+.category-fade-enter {
+    transform: translateY(-100px);
     opacity: 0;
 }

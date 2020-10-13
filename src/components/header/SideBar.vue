@@ -10,51 +10,55 @@
                     </div>
                 </div>
                 <div class="sidebar-menus">
-                    <div class="site-nav">
+                    <div class="site-nav" @click="showOrHide('1')">
                         <p>
                             <a-icon type="appstore" />
                             文章分类
                         </p>
                     </div>
-                    <ul class="nav-menu">
-                        <!-- 类别导航 -->
-                        <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
-                            :key="category_level1.id">
-                            &nbsp;
-                            <router-link class="nav-link" @click.native="getClose"
-                                :to="{name:'categroies',query:{categoryId:category_level1.id}}">
-                                {{category_level1.name}}<span class="arrow"></span>
-                            </router-link>
-                            <ul class="nav-dropdown">
-                                <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
-                                    &nbsp;
-                                    <router-link class="nav-link" @click.native="getClose"
-                                        :to="{name:'categroies',query:{categoryId:category_level2.id}}">
-                                        {{ category_level2.name}}</router-link>
-                                    <ul class="nav-dropdown">
-                                        <li v-for="category_level3 in category_level2.children"
-                                            :key="category_level3.id">
-                                            &nbsp;
-                                            <router-link class="nav-link" @click.native="getClose"
-                                                :to="{name:'categroies',query:{categoryId:category_level3.id}}">
-                                                {{ category_level3.name }}</router-link>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <transition name="category-fade">
+                        <ul class="nav-menu" v-if="categoryShow">
+                            <!-- 类别导航 -->
+                            <li class="nav-dropdown-container" v-for="category_level1 in articleCategoryList"
+                                :key="category_level1.id">
+                                &nbsp;
+                                <router-link class="nav-link" @click.native="getClose"
+                                    :to="{name:'categroies',query:{categoryId:category_level1.id}}">
+                                    {{category_level1.name}}<span class="arrow"></span>
+                                </router-link>
+                                <ul class="nav-dropdown">
+                                    <li v-for="category_level2 in category_level1.children" :key="category_level2.id">
+                                        &nbsp;
+                                        <router-link class="nav-link" @click.native="getClose"
+                                            :to="{name:'categroies',query:{categoryId:category_level2.id}}">
+                                            {{ category_level2.name}}</router-link>
+                                        <ul class="nav-dropdown">
+                                            <li v-for="category_level3 in category_level2.children"
+                                                :key="category_level3.id">
+                                                &nbsp;
+                                                <router-link class="nav-link" @click.native="getClose"
+                                                    :to="{name:'categroies',query:{categoryId:category_level3.id}}">
+                                                    {{ category_level3.name }}</router-link>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </transition>
                     <div class="sidebar-toc-list" ref="list">
-                        <div class="site-nav">
+                        <div class="site-nav" @click="showOrHide('2')">
                             <p>
                                 <a-icon type="menu" />
                                 文章目录
                             </p>
                         </div>
                         <!-- <div id="sidebar-toc" class="list" @click.prevent></div> -->
-                        <div class="anchorDiv">
-                            <my-anchor @getClose="getClose"></my-anchor>
-                        </div>
+                        <transition name="menus-fade">
+                            <div class="anchorDiv" v-if="menusShow">
+                                <my-anchor @getClose="getClose"></my-anchor>
+                            </div>
+                        </transition>
                     </div>
                 </div>
             </div>
@@ -71,7 +75,9 @@ export default {
     data() {
         return {
             show: false,
-            showNav: false
+            showNav: false,
+            categoryShow: true,
+            menusShow: false
         };
     },
     components: {
@@ -85,6 +91,17 @@ export default {
         next();
     },
     methods: {
+        //控制目录和分类显示隐藏
+        showOrHide(type) {
+            //1为分类，2位目录
+            if (type == '1') {
+                this.categoryShow = !this.categoryShow;
+                this.menusShow = !this.menusShow;
+            } else {
+                this.menusShow = !this.menusShow;
+                this.categoryShow = !this.categoryShow;
+            }
+        },
         getClose(data) {
             setTimeout(() => {
                 this.show = false;
@@ -109,6 +126,20 @@ export default {
                 this.$route.name === "movie" ||
                 this.$route.name === "album"
             );
+        }
+    },
+    watch: {
+        '$store.state.menus': {
+            handler(n, o) {
+                if (n.length == 0) {
+                    this.categoryShow = true;
+                    this.menusShow = false;
+                } else {
+                    this.categoryShow = false;
+                    this.menusShow = true;
+                }
+            },
+            deep: true
         }
     }
 };

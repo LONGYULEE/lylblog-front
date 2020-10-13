@@ -19,7 +19,7 @@
                                 <a-icon type="caret-right" />
                             </router-link>
                         </p>
-                        <p class="operate_info">
+                        <p class="operate_info" :style="myStyle">
                             <span class="publish-time">At time / <a>{{article.createTime | socialDate}}</a></span>
                             <span class="readings"><a>
                                     <a-icon type="eye" /> {{article.readNum}} 阅读
@@ -85,6 +85,18 @@ export default {
             } else {
                 return "";
             }
+        },
+        myStyle: function () {
+            if (this.article.coverType === ARTICLE_TYPE_BIG_IMAGE) {
+                return '';
+            } else if (this.article.coverType === ARTICLE_TYPE_NO_IMAGE) {
+                return '';
+            } else {
+                return {
+                    'position': 'absolute',
+                    'bottom': '0'
+                };
+            }
         }
     },
     methods: {
@@ -134,7 +146,7 @@ export default {
         .text-wrapper {
             padding: 20px 20px 0 20px;
             text-align: left;
-            min-height: 120px;
+            min-height: 114px;
 
             @media only screen and (max-width: 768px) {
                 padding: 15px 15px 0 15px;
@@ -215,6 +227,7 @@ export default {
                     color: @color-main-primary;
                     font-weight: 500;
                     cursor: pointer;
+                    white-space: nowrap;
 
                     &:hover {
                         text-decoration: underline;
@@ -260,6 +273,7 @@ export default {
 
             img {
                 width: 100%;
+                border-top-right-radius: 7px;
             }
         }
     }

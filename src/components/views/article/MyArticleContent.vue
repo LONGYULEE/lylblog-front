@@ -119,7 +119,8 @@ export default {
                 if (viewWidth < 768) {
                     new Viewer(imgDom[i], {
                         navbar: false,
-                        toolbar: false
+                        toolbar: false,
+                        title: false
                     });
                 } else {
                     new Viewer(imgDom[i], {
