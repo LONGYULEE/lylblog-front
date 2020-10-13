@@ -55,7 +55,7 @@ export default {
         listArticle() {
             let params = {
                 categoryId: this.categoryId,
-                limit: this.pageSize,
+                size: this.pageSize,
                 page: this.currentPage
             };
             params = merge(params, this.menuParams);
@@ -106,7 +106,7 @@ export default {
             debugger
             let params = {
                 categoryId: this.categoryId,
-                limit: this.pageSize,
+                size: this.pageSize,
                 page: this.currentPage
             };
             params = merge(params, this.menuParams);
