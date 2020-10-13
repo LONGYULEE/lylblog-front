@@ -131,6 +131,10 @@ export default {
         margin-bottom: 3px;
     }
 
+    @media only screen and (max-width: 992px) {
+        border-bottom: 1px dashed #e5e5e5;
+    }
+
     > a {
         border-radius: @default-border-radius;
         display: block;

@@ -5,8 +5,11 @@
             <span class="main-title">{{mainTitle}}</span>
             <span class="vertical-line"></span>
             <span class="sub-title">{{subTitle}}</span>
-            <span class="view-more"><router-link :to="tipHref" v-if="tipText">{{tipText}}
-                    <a-icon type="caret-right" /></router-link></span>
+            <span class="view-more">
+                <router-link :to="tipHref" v-if="tipText">{{tipText}}
+                    <a-icon type="caret-right" />
+                </router-link>
+            </span>
         </div>
         <div class="menu">
             <slot name="menu"></slot>
@@ -43,6 +46,9 @@ export default {
         padding: 10px 0;
         margin-bottom: 5px;
         height: 70px;
+    }
+    @media only screen and (max-width: 992px) {
+        border-bottom: 1px dashed #e5e5e5;
     }
     .title {
         .square {

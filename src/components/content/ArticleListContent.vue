@@ -39,7 +39,7 @@ export default {
             categoryList: [],
             selected_category: '',
             currentPage: 1,
-            pageSize: 15,
+            pageSize: 10,
             categoryId: '',
             menuParams: {
                 latest: true
@@ -102,8 +102,8 @@ export default {
             this.currentPage = 1;
         },
         browseMore() {
-            this.currentPage++;
             debugger
+            this.currentPage++;
             let params = {
                 categoryId: this.categoryId,
                 size: this.pageSize,

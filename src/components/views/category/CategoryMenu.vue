@@ -212,6 +212,9 @@ export default {
 
 .classify-bar {
     margin-bottom: 10px;
+    @media only screen and (max-width: 992px) {
+        margin-bottom: 0px;
+    }
     .level {
         display: flex;
         padding: 10px 0;
@@ -222,6 +225,10 @@ export default {
         // border-bottom: 1px solid @default-border-color;
         // background-color: @default-background-image;
         padding-left: 10px;
+
+        @media only screen and (max-width: 992px) {
+            border-bottom: 1px dashed #e5e5e5;
+        }
 
         .title {
             display: inline-block;
