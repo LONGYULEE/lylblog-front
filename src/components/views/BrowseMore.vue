@@ -51,6 +51,9 @@ export default {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    margin-bottom: -5px;
+    @media only screen and (max-width: 992px) {
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #e5e5e5;
+    }
 }
 </style>
