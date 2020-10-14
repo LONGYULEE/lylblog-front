@@ -30,7 +30,8 @@ export default {
     text-align: center;
     color: #888;
     user-select: none;
-    padding: 24px 0;
+    padding: 10px 0px;
+    margin: 0px 20px;
 
     @media only screen and (max-width: 768px) {
         padding: 5px 0px 15px 0px;
@@ -43,6 +44,10 @@ export default {
         &:hover {
             text-decoration: underline;
         }
+    }
+
+    @media only screen and (min-width: 992px) {
+        border-top: 1px dashed #c4c4c4;
     }
 }
 

@@ -21,8 +21,17 @@
                         <a>123</a>。
                     </p>
                 </div> -->
+
                 <div class="end-wrap">
                     <span>【END】</span>
+                </div>
+                <div class="category-class">
+                    <span>所属分类：
+                    </span>
+                    <router-link to="" v-for="(item,index) in categoryArr" @click.native="toCategory(item.id)"
+                        :key="item.id">{{item.name}}
+                        <a-divider type="vertical" v-if="(index + 1) != categoryArr.length" />
+                    </router-link>
                 </div>
                 <div class="article-views">
                     <a-row>
@@ -84,7 +93,9 @@ export default {
         return {
             article: {},
             menus: [],
-            toc: null
+            toc: null,
+            category: [],
+            categoryArr: []
         };
     },
     methods: {
@@ -95,6 +106,7 @@ export default {
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
                     this.article = data.data
+                    this.category = data.data.categoryId.split(',');
 
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
@@ -105,9 +117,9 @@ export default {
                         this.createMenus(h2El);
                         //文章页面网页 title
                         document.title = this.article.title + ' - 寒露';
-                        this.refreshMobileDirectory();
                         this.setViewer();
                     })
+                    this.getCategroyName();
                 }
             })
         },
@@ -203,8 +215,33 @@ export default {
             this.$emit('getMenus', false);
             this.$store.commit('setMenus', this.menus);
         },
-        refreshMobileDirectory() {
-
+        getCategroyName() {
+            this.$http({
+                url: this.$http.adornUrl("/operation/categories?type=0"),
+                method: "get",
+                data: this.$http.adornData()
+            }).then(({ data }) => {
+                if (data && data.code === 2000) {
+                    let categoryArr = data.data;
+                    this.category.forEach((item01, index01) => {
+                        categoryArr.forEach((item02, index02) => {
+                            if (item01 == item02.id) {
+                                this.categoryArr.push({
+                                    'id': item02.id,
+                                    'name': item02.name
+                                })
+                            }
+                        })
+                    })
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+        },
+        toCategory(id) {
+            this.$router.push({
+                path: '/articles',query:{categoryId:id}
+            })
         }
     },
     created: function () {
@@ -228,6 +265,22 @@ export default {
     text-align: right;
     font-size: 14px;
 }
+
+.category-class {
+    span {
+        font-weight: bold;
+    }
+    a {
+        color: #2799ff;
+        cursor: pointer;
+
+        &:hover {
+            color: @color-typegraphy-title-hover;
+            text-decoration: underline;
+        }
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .operate_info {
         text-align: center;

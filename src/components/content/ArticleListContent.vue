@@ -102,7 +102,6 @@ export default {
             this.currentPage = 1;
         },
         browseMore() {
-            debugger
             this.currentPage++;
             let params = {
                 categoryId: this.categoryId,
@@ -175,7 +174,7 @@ export default {
     @media screen and (min-width: 1200px) {
         width: 1200px;
         margin: 15px auto 0;
-        margin-bottom: 50px;
+        margin-bottom: 15px;
     }
 
     .layout-left,

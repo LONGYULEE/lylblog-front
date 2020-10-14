@@ -52,9 +52,15 @@ export default {
         };
     },
     mounted() {
-        this.$nextTick(() => {
-            this.setDefaultCategory(parseInt(this.defaultCategory));
-        });
+        if (this.defaultCategory == '') {
+            this.$nextTick(() => {
+                this.setDefaultCategory(parseInt(this.$route.query.categoryId));
+            });
+        } else {
+            this.$nextTick(() => {
+                this.setDefaultCategory(parseInt(this.defaultCategory));
+            });
+        }
     },
     methods: {
         choseLevel(category, event) {
@@ -215,16 +221,16 @@ export default {
     @media only screen and (max-width: 992px) {
         margin-bottom: 0px;
     }
+    .level-one {
+        border-top: 1px dashed #c4c4c4;
+    }
     .level {
         display: flex;
         padding: 10px 0;
         font-size: 15px;
         line-height: 22px;
-        border-radius: @default-border-radius;
-        // margin-bottom: 3px;
-        // border-bottom: 1px solid @default-border-color;
-        // background-color: @default-background-image;
-        padding-left: 10px;
+        border-bottom: 1px dashed #c4c4c4;
+        margin: 0px 10px;
 
         @media only screen and (max-width: 992px) {
             border-bottom: 1px dashed #e5e5e5;

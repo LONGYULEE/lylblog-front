@@ -66,6 +66,7 @@ export default {
     .layout-left,
     .layout-right {
         padding: 0;
+        margin-bottom: 15px;
 
         @media only screen and (max-width: 768px) {
             padding: 0;

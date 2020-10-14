@@ -39,11 +39,6 @@ export default {
         filterByCategory(params) {
             this.$emit("filterByCategory", params);
         }
-    },
-    watch: {
-        categorys(newval) {
-            // console.log(newval);
-        }
     }
 };
 </script>

@@ -92,7 +92,7 @@ export default {
     @media screen and (min-width: 1200px) {
         width: 1200px;
         margin: 15px auto 0;
-        margin-bottom: 50px;
+        margin-bottom: 15px;
     }
 
     .layout-left,
@@ -119,6 +119,9 @@ export default {
             background-color: @default-background-image;
             padding: 10px 15px;
             border-radius: @default-border-radius;
+            @media only screen and (max-width: 992px) {
+                border-bottom: 1px dashed #e5e5e5;
+            }
         }
     }
 }
