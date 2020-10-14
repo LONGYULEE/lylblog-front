@@ -50,7 +50,7 @@ export default {
             defaultFilterList: DefaultFilterList,
             pageParam: {
                 page: 1,
-                limit: DefaultLimitSize
+                size: DefaultLimitSize
             }
         };
     },
