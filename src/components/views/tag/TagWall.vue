@@ -2,9 +2,11 @@
     <div class="tag-wall">
         <panel :title="'标签墙'">
             <div slot="content" class="content">
-                <a-tag v-for="(tag, index) in tagList" type="dot" :color="index | mapTagColor" :key="index"
-                    style="margin: 0 5px 5px 0;" class="dot-tag">{{ tag.name +' ['+ tag.linkNum + ']'}}
-                </a-tag>
+                <a-badge :count="tag.linkNum" v-for="(tag, index) in tagList" :key="index" show-zero>
+                    <a-tag type="dot" :color="index | mapTagColor" style="margin: 0 5px 5px 0;" class="dot-tag">
+                        {{ tag.name }}
+                    </a-tag>
+                </a-badge>
             </div>
         </panel>
     </div>
@@ -47,7 +49,10 @@ export default {
 
 .tag-wall {
     .content {
-        padding: 10px 20px 5px 20px;
+        padding: 15px 20px 5px 20px;
+        .ant-badge {
+            margin-right: 15px;
+        }
     }
 }
 </style>

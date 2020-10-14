@@ -58,6 +58,10 @@ export default {
         margin: 15px 35px 50px 35px;
     }
 
+    @media only screen and (max-width: 992px) {
+        border-bottom: 1px dashed #e5e5e5;
+    }
+
     @media screen and (min-width: 1200px) {
         width: 1200px;
         margin: 15px auto 0;

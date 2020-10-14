@@ -25,13 +25,19 @@
                 <div class="end-wrap">
                     <span>【END】</span>
                 </div>
-                <div class="category-class">
-                    <span>所属分类：
-                    </span>
-                    <router-link to="" v-for="(item,index) in categoryArr" @click.native="toCategory(item.id)"
-                        :key="item.id">{{item.name}}
-                        <a-divider type="vertical" v-if="(index + 1) != categoryArr.length" />
-                    </router-link>
+                <div class="info-class">
+                    <div class="category-class">
+                        <span>所属分类：</span>
+                        <router-link to="" v-for="(item,index) in categoryArr" @click.native="toCategory(item.id)"
+                            :key="item.id">{{item.name}}
+                            <a-divider type="vertical" v-if="(index + 1) != categoryArr.length" />
+                        </router-link>
+                    </div>
+                    <div class="tags-class" v-if="tags.length != 0">
+                        <span>标签：</span>
+                        <a-tag :color="index | mapTagColor" v-for="(tag, index) in tags" :key="index">{{tag.name}}
+                        </a-tag>
+                    </div>
                 </div>
                 <div class="article-views">
                     <a-row>
@@ -95,7 +101,8 @@ export default {
             menus: [],
             toc: null,
             category: [],
-            categoryArr: []
+            categoryArr: [],
+            tags: []
         };
     },
     methods: {
@@ -107,6 +114,7 @@ export default {
                 if (data && data.code === 2000) {
                     this.article = data.data
                     this.category = data.data.categoryId.split(',');
+                    this.tags = data.data.tagList;
 
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
@@ -240,7 +248,7 @@ export default {
         },
         toCategory(id) {
             this.$router.push({
-                path: '/articles',query:{categoryId:id}
+                path: '/articles', query: { categoryId: id }
             })
         }
     },
@@ -266,17 +274,43 @@ export default {
     font-size: 14px;
 }
 
-.category-class {
-    span {
-        font-weight: bold;
+.info-class {
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (max-width: 992px) {
+        display: flex;
+        justify-content: center;
     }
-    a {
-        color: #2799ff;
-        cursor: pointer;
+    .category-class {
+        span {
+            font-weight: bold;
+        }
+        a {
+            color: #2799ff;
+            cursor: pointer;
 
-        &:hover {
-            color: @color-typegraphy-title-hover;
-            text-decoration: underline;
+            &:hover {
+                color: @color-typegraphy-title-hover;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .tags-class {
+        @media only screen and (max-width: 992px) {
+            display: none;
+        }
+        span {
+            font-weight: bold;
+        }
+        a {
+            color: #2799ff;
+            cursor: pointer;
+
+            &:hover {
+                color: @color-typegraphy-title-hover;
+                text-decoration: underline;
+            }
         }
     }
 }
