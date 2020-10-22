@@ -67,7 +67,7 @@ export default {
     name: "side-bar",
     data() {
         return {
-            myHeight: 'calc(100vh - 270px)',
+            myHeight: 'calc(100vh - 277px)',
             headerStyle: {
                 'display': 'none'
             },
@@ -137,6 +137,9 @@ export default {
     }
     .ant-collapse-content {
         color: rgba(white, 0.7);
+        .ant-collapse-content-box {
+            padding-right: 0px;
+        }
     }
 }
 
