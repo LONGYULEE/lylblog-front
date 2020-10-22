@@ -12,6 +12,11 @@
                     <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
                         :type="'article'">
                     </article-list-cell>
+                    <div class="btnDiv">
+                        <a-button type="primary" @click="browseMore">
+                            查看更多
+                        </a-button>
+                    </div>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
@@ -86,7 +91,8 @@ export default {
                     this.articleList = data.data.list;
                 }
             });
-        }
+        },
+        browseMore() { }
     }
 };
 </script>
@@ -125,5 +131,24 @@ export default {
     .home-content .layout-right {
         padding: 0 10px;
     }
+}
+
+.btnDiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .btnDiv {
+        margin: 10px 0px 0px 0px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #e5e5e5;
+    }
+}
+
+.ant-btn-primary {
+    background-color: #fa8990;
+    border-color: #fa8990;
 }
 </style>

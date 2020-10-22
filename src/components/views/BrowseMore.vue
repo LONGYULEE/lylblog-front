@@ -1,6 +1,6 @@
 <template>
     <div class="btnClass">
-        <a-button type="primary" size="large" @click="browseMore" :loading="loading">
+        <a-button type="primary" @click="browseMore" :loading="loading">
             {{tipStr}}
         </a-button>
     </div>
@@ -54,6 +54,11 @@ export default {
     @media only screen and (max-width: 992px) {
         padding-bottom: 10px;
         border-bottom: 1px dashed #e5e5e5;
+    }
+
+    .ant-btn-primary {
+        background-color: #fa8990;
+        border-color: #fa8990;
     }
 }
 </style>
