@@ -1,6 +1,7 @@
 <template>
     <div>
-        <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="true" @click="closeSide">
+        <a-anchor :wrapperStyle="myStyle" :offsetTop="80" :showInkInFixed="showInkInFixed" @click="closeSide"
+            :affix="affix">
             <a-anchor-link v-for="item in menus" v-bind:key="item.href" :href="item.href" :title="item.title">
                 <a-anchor-link v-for="item01 in item.children" v-bind:key="item01.href" :href="item01.href"
                     :title="item01.title">
@@ -16,8 +17,18 @@
 <script>
 export default {
     props: {
-        setHeight: String,
-        required: false
+        setHeight: {
+            type: String,
+            required: false
+        },
+        affix: {
+            type: Boolean,
+            default: true
+        },
+        showInkInFixed: {
+            type: Boolean,
+            default: true
+        },
     },
     data() {
         return {
