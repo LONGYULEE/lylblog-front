@@ -2,7 +2,7 @@
     <div class="simple-header">
         <transition name="slide-fade">
             <div id="mobile-bar" v-show="show">
-                <a class="menu-button" ref="menubutton"></a>
+                <a class="menu-button" ref="menubutton" @click="menubutton"></a>
                 <router-link to="/timeline">
                     <TimeIcon class="mobile-time-class"></TimeIcon>
                 </router-link>
@@ -58,7 +58,8 @@
                 </ul>
             </div>
         </transition>
-        <sidebar ref="sidebar" :articleCategoryList="articleCategoryList">
+        <sidebar ref="sidebar" :articleCategoryList="articleCategoryList" :visible="menubuttonShow"
+            @closepop="closepop">
         </sidebar>
     </div>
 </template>
@@ -82,7 +83,8 @@ export default {
             articleCategoryList: [],
             keywords: '',
             startY: '',
-            endY: ''
+            endY: '',
+            menubuttonShow: false
         };
     },
     created() {
@@ -90,9 +92,6 @@ export default {
         this.keywords = this.$route.query.keywords;
     },
     mounted: function () {
-        this.$nextTick(function () {
-            this.initMobileMenu();
-        });
         // 给页面绑定滑轮滚动事件
         if (document.addEventListener) {
             // firefox
@@ -108,12 +107,9 @@ export default {
         document.addEventListener('touchend', this.watchTouchEnd, false);
     },
     methods: {
-        initMobileMenu() {
-            // 显示手机端的菜单
-            var sidebar = this.$refs.sidebar;
-            this.$refs.menubutton.addEventListener('click', function () {
-                sidebar.toggleSideBar();
-            });
+        closepop(data) { this.menubuttonShow = data },
+        menubutton() {
+            this.menubuttonShow = !this.menubuttonShow;
         },
         watchScroll(e) {
             e = e || window.event;
