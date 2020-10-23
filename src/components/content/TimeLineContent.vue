@@ -24,10 +24,12 @@
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
-                <div class="layout-right">
-                    <recommend></recommend>
-                    <tag-wall style="margin-top: 15px;"></tag-wall>
-                </div>
+                <a-anchor :offsetTop="80" :bounds="0">
+                    <div class="layout-right">
+                        <recommend></recommend>
+                        <tag-wall style="margin-top: 15px;"></tag-wall>
+                    </div>
+                </a-anchor>
             </a-col>
         </a-row>
     </div>
@@ -122,6 +124,13 @@ export default {
             @media only screen and (max-width: 992px) {
                 border-bottom: 1px dashed #e5e5e5;
             }
+        }
+    }
+    .ant-anchor-wrapper {
+        padding-left: 0;
+        background-color: inherit;
+        .ant-anchor-ink::before {
+            content: none;
         }
     }
 }

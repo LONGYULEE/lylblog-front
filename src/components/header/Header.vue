@@ -92,17 +92,6 @@ export default {
         this.keywords = this.$route.query.keywords;
     },
     mounted: function () {
-        // 给页面绑定滑轮滚动事件
-        if (document.addEventListener) {
-            // firefox
-            document.addEventListener(
-                'DOMMouseScroll',
-                this.watchScroll,
-                false
-            );
-        }
-        // 滚动滑轮触发scrollFunc方法  //ie 谷歌
-        window.onmousewheel = document.onmousewheel = this.watchScroll;
         document.addEventListener('touchstart', this.watchTouchStart, false);
         document.addEventListener('touchend', this.watchTouchEnd, false);
     },
@@ -110,28 +99,6 @@ export default {
         closepop(data) { this.menubuttonShow = data },
         menubutton() {
             this.menubuttonShow = !this.menubuttonShow;
-        },
-        watchScroll(e) {
-            e = e || window.event;
-            if (e.wheelDelta) {
-                if (e.wheelDelta > 0 && this.show === false) {
-                    // 当滑轮向上滚动
-                    this.show = true;
-                }
-                if (e.wheelDelta < 0 && this.show === true) {
-                    // 当滑轮向下滚动
-                    this.show = false;
-                }
-            } else if (e.detail) {
-                if (e.detail < 0 && this.show === false) {
-                    // 当滑轮向上滚动
-                    this.show = true;
-                }
-                if (e.detail > 0 && this.show === true) {
-                    // 当滑轮向下滚动
-                    this.show = false;
-                }
-            }
         },
         watchTouchStart(e) {
             this.startY = e.touches[0].pageY;
