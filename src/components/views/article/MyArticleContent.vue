@@ -70,8 +70,8 @@
 </template>
 
 <script>
-import hljs from 'highlight.js'
-import 'highlight.js/styles/tomorrow.css';
+// import hljs from 'highlight.js'
+// import 'highlight.js/styles/atom-one-dark.css';
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
 import Viewer from 'viewerjs';
@@ -84,11 +84,12 @@ const highlightCode = () => {
 
     // 添加行号
     //TODO: 待做
-    // let blocks = document.querySelectorAll('pre code')
-    // blocks.forEach((block) => {
-    //     // 去前后空格并添加行号
-    //     block.innerHTML = '<ol><li>' + block.innerHTML.replace(/(^\s*)|(\s*$)/g, '').replace(/\n/g, '\n</li><li>') + '\n</li></ol>'
-    // })
+    let blocks = document.querySelectorAll('pre code')
+    blocks.forEach((block) => {
+        // 去前后空格并添加行号
+        block.innerHTML = '<ul>' + block.innerHTML + '</ul>'
+        // $(this).text().split('\n').length - 1
+    })
 }
 export default {
     components: {

@@ -1,6 +1,6 @@
 .myarticle-content {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 2rem;
     word-wrap: break-word;
 
     * {
@@ -14,6 +14,9 @@
     img {
         max-width: -webkit-fill-available;
         cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24) !important;
+        border-radius: 5px;
+        margin: 1.4em 0;
     }
 
     h1,
@@ -31,6 +34,9 @@
         &:hover .anchor {
             opacity: 1;
         }
+
+        padding: 0 0 0 15px;
+        border-left: 3px solid #333;
     }
 
     h1,
@@ -40,12 +46,13 @@
 
     h1 {
         font-size: 2em;
-        border-bottom: 3px double rgba(0, 0, 0, 0.1);
+        border-bottom: 3px dashed rgba(0, 0, 0, 0.1);
     }
 
     h2 {
+        margin-top: 32px;
         font-size: 1.75em;
-        border-bottom: 1px double rgba(0, 0, 0, 0.1);
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
     }
 
     h3 {
@@ -96,7 +103,6 @@
     ul,
     ol {
         position: relative;
-        padding-left: 20px;
         margin: 6px 0 10px 10px;
     }
 
@@ -140,16 +146,15 @@
     }
 
     pre {
+        margin: 1.6em 0;
         padding: 12px 16px;
-        border-radius: 8px;
-        background: #f6f8fa;
-        border: 1px solid #eee;
+        border-radius: 5px;
+        box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
         @media (max-width: 576px) {
             padding: 10px 8px;
         }
 
         .hljs {
-            background: #f6f8fa;
             padding-left: 0px;
         }
 
@@ -232,9 +237,10 @@
     }
 
     .pre-header-right {
-        font-size: 12px;
-        color: #777;
+        font-size: 16px;
+        color: #d19a66;
         padding-top: 1px;
         user-select: none;
+        font-weight: bold;
     }
 }
