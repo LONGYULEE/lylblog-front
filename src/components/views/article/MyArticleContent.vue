@@ -77,19 +77,16 @@ import { mixin } from "@/util";
 import Viewer from 'viewerjs';
 import 'viewerjs/dist/viewer.css';
 const highlightCode = () => {
-    const preEl = document.querySelectorAll('pre')
-    preEl.forEach((el) => {
-        hljs.highlightBlock(el)
-    })
+    // const preEl = document.querySelectorAll('pre')
+    // preEl.forEach((el) => {
+    //     hljs.highlightBlock(el)
+    // })
 
-    // 添加行号
-    //TODO: 待做
-    let blocks = document.querySelectorAll('pre code')
-    blocks.forEach((block) => {
-        // 去前后空格并添加行号
-        block.innerHTML = '<ul>' + block.innerHTML + '</ul>'
-        // $(this).text().split('\n').length - 1
-    })
+    // let blocks = document.querySelectorAll('.hljs')
+    // blocks.forEach((block) => {
+    //     hljs.initLineNumbersOnLoad(block)
+    //     console.log(block)
+    // })
 }
 export default {
     components: {
