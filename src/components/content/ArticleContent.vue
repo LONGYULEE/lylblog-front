@@ -8,9 +8,10 @@
                         <a-back-top />
                     </div>
                 </a-col>
-                <a-col :xs="0" :sm="0" :md="0" :lg="4">
+                <a-col :xs="0" :sm="0" :md="0" :lg="6">
                     <div class="layout-right">
-                        <my-anchor></my-anchor>
+                        <!-- <my-anchor></my-anchor> -->
+                        <div class="js-toc"></div>
                     </div>
                 </a-col>
             </a-row>
@@ -101,6 +102,30 @@ export default {
             // background-color: #fff;
             // border: 2
             border: 2px solid @color-main-primary;
+        }
+
+        .js-toc {
+            position: sticky;
+            top: 75px;
+
+            /deep/ .toc-list {
+                list-style: none;
+
+                .toc-list-item {
+                    margin: 3px 0;
+                }
+
+                .is-active-link {
+                    color: #5c5c5c !important;
+                    font-weight: 700;
+                    &::before {
+                        background-color: #5c5c5c;
+                    }
+                }
+
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+                line-height: 1.5;
+            }
         }
     }
 }
