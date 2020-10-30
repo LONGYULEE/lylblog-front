@@ -7,8 +7,16 @@
                         @filterByCategory="filterByCategory" :categorys="categoryList"
                         :defaultCategory="selected_category" :mainTitle="'文章列表'" :sub-title="'Articles'">
                     </article-list-header>
-                    <article-list-cell v-for="article in articleList" :article="article" :key="article.id">
-                    </article-list-cell>
+                    <div v-if="skeletonFlag">
+                        <article-list-cell v-for="article in articleList" :article="article" :key="article.id">
+                        </article-list-cell>
+                    </div>
+                    <div v-if="!skeletonFlag">
+                        <div v-for="item in 5" :key="item" class="skeDiv">
+                            <a-skeleton active>
+                            </a-skeleton>
+                        </div>
+                    </div>
                     <browse-more @browseMore="browseMore" :noMoreData="noMoreData" ref="browseMore"></browse-more>
                 </div>
             </a-col>
@@ -46,7 +54,8 @@ export default {
             menuParams: {
                 latest: true
             },
-            noMoreData: false
+            noMoreData: false,
+            skeletonFlag: false
         };
     },
     created() {
@@ -73,6 +82,7 @@ export default {
                         this.noMoreData = false;
                     }
                     this.articleList = data.data.list;
+                    this.skeletonFlag = true;
                 }
             });
         },
@@ -158,6 +168,7 @@ export default {
 </script>
 
 <style lang="less" >
+@import '../../common/less/index.less';
 .article-list-content {
     width: auto;
 
@@ -197,6 +208,26 @@ export default {
 
         @media screen and (min-width: 1200px) {
             padding: 0 10px;
+        }
+
+        .skeDiv {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: @default-border-radius;
+            background-color: @default-background-image;
+            @media only screen and (max-width: 768px) {
+                margin-bottom: 3px;
+            }
+
+            @media only screen and (max-width: 992px) {
+                border-bottom: 1px dashed #e5e5e5;
+            }
+
+            &:hover {
+                transform: rotate(0deg) scale(1) translate(0%, 0%);
+                transition: all 0.3s ease;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
+            }
         }
     }
     .ant-anchor-wrapper {

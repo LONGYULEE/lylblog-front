@@ -9,9 +9,17 @@
                             :menu-filter-list="defaultFilterList">
                         </title-menu-filter>
                     </section-title>
-                    <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
-                        :type="'article'">
-                    </article-list-cell>
+                    <div v-if="skeletonFlag">
+                        <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
+                            :type="'article'">
+                        </article-list-cell>
+                    </div>
+                    <div v-if="!skeletonFlag">
+                        <div v-for="item in 5" :key="item" class="skeDiv">
+                            <a-skeleton active>
+                            </a-skeleton>
+                        </div>
+                    </div>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
@@ -51,7 +59,8 @@ export default {
             pageParam: {
                 page: 1,
                 size: DefaultLimitSize
-            }
+            },
+            skeletonFlag: false
         };
     },
     components: {
@@ -84,6 +93,7 @@ export default {
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
                     this.articleList = data.data.list;
+                    this.skeletonFlag = true;
                 }
             });
         },
@@ -94,7 +104,8 @@ export default {
 };
 </script>
 
-<style scope>
+<style scope lang="less">
+@import '../../common/less/index.less';
 .home-content {
     width: auto;
 }
@@ -127,6 +138,26 @@ export default {
     .home-content .layout-left,
     .home-content .layout-right {
         padding: 0 10px;
+    }
+}
+
+.skeDiv {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: @default-border-radius;
+    background-color: @default-background-image;
+    @media only screen and (max-width: 768px) {
+        margin-bottom: 3px;
+    }
+
+    @media only screen and (max-width: 992px) {
+        border-bottom: 1px dashed #e5e5e5;
+    }
+
+    &:hover {
+        transform: rotate(0deg) scale(1) translate(0%, 0%);
+        transition: all 0.3s ease;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
     }
 }
 </style>
