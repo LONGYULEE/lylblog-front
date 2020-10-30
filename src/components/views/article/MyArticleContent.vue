@@ -125,6 +125,8 @@ export default {
                         this.setViewer();
                     })
                     this.getCategroyName();
+                    //占位取消
+                    this.$emit('getMenus', true);
                 }
             })
         },
@@ -217,7 +219,6 @@ export default {
                 }
                 this.menus.push(result)
             })
-            this.$emit('getMenus', false);
             this.$store.commit('setMenus', this.menus);
         },
         getCategroyName() {

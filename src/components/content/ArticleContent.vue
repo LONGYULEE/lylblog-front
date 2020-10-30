@@ -1,20 +1,23 @@
 <template>
     <div class="article-content" v-cloak>
-        <a-spin :spinning="spinning" tip="Loading..." size="large">
-            <a-row>
-                <a-col :xs="24" :sm="24" :md="24" :lg="18">
-                    <div class="layout-left">
+        <a-row>
+            <a-col :xs="24" :sm="24" :md="24" :lg="18">
+                <div class="layout-left">
+                    <div v-show="skeletonFlag">
                         <my-article-content ref="article" @getMenus="getArticleMenus"></my-article-content>
-                        <a-back-top />
                     </div>
-                </a-col>
-                <a-col :xs="0" :sm="0" :md="0" :lg="4">
-                    <div class="layout-right">
-                        <my-anchor></my-anchor>
+                    <div v-show="!skeletonFlag" class="skeletonDiv">
+                        <a-skeleton active :paragraph="{ rows: 12 }"></a-skeleton>
                     </div>
-                </a-col>
-            </a-row>
-        </a-spin>
+                    <a-back-top />
+                </div>
+            </a-col>
+            <a-col :xs="0" :sm="0" :md="0" :lg="4">
+                <div class="layout-right">
+                    <my-anchor></my-anchor>
+                </div>
+            </a-col>
+        </a-row>
     </div>
 </template>
 <script>
@@ -24,7 +27,7 @@ export default {
     data() {
         return {
             article: {},
-            spinning: true,
+            skeletonFlag: false
         }
     },
     components: {
@@ -34,7 +37,7 @@ export default {
     methods: {
         getArticleMenus(data) {
             this.$nextTick(() => {
-                this.spinning = data;
+                this.skeletonFlag = data;
             })
         }
     }
@@ -101,6 +104,13 @@ export default {
             // background-color: #fff;
             // border: 2
             border: 2px solid @color-main-primary;
+        }
+
+        .skeletonDiv {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            height: calc(100vh - 127px);
         }
     }
 }
