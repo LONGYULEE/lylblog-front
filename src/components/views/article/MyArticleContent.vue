@@ -77,16 +77,15 @@ import { mixin } from "@/util";
 import Viewer from 'viewerjs';
 import 'viewerjs/dist/viewer.css';
 const highlightCode = () => {
-    // const preEl = document.querySelectorAll('pre')
-    // preEl.forEach((el) => {
-    //     hljs.highlightBlock(el)
-    // })
+    const preEl = document.querySelectorAll('pre')
+    preEl.forEach((el) => {
+        hljs.highlightBlock(el)
+    })
 
-    // let blocks = document.querySelectorAll('.hljs')
-    // blocks.forEach((block) => {
-    //     hljs.initLineNumbersOnLoad(block)
-    //     console.log(block)
-    // })
+    let blocks = document.querySelectorAll('code')
+    blocks.forEach((block) => {
+        hljs.lineNumbersBlock(block)
+    })
 }
 export default {
     components: {
