@@ -20,7 +20,7 @@ export default {
 
 .panel {
     position: relative;
-    background: #fff;
+    background: @default-background-color;
     // border-left: 1px solid @color-border;
     border-radius: @default-border-radius;
 

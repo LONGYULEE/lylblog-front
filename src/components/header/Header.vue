@@ -47,13 +47,13 @@
                     </li>
 
                     <li>
-                        <router-link to="/articles" class="nav-link contribute">文章</router-link>
+                        <router-link to="/articles" class="nav-link contribute">CATEGORY</router-link>
                     </li>
                     <li>
-                        <router-link to="/timeline" class="nav-link contribute">时间线</router-link>
+                        <router-link to="/timeline" class="nav-link contribute">TIMELINE</router-link>
                     </li>
                     <li>
-                        <router-link to="/showme" class="nav-link contribute">关于</router-link>
+                        <router-link to="/showme" class="nav-link contribute">ABOUT</router-link>
                     </li>
                 </ul>
             </div>

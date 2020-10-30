@@ -11,7 +11,8 @@ export default {
 </script>
 
 <style>
-@import "assets/css/reset.css";
+@import 'assets/css/reset.css';
+@import 'assets/font/font.css';
 #nprogress .bar {
     /* 自定义颜色 */
     background: #409eff !important;
