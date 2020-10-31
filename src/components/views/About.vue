@@ -44,7 +44,7 @@ export default {};
     text-align: center;
     // border: 1px solid @color-border;
     padding-bottom: 20px;
-    background-color: @default-background-image;
+    background-color: @default-background-color;
     border-radius: @default-border-radius;
 
     img.background {

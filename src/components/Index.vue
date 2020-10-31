@@ -9,9 +9,10 @@
 <style lang="less" scoped>
 @import '../common/less/theme.less';
 .main-wrapper {
-    background-color: @default-background-color;
+    background-color: @default-background-image;
     width: 100%;
     margin: 0 auto;
+    padding: 35px;
 
     @media only screen and (max-width: 992px) {
         background-color: white;

@@ -93,7 +93,7 @@ export default {
 
     @media screen and (min-width: 1200px) {
         width: 1200px;
-        margin: 15px auto 0;
+        margin: 0px auto 0;
         margin-bottom: 15px;
     }
 
@@ -118,7 +118,7 @@ export default {
         }
 
         .timeline-wrapper {
-            background-color: @default-background-image;
+            background-color: @default-background-color;
             padding: 10px 15px;
             border-radius: @default-border-radius;
             @media only screen and (max-width: 992px) {

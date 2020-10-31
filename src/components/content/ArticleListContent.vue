@@ -186,7 +186,7 @@ export default {
 
     @media screen and (min-width: 1200px) {
         width: 1200px;
-        margin: 15px auto 0;
+        margin: 0px auto 0;
         margin-bottom: 15px;
     }
 
@@ -214,7 +214,7 @@ export default {
             margin-bottom: 10px;
             padding: 10px;
             border-radius: @default-border-radius;
-            background-color: @default-background-image;
+            background-color: @default-background-color;
             @media only screen and (max-width: 768px) {
                 margin-bottom: 3px;
             }

@@ -4,3 +4,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'simple';
+    src: url('simple.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+

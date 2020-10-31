@@ -67,7 +67,7 @@ export default {
 
     @media screen and (min-width: 1200px) {
         width: 1200px;
-        margin: 15px auto 0;
+        margin: 0px auto 0;
     }
 
     .layout-left,

@@ -340,7 +340,7 @@ export default {
     display: flex;
     justify-content: center;
     /* margin-top: 30px; */
-    background-color: @default-background-image;
+    background-color: @default-background-color;
     border-radius: @default-border-radius;
 }
 
@@ -349,7 +349,7 @@ export default {
 }
 
 .content-wrap {
-    background: #fff;
+    background: @default-background-color;
     border-radius: 10px;
     padding: 30px;
     min-height: 50vh;

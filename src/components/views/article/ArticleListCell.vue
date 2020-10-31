@@ -126,7 +126,7 @@ export default {
 .article-cell {
     margin-bottom: 10px;
     border-radius: @default-border-radius;
-    background-color: @default-background-image;
+    background-color: @default-background-color;
     @media only screen and (max-width: 768px) {
         margin-bottom: 3px;
     }
@@ -150,7 +150,7 @@ export default {
         .text-wrapper {
             padding: 20px 20px 0 20px;
             text-align: left;
-            min-height: 114px;
+            min-height: 300px;
 
             @media only screen and (max-width: 768px) {
                 padding: 15px 15px 0 15px;
@@ -158,9 +158,10 @@ export default {
             }
 
             .title {
-                font-size: 23px;
+                font-size: 32px;
                 font-weight: 100;
                 line-height: 27px;
+                font-family: '微软雅黑';
 
                 span.special {
                     border-radius: @border-radius;
@@ -175,7 +176,9 @@ export default {
                 }
 
                 a {
-                    color: @color-typegraphy-title;
+                    // color: @color-typegraphy-title;
+                    color: @my-title-color;
+
                     cursor: pointer;
 
                     &:hover {
@@ -222,7 +225,7 @@ export default {
             }
 
             .desc {
-                color: #666;
+                color: #d9d9d9;
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: 200;

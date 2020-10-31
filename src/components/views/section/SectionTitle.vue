@@ -41,7 +41,7 @@ export default {
     line-height: 50px;
     text-align: left;
     box-sizing: border-box;
-    background-color: @default-background-image;
+    background-color: @default-background-color;
     @media only screen and (max-width: 768px) {
         padding: 10px 0;
         margin-bottom: 5px;
