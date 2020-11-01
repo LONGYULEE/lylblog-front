@@ -29,7 +29,7 @@
                         </div>
                     </li>
                     <li class="timeline-li">
-                        <div class="timeline-div" style="background:rgba(0,0,0,0.5)">
+                        <div class="timeline-div" style="background:rgba(255,255,255,0.5)">
                             <div class="sec-left-box">
                                 <p>重庆理工大学</p>
                                 <div class="sec-right-div">
@@ -307,6 +307,7 @@ export default {
                                 }
                             }
                             .sec-right-div {
+                                color: black;
                                 span {
                                     .content-div-box();
                                     @media screen and (max-width: 768px) {
@@ -323,6 +324,7 @@ export default {
                             }
                         }
                         .sec-right-box {
+                            color: black;
                             flex: 1 !important;
                             @media screen and (max-width: 768px) {
                                 position: absolute;

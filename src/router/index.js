@@ -64,7 +64,7 @@ let router = new Router({
                         footer: Footer
                     },
                     meta: {
-                        title: '文章列表 - 寒露'
+                        title: 'ARTICLES - 寒露'
                     }
                 },
                 {
@@ -85,7 +85,7 @@ let router = new Router({
                         footer: Footer
                     },
                     meta: {
-                        title: '分类 - 寒露'
+                        title: 'CATEGORY - 寒露'
                     }
                 },
                 {
@@ -97,7 +97,7 @@ let router = new Router({
                         footer: Footer
                     },
                     meta: {
-                        title: '时间线 - 寒露'
+                        title: 'TIMELINE - 寒露'
                     }
                 },
                 {
@@ -109,7 +109,7 @@ let router = new Router({
                         footer: Footer
                     },
                     meta: {
-                        title: '关于 - 寒露'
+                        title: 'ABOUT - 寒露'
                     }
                 }
             ]

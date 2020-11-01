@@ -46,9 +46,6 @@ export default {
         }
     }
 
-    @media only screen and (min-width: 992px) {
-        border-top: 1px dashed #c4c4c4;
-    }
 }
 
 @media (max-width: 576px) {
