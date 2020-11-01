@@ -18,12 +18,10 @@
         </transition>
         <transition name="slide-fade">
             <div id="header" v-show="show">
-                <router-link id="logo" to="/">
-                    <!-- <img src="../../assets/logo.png" /> -->
-                    <PandaIcon class="icon-class"></PandaIcon>
+                <router-link to="/">
+                    <span class="title">寒露</span>
                 </router-link>
-                <span class="title">寒露</span>
-                <span class="motto">FIGHTING</span>
+                <!-- <span class="motto">FIGHTING</span> -->
 
                 <ul id="nav">
                     <li>
@@ -37,7 +35,7 @@
                                     aria-owns="algolia-autocomplete-listbox-0" dir="auto"
                                     style="position: relative; vertical-align: top;" />
                                 <pre aria-hidden="true"
-                                    style="position: absolute; visibility: hidden; white-space: pre; font-family: system-ui; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                                    style="color:#fff;position: absolute; visibility: hidden; white-space: pre; font-family: system-ui; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
                                 <span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0"
                                     style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;">
                                     <div class="aa-dataset-1"></div>
@@ -92,6 +90,18 @@ export default {
         this.keywords = this.$route.query.keywords;
     },
     mounted: function () {
+        // 给页面绑定滑轮滚动事件
+        if (document.addEventListener) {
+            // firefox
+            document.addEventListener(
+                'DOMMouseScroll',
+                this.watchScroll,
+                false
+            );
+        }
+        // 滚动滑轮触发scrollFunc方法  //ie 谷歌
+        window.onmousewheel = document.onmousewheel = this.watchScroll;
+
         document.addEventListener('touchstart', this.watchTouchStart, false);
         document.addEventListener('touchend', this.watchTouchEnd, false);
     },
@@ -99,6 +109,41 @@ export default {
         closepop(data) { this.menubuttonShow = data },
         menubutton() {
             this.menubuttonShow = !this.menubuttonShow;
+        },
+        watchScroll(e) {
+            e = e || window.event;
+            const header = document.getElementById('header');
+            if (e.wheelDelta) {
+                if (e.wheelDelta > 0) {
+                    // 当滑轮向上滚动
+                    this.changeHeaderColor();
+                }
+                if (e.wheelDelta < 0) {
+                    // 当滑轮向下滚动
+                    header.classList.add("notTop")
+                    header.classList.remove("isTop")
+                }
+            } else if (e.detail) {
+                if (e.detail < 0) {
+                    // 当滑轮向上滚动
+                    this.changeHeaderColor();
+                }
+                if (e.detail > 0) {
+                    // 当滑轮向下滚动
+                    header.classList.add("notTop")
+                    header.classList.remove("isTop")
+                }
+            }
+            // console.log(e)
+        },
+        changeHeaderColor() {
+            setTimeout(() => {
+                let scrollTop = window.pageYOffset || 0;
+                if (scrollTop == 0) { //此时滚动条处于页面的顶部
+                    document.getElementById('header').classList.remove("notTop");
+                    document.getElementById('header').classList.add("isTop");
+                }
+            }, 300);
         },
         watchTouchStart(e) {
             this.startY = e.touches[0].pageY;
@@ -136,4 +181,34 @@ export default {
 
 <style lang="less">
 @import './css/header.less';
+.isTop {
+    animation: top 0.5s;
+    animation-fill-mode: forwards;
+}
+.notTop {
+    animation: noTop 0.8s;
+    animation-fill-mode: forwards;
+}
+@keyframes noTop {
+    0% {
+        background: @default-background-image;
+    }
+    100% {
+        background: black;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+    }
+}
+
+@keyframes top {
+    0% {
+        background: black;
+    }
+    100% {
+        background: @default-background-image;
+    }
+}
+
+#search-query-nav {
+    background-color: #e5e5e5;
+}
 </style>

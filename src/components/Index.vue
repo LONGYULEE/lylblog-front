@@ -11,8 +11,8 @@
 .main-wrapper {
     background-color: @default-background-image;
     width: 100%;
-    margin: 0 auto;
-    padding: 35px;
+    margin: 1px 0 auto;
+    padding-top: 35px;
 
     @media only screen and (max-width: 992px) {
         background-color: white;

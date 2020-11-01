@@ -10,8 +10,8 @@
                         </title-menu-filter>
                     </section-title>
                     <div v-if="skeletonFlag">
-                        <article-list-cell v-for="article in articleList" :article="article" :key="article.title"
-                            :type="'article'">
+                        <article-list-cell v-for="(article,index) in articleList" :article="article" :key="article.id"
+                            :flag="(index+1) == articleList.length" :type="'article'">
                         </article-list-cell>
                     </div>
                     <div v-if="!skeletonFlag">

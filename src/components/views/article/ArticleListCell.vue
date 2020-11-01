@@ -37,6 +37,7 @@
                     </div>
                 </a-col>
             </a-row>
+            <hr v-show="!flag">
         </a>
     </div>
 </template>
@@ -51,7 +52,10 @@ export default {
         article: {
             Type: Object
         },
-        type: ""
+        type: "",
+        flag: {
+            Type: Boolean
+        }
     },
     mixins: [mixin],
     computed: {
@@ -136,6 +140,21 @@ export default {
     }
 
     > a {
+        > hr {
+            // width: 80%;
+            margin: 40px auto;
+            height: 3px;
+            border: none;
+            background-color: #ddd;
+            background-image: repeating-linear-gradient(
+                -45deg,
+                #000,
+                #fff 4px,
+                transparent 4px,
+                transparent 8px
+            );
+        }
+
         border-radius: @default-border-radius;
         display: block;
         cursor: default;
@@ -144,7 +163,7 @@ export default {
         &:hover {
             transform: rotate(0deg) scale(1) translate(0%, 0%);
             transition: all 0.3s ease;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 10px 0px;
         }
 
         .text-wrapper {
