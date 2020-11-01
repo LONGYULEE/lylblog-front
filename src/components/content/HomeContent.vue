@@ -1,6 +1,15 @@
 <template>
     <div class="home-content">
         <a-row>
+            <a-col :xs="0" :sm="0" :md="0" :lg="7">
+                <div class="layout-right">
+                    <about></about>
+                    <!-- <recommend style="margin-top:15px"></recommend> -->
+                    <!-- <hot-read style="margin-top:15px"></hot-read> -->
+                    <!--<friend-links style="margin-top:15px;"></friend-links> -->
+                    <!-- <tag-wall style="margin-top: 15px;"></tag-wall> -->
+                </div>
+            </a-col>
             <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
                 <div class="layout-left">
                     <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'"
@@ -22,15 +31,7 @@
                     </div>
                 </div>
             </a-col>
-            <a-col :xs="0" :sm="0" :md="0" :lg="7">
-                <div class="layout-right">
-                    <about></about>
-                    <recommend style="margin-top:15px"></recommend>
-                    <hot-read style="margin-top:15px"></hot-read>
-                    <!--<friend-links style="margin-top:15px;"></friend-links> -->
-                    <tag-wall style="margin-top: 15px;"></tag-wall>
-                </div>
-            </a-col>
+
         </a-row>
     </div>
 </template>

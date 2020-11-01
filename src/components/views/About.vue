@@ -8,27 +8,8 @@
             <li><a href="#" target="_blank"><img src="../../assets/icon/GitHub.png" alt=""></a></li>
         </ul>
         <div class="line"></div>
-        <h4>技能值</h4>
-        <div class="progresses">
-            <a-row :gutter="20">
-                <a-col :span="6">
-                    <p class="title">Java</p>
-                </a-col>
-                <a-col :span="18">
-                    <a-progress :hide-info="true" :stroke-width="8" :percent="60" class="bar" strokeColor="#75cce8">
-                    </a-progress>
-                </a-col>
-            </a-row>
-            <a-row :gutter="20">
-                <a-col :span="6">
-                    <p class="title">Vue</p>
-                </a-col>
-                <a-col :span="18">
-                    <a-progress :hide-info="true" :stroke-width="8" :percent="40" class="bar" strokeColor="#80beaf">
-                    </a-progress>
-                </a-col>
-            </a-row>
-        </div>
+        <a-progress type="circle" :percent="75" :format="percent => `${percent} Days`" />
+        <a-progress type="circle" :percent="75" :format="percent => `${percent} Days`" />
     </div>
 </template>
 
