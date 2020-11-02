@@ -1,7 +1,8 @@
 <template>
     <div class="article-list-year-title" :class="styleType">
         <span class="date">
-            <a-icon :type="iconType" /></span>
+            <a-icon :type="iconType" />
+        </span>
         <span class="main-title">{{date}}</span>
         <span class="vertical-line"></span>
         <span class="sub-title">共 <a>{{count}}</a> 篇</span>
@@ -40,10 +41,10 @@ export default {
 <style lang="less">
 @import '../../../common/less/index.less';
 @import '../../../common/less/theme.less';
-@only-back-color: #409eff;
 .article-list-year-title {
     position: relative;
     text-align: left;
+    color: white;
 
     &.style-date-year {
         padding: 15px 0;
@@ -65,7 +66,7 @@ export default {
                 top: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @only-back-color;
+                background-color: @my-theme-color01;
                 height: 20%;
                 border-radius: 0 0 2px 2px;
             }
@@ -76,7 +77,7 @@ export default {
                 bottom: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @only-back-color;
+                background-color: @my-theme-color01;
                 height: 20%;
                 border-radius: 2px 2px 0 0;
             }
@@ -134,7 +135,8 @@ export default {
             display: inline-block;
             margin-left: 8px;
             font-size: 24px;
-            color: lighten(@color-typegraphy-title, 20%);
+            // color: lighten(@color-typegraphy-title, 20%);
+            color: @my-theme-color02;
             vertical-align: middle;
 
             &::before {
@@ -143,7 +145,7 @@ export default {
                 top: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @only-back-color;
+                background-color: @my-theme-color01;
                 height: 20%;
                 border-radius: 0 0 2px 2px;
             }
@@ -154,7 +156,7 @@ export default {
                 bottom: 0px;
                 left: 17px;
                 width: 4px;
-                background-color: @only-back-color;
+                background-color: @my-theme-color01;
                 height: 20%;
                 border-radius: 2px 2px 0 0;
             }

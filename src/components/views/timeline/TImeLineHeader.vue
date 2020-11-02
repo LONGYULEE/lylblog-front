@@ -1,11 +1,11 @@
 <template>
     <div class="timeline-header">
-        <section-title :mainTitle="'存档时光'" :subTitle="'Articles'">
+        <section-title :mainTitle="'TIMELINE'" :subTitle="''">
         </section-title>
     </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
 import SectionTitle from '@/components/views/Section/SectionTitle'
 
 export default {

@@ -2,14 +2,15 @@
     <div class="archive-list-cell">
         <div class="info">
             <div>
-                <a-tag class="time-tag border-tag">{{ post.createTime | socialDate }}</a-tag>
+                <a-tag color="#2db7f5" class="time-tag border-tag">{{ post.createTime | socialDate }}</a-tag>
             </div>
             <div class="base-info">
                 <router-link class="title" :to="'/' + post.postType + '/' + post.id">
                     {{post.title}}
                 </router-link>
                 <a class="see-desc" @click.stop="seeDesc" :class="{show: showDesc}">查看简介&nbsp;&nbsp;
-                    <a-icon type="down-circle" /></a>
+                    <a-icon type="down-circle" />
+                </a>
                 <p class="desc" :class="{show: showDesc}">{{post.description}}</p>
             </div>
         </div>
@@ -56,7 +57,8 @@ export default {
         bottom: 0;
         left: 17px;
         width: 4px;
-        background: @default-link-hover-color;
+        // background: @default-link-hover-color;
+        background: @my-theme-color01;
     }
 
     .info {
@@ -91,15 +93,15 @@ export default {
             a.title {
                 margin-left: 5px;
                 font-weight: 300;
-                color: @default-title-color;
+                color: @my-font-color;
                 cursor: pointer;
                 &:hover {
-                    color: @default-title-hover-color;
+                    color: @color-main-primary;
                 }
             }
 
             a.see-desc {
-                color: @default-desc-color;
+                color: @my-dark-font-color;
                 font-size: 13px;
                 margin-left: 5px;
                 font-weight: 100;
@@ -126,7 +128,7 @@ export default {
                 font-size: 14px;
                 font-weight: 300;
                 margin-left: 5px;
-                color: @default-desc-color;
+                color: @my-dark-font-color;
                 overflow: hidden;
                 max-height: 0;
                 transition: All 0.4s ease-in-out;
