@@ -60,6 +60,7 @@ export default {
             }
         }
         .main-title {
+            color: @my-font-color;
             display: inline-block;
             vertical-align: middle;
             font-size: 22px;

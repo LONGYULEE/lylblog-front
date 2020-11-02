@@ -49,7 +49,7 @@ export default {
             categoryList: [],
             selected_category: '',
             currentPage: 1,
-            pageSize: 10,
+            pageSize: 5,
             categoryId: '',
             menuParams: {
                 latest: true

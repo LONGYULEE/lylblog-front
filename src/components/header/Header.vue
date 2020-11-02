@@ -194,14 +194,14 @@ export default {
         background: @default-background-image;
     }
     100% {
-        background: black;
+        background: #49627e;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
     }
 }
 
 @keyframes top {
     0% {
-        background: black;
+        background: #49627e;
     }
     100% {
         background: @default-background-image;

@@ -37,7 +37,6 @@
                     </div>
                 </a-col>
             </a-row>
-            <hr v-show="!flag">
         </a>
     </div>
 </template>
@@ -128,9 +127,9 @@ export default {
 @import '../../../common/less/index.less';
 
 .article-cell {
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
     border-radius: @default-border-radius;
-    background-color: @default-background-color;
+    background-color: @my-background;
     @media only screen and (max-width: 768px) {
         margin-bottom: 3px;
     }
@@ -140,20 +139,6 @@ export default {
     }
 
     > a {
-        > hr {
-            // width: 80%;
-            margin: 40px auto;
-            height: 3px;
-            border: none;
-            background-color: #ddd;
-            background-image: repeating-linear-gradient(
-                -45deg,
-                #000,
-                #fff 4px,
-                transparent 4px,
-                transparent 8px
-            );
-        }
 
         border-radius: @default-border-radius;
         display: block;

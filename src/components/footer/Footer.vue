@@ -30,8 +30,8 @@ export default {
     text-align: center;
     color: #888;
     user-select: none;
-    padding: 10px 0px;
-    margin: 0px 20px;
+    padding: 4rem 0px;
+    background-color: #222;
 
     @media only screen and (max-width: 768px) {
         padding: 5px 0px 15px 0px;
@@ -45,7 +45,6 @@ export default {
             text-decoration: underline;
         }
     }
-
 }
 
 @media (max-width: 576px) {

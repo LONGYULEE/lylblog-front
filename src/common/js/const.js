@@ -15,7 +15,7 @@ export const ResponsivePoint = {
 }
 
 // 默认请求数据时的limit size
-export const DefaultLimitSize = 10
+export const DefaultLimitSize = 5
 
 // section title默认的menus
 export const DefaultFilterList = [
