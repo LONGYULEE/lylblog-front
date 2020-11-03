@@ -28,6 +28,10 @@
                             <span class="likes"><a @click="likePost(article)">
                                     <a-icon type="heart" /> {{article.likeNum}} 喜欢
                                 </a></span>
+                            <a-button type="link" icon="double-right" @click="viewArticle(article.id)" :ghost="true"
+                                size="small">
+                                阅读更多
+                            </a-button>
                         </p>
                     </div>
                 </a-col>
@@ -119,6 +123,9 @@ export default {
                 .catch(error => {
                     console.log(error);
                 });
+        },
+        viewArticle(id) {
+            this.$router.push('/article/' + id);
         }
     }
 };
@@ -147,8 +154,8 @@ export default {
 
         &:hover {
             transform: rotate(0deg) scale(1) translate(0%, 0%);
-            transition: all 0.3s ease;
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 10px 0px;
+            transition: all 0.5s ease;
+            box-shadow: rgba(34, 34, 34, 0.5) 10px 10px 10px 0px;
         }
 
         .text-wrapper {
@@ -263,6 +270,14 @@ export default {
                 margin: 15px 0;
                 position: absolute;
                 bottom: 0px;
+                width: 95%;
+                .ant-btn {
+                    position: absolute;
+                    right: 0;
+                    bottom: -5px;
+                    border: none;
+                    color: @color-main-primary;
+                }
 
                 span {
                     margin-right: 8px;

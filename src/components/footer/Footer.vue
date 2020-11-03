@@ -2,8 +2,8 @@
     <div class="layout-footer">
         {{ year }} © Powered by
         <a href="https://gitee.com/lihanly10979/temp-fontend" target="_blank">lylBlog</a>
+        <br>
         <span class="record-info">
-            |
             <a href="http://www.beian.miit.gov.cn">{{ beianhao }}</a>
         </span>
         <span class="record-info">
@@ -30,8 +30,9 @@ export default {
     text-align: center;
     color: #888;
     user-select: none;
-    padding: 4rem 0px;
+    padding: 3.5rem 0px;
     background-color: #222;
+    line-height: 1.5rem;
 
     @media only screen and (max-width: 768px) {
         padding: 5px 0px 15px 0px;
