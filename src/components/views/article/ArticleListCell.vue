@@ -5,6 +5,7 @@
                 <a-col :xs="24" :sm="24" :md="textSpan" :lg="textSpan" :order="textOrderType"
                     style="padding-left: 0;padding-right: 0;">
                     <div class="text-wrapper">
+                        <i class="article-top" v-if="article.top>0"></i>
                         <h4 class="title">
                             <router-link :to="'/article/'+article.id">{{article.title}}</router-link>
                             <span class="special" v-if="article.top>0" title="置顶">置顶</span>
@@ -20,7 +21,7 @@
                             </router-link>
                         </p>
                         <p class="operate_info" :style="myStyle">
-                            <span class="publish-time">At time / <a>{{article.createTime | socialDate}}</a></span>
+                            <span class="publish-time">At Time / <a>{{article.createTime | socialDate}}</a></span>
                             <span class="readings"><a>
                                     <a-icon type="eye" /> {{article.readNum}} 阅读
                                 </a></span>
@@ -139,7 +140,6 @@ export default {
     }
 
     > a {
-
         border-radius: @default-border-radius;
         display: block;
         cursor: default;
@@ -155,10 +155,21 @@ export default {
             padding: 20px 20px 0 20px;
             text-align: left;
             min-height: 300px;
+            position: relative;
 
             @media only screen and (max-width: 768px) {
                 padding: 15px 15px 0 15px;
                 min-height: 110px;
+            }
+
+            .article-top {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 48px;
+                height: 48px;
+                background: url(../../../assets/top.svg) top right/48px 48px
+                    no-repeat;
             }
 
             .title {
@@ -166,6 +177,7 @@ export default {
                 font-weight: 100;
                 line-height: 27px;
                 font-family: '微软雅黑';
+                margin-bottom: 20px;
 
                 span.special {
                     border-radius: @border-radius;
@@ -248,9 +260,9 @@ export default {
 
             .operate_info {
                 font-size: 14px;
-                margin: 15px 0 10px;
-                // position: absolute;
-                // bottom: 0px;
+                margin: 15px 0;
+                position: absolute;
+                bottom: 0px;
 
                 span {
                     margin-right: 8px;

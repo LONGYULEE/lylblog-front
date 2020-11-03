@@ -2,14 +2,12 @@
     <div class="about">
         <img class="background" src="http://img.lylblog.xyz/AK-02.jpg" alt="">
         <img class="avatar" src="http://img.lylblog.xyz/web_avatar.jpg" alt="">
-        <p class="name">HANLU</p>
-        <p class="desc">南波湾</p>
+        <p class="name">HAN&nbsp;LU</p>
+        <p class="desc">写网站好难啊</p>
         <ul class="social">
             <li><a href="#" target="_blank"><img src="../../assets/icon/GitHub.png" alt=""></a></li>
         </ul>
         <div class="line"></div>
-        <a-progress type="circle" :percent="75" :format="percent => `${percent} Days`" />
-        <a-progress type="circle" :percent="75" :format="percent => `${percent} Days`" />
     </div>
 </template>
 
@@ -25,7 +23,7 @@ export default {};
     text-align: center;
     // border: 1px solid @color-border;
     padding-bottom: 20px;
-    background-color: @default-background-color;
+    background-color: @my-background;
     border-radius: @default-border-radius;
 
     img.background {
@@ -51,10 +49,11 @@ export default {};
     }
 
     .name {
-        font-size: 22px;
-        color: @color-typegraphy-title;
+        font-size: 32px;
+        color: @my-font-color;
         line-height: 30px;
         font-weight: 700;
+        font-family: 'name';
     }
 
     .desc {
@@ -62,6 +61,7 @@ export default {};
         color: @color-secondary-info;
         line-height: 30px;
         font-weight: 100;
+        transform: rotate(180deg);
     }
 
     .social {

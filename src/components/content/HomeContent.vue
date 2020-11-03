@@ -4,12 +4,12 @@
 
             <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
                 <div class="layout-left">
-                    <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'"
+                    <!-- <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'"
                         :tipHref="'/articles'">
                         <title-menu-filter @filterByMenu="refreshArticle" slot="menu"
                             :menu-filter-list="defaultFilterList">
                         </title-menu-filter>
-                    </section-title>
+                    </section-title> -->
                     <div v-if="skeletonFlag">
                         <article-list-cell v-for="(article,index) in articleList" :article="article" :key="article.id"
                             :flag="(index+1) == articleList.length" :type="'article'">
