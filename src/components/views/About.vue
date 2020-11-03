@@ -1,6 +1,5 @@
 <template>
     <div class="about">
-        <img class="background" src="http://img.lylblog.xyz/AK-02.jpg" alt="">
         <img class="avatar" src="http://img.lylblog.xyz/web_avatar.jpg" alt="">
         <p class="name">HAN&nbsp;LU</p>
         <p class="desc">写网站好难啊</p>
@@ -21,22 +20,8 @@ export default {};
 .about {
     position: relative;
     text-align: center;
-    // border: 1px solid @color-border;
     padding-bottom: 20px;
-    background-color: @my-background;
     border-radius: @default-border-radius;
-
-    img.background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        z-index: 1;
-        border-top-left-radius: @default-border-radius;
-        border-top-right-radius: @default-border-radius;
-        clip: rect(0 1000px 125px 0);
-    }
 
     img.avatar {
         position: relative;

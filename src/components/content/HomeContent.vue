@@ -29,7 +29,7 @@
                     <!-- <recommend style="margin-top:15px"></recommend> -->
                     <!-- <hot-read style="margin-top:15px"></hot-read> -->
                     <!--<friend-links style="margin-top:15px;"></friend-links> -->
-                    <!-- <tag-wall style="margin-top: 15px;"></tag-wall> -->
+                    <tag-wall style="margin-top: 15px;"></tag-wall>
                 </div>
             </a-col>
         </a-row>
@@ -127,7 +127,7 @@ export default {
 
     .home-content .layout-left,
     .home-content .layout-right {
-        padding: 0 10px;
+        margin: 0 10px;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -138,8 +138,13 @@ export default {
 
     .home-content .layout-left,
     .home-content .layout-right {
-        padding: 0 10px;
+        margin: 0 10px;
     }
+}
+
+.layout-right {
+    background-color: @my-background;
+    border-radius: @default-border-radius;
 }
 
 .skeDiv {
