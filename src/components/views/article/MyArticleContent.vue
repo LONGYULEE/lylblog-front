@@ -121,8 +121,9 @@ export default {
                         //文章页面网页 title
                         document.title = this.article.title + ' - 寒露';
                         this.setViewer();
+                        this.createToc();
                     })
-                    this.getCategroyName();
+                    // this.getCategroyName();
                     //占位取消
                     this.$emit('getMenus', true);
                 }
@@ -185,39 +186,39 @@ export default {
         //创建目录
         createMenus(data) {
             //h2
-            data.forEach(item => {
-                let aEl = item.getElementsByTagName('a');
-                const result = {
-                    href: '#' + aEl[0].getAttribute('id'),
-                    title: item.innerHTML.substring(item.innerHTML.lastIndexOf('>') + 1),
-                    children: []
-                };
-                let nextEl = item.nextElementSibling;
-                while (nextEl && nextEl.nodeName !== 'H2') {
-                    if (nextEl.nodeName === 'H4') {
-                        let anchor = nextEl.querySelector('a');
-                        if (anchor) {
-                            let l = result.children.length;
-                            result.children[l - 1].children.push({
-                                href: `#${anchor.id}`,
-                                title: nextEl.textContent,
-                            })
-                        }
-                    } else if (nextEl.nodeName === 'H3') {
-                        const anchor = nextEl.querySelector('a');
-                        if (anchor) {
-                            result.children.push({
-                                href: `#${anchor.id}`,
-                                title: nextEl.textContent,
-                                children: []
-                            });
-                        }
-                    }
-                    nextEl = nextEl.nextElementSibling;
-                }
-                this.menus.push(result)
-            })
-            this.$store.commit('setMenus', this.menus);
+            // data.forEach(item => {
+            //     let aEl = item.getElementsByTagName('a');
+            //     const result = {
+            //         href: '#' + aEl[0].getAttribute('id'),
+            //         title: item.innerHTML.substring(item.innerHTML.lastIndexOf('>') + 1),
+            //         children: []
+            //     };
+            //     let nextEl = item.nextElementSibling;
+            //     while (nextEl && nextEl.nodeName !== 'H2') {
+            //         if (nextEl.nodeName === 'H4') {
+            //             let anchor = nextEl.querySelector('a');
+            //             if (anchor) {
+            //                 let l = result.children.length;
+            //                 result.children[l - 1].children.push({
+            //                     href: `#${anchor.id}`,
+            //                     title: nextEl.textContent,
+            //                 })
+            //             }
+            //         } else if (nextEl.nodeName === 'H3') {
+            //             const anchor = nextEl.querySelector('a');
+            //             if (anchor) {
+            //                 result.children.push({
+            //                     href: `#${anchor.id}`,
+            //                     title: nextEl.textContent,
+            //                     children: []
+            //                 });
+            //             }
+            //         }
+            //         nextEl = nextEl.nextElementSibling;
+            //     }
+            // this.menus.push(result)
+            // })
+            this.$store.commit('setMenus', false);
         },
         getCategroyName() {
             this.$http({
@@ -246,6 +247,17 @@ export default {
             this.$router.push({
                 path: '/articles', query: { categoryId: id }
             })
+        },
+        createToc() {
+            tocbot.init({
+                tocSelector: '.js-toc',
+                contentSelector: '.content-wrap',
+                headingSelector: 'h2, h3, h4',
+                positionFixedSelector: '.js-toc',
+                scrollSmooth: true,
+                scrollSmoothDuration: 420,
+                headingsOffset: 80
+            });
         }
     },
     created: function () {
