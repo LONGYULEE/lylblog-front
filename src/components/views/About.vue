@@ -6,26 +6,26 @@
         <div class="card-info">
             <div class="card-info-item">
                 <div>
-                    <div class="header-line">文章</div>
+                    <div class="header-line">Articles</div>
                     <div class="content-line">{{number.articleNum}}</div>
                 </div>
             </div>
             <div class="card-info-item">
                 <div>
-                    <div class="header-line">分类</div>
+                    <div class="header-line">Categories</div>
                     <div class="content-line">{{number.categoryNum}}</div>
                 </div>
             </div>
             <div class="card-info-item">
                 <div>
-                    <div class="header-line">标签</div>
+                    <div class="header-line">Tags</div>
                     <div class="content-line">{{number.tagNum}}</div>
                 </div>
             </div>
         </div>
-        <ul class="social">
+        <!-- <ul class="social">
             <li><a href="#" target="_blank"><img src="../../assets/icon/GitHub.png" alt=""></a></li>
-        </ul>
+        </ul> -->
         <div class="line"></div>
     </div>
 </template>
@@ -119,6 +119,7 @@ export default {
 
             .content-line {
                 font-size: 18px;
+                padding-top: 10px;
             }
         }
     }

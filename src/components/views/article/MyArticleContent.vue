@@ -22,9 +22,7 @@
                     </p>
                 </div> -->
 
-                <div class="end-wrap">
-                    <span>【END】</span>
-                </div>
+                <a-divider class="divider">[ END ]</a-divider>
                 <div class="info-class">
                     <div class="category-class">
                         <span>所属分类：</span>
@@ -282,6 +280,7 @@ export default {
     .category-class {
         span {
             font-weight: bold;
+            color: @my-dark-font-color;
         }
         a {
             color: #2799ff;
@@ -300,6 +299,9 @@ export default {
         }
         span {
             font-weight: bold;
+            &:first-child {
+                color: @my-dark-font-color;
+            }
         }
         a {
             color: #2799ff;
@@ -355,6 +357,10 @@ export default {
     min-height: 50vh;
     font-size: 16px;
     width: 100%;
+    .divider {
+        color: @my-font-color;
+        margin: 60px 0;
+    }
 }
 
 .article-title {
@@ -367,7 +373,8 @@ export default {
 }
 
 .article-title h1 {
-    font-size: 2em;
+    font-size: 3em;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -433,8 +440,7 @@ export default {
     font-size: 14px;
 }
 
-.license-wrap > span,
-.end-wrap span {
+.license-wrap > span {
     position: absolute;
     left: 50%;
     top: -12px;
@@ -449,12 +455,6 @@ export default {
     margin-bottom: 5px;
 }
 
-.end-wrap {
-    position: relative;
-    border-top: 1px solid #ddd;
-    margin: 60px 0 40px;
-}
-
 .sticky-wrap {
     position: sticky;
     top: 90px;
@@ -464,6 +464,12 @@ export default {
     color: #666;
     font-size: 14px;
     margin-top: 20px;
+    .publish-time {
+        color: @my-dark-font-color;
+    }
+    .author {
+        color: @my-dark-font-color;
+    }
 }
 
 .article-views .split-line {

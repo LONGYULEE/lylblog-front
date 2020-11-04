@@ -1,6 +1,9 @@
 <template>
     <div class="hotRead">
-        <panel :title="'最热阅读'">
+        <panel>
+            <div slot="header">
+                <span>最新</span>
+            </div>
             <div slot="content" class="content">
                 <div class="top">
                     <router-link :to="'/' + topHotRead.urlType + '/' + topHotRead.linkId">
@@ -54,7 +57,6 @@
 <script>
 import { mixin } from "@/util/index";
 import Panel from "@/components/utils/Panel";
-
 export default {
     data() {
         return {
@@ -81,7 +83,7 @@ export default {
         }
     },
     components: {
-        panel: Panel
+        panel: Panel,
     }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="panel">
-        <h4>{{title}}</h4>
+        <slot name="header" class="header"></slot>
         <slot name="content"></slot>
     </div>
 </template>
@@ -23,15 +23,11 @@ export default {
     background: @default-background-color;
     // border-left: 1px solid @color-border;
     border-radius: @default-border-radius;
-
-    h4 {
-        font-size: 18px;
-        padding: 13px 20px 13px;
-        line-height: 18px;
-        text-align: left;
-        background-color: rgba(#75cce8, 0.5);
-        border-top-right-radius: @default-border-radius;
-        border-top-left-radius: @default-border-radius;
+    box-shadow: @my-box-shadow;
+    &:hover {
+        transform: rotate(0deg) scale(1) translate(0%, 0%);
+        transition: all 0.3s ease;
+        box-shadow: @my-box-shadow-hover;
     }
 }
 </style>
