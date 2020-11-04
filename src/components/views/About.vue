@@ -3,6 +3,26 @@
         <img class="avatar" src="http://img.lylblog.xyz/web_avatar.jpg" alt="">
         <p class="name">HAN&nbsp;LU</p>
         <p class="desc">写网站好难啊</p>
+        <div class="card-info">
+            <div class="card-info-item">
+                <div>
+                    <div class="header-line">文章</div>
+                    <div class="content-line">{{number.articleNum}}</div>
+                </div>
+            </div>
+            <div class="card-info-item">
+                <div>
+                    <div class="header-line">分类</div>
+                    <div class="content-line">{{number.categoryNum}}</div>
+                </div>
+            </div>
+            <div class="card-info-item">
+                <div>
+                    <div class="header-line">标签</div>
+                    <div class="content-line">{{number.tagNum}}</div>
+                </div>
+            </div>
+        </div>
         <ul class="social">
             <li><a href="#" target="_blank"><img src="../../assets/icon/GitHub.png" alt=""></a></li>
         </ul>
@@ -11,7 +31,34 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            number: {
+                articleNum: 0,
+                categoryNum: 0,
+                tagNum: 0
+            }
+        };
+    },
+    created: function () {
+        this.getNumbers();
+    },
+    methods: {
+        getNumbers() {
+            this.$http({
+                url: this.$http.adornUrl("/operation/getCategoyNum"),
+                method: "get"
+            }).then(({ data }) => {
+                if (data && data.code === 2000) {
+                    this.number.articleNum = data.data.articleNum;
+                    this.number.categoryNum = data.data.categoryNum;
+                    this.number.tagNum = data.data.tagNum;
+                }
+            });
+        }
+    }
+};
 </script>
 
 <style lang="less" scoped>
@@ -22,6 +69,13 @@ export default {};
     text-align: center;
     padding-bottom: 20px;
     border-radius: @default-border-radius;
+
+    box-shadow: @my-box-shadow;
+    &:hover {
+        transform: rotate(0deg) scale(1) translate(0%, 0%);
+        transition: all 0.3s ease;
+        box-shadow: @my-box-shadow-hover;
+    }
 
     img.avatar {
         position: relative;
@@ -49,6 +103,26 @@ export default {};
         transform: rotate(180deg);
     }
 
+    .card-info {
+        display: table;
+        padding: 0.7rem 0;
+        width: 100%;
+        table-layout: fixed;
+        color: darkgray;
+        .card-info-item {
+            display: table-cell;
+
+            .header-line {
+                font-size: 18px;
+                padding: 5px 5px;
+            }
+
+            .content-line {
+                font-size: 18px;
+            }
+        }
+    }
+
     .social {
         text-align: center;
         padding: 0 20px;
@@ -70,11 +144,11 @@ export default {};
         }
     }
 
-    .line {
-        height: 1px;
-        background-color: @color-gradually-gray-91;
-        margin: 10px 20px;
-    }
+    // .line {
+    //     height: 1px;
+    //     background-color: @color-gradually-gray-91;
+    //     margin: 10px 20px;
+    // }
 
     h4 {
         font-size: 19px;

@@ -137,10 +137,10 @@ export default {
 .article-cell {
     margin-bottom: 1.5rem;
     border-radius: @default-border-radius;
-    background-color: @my-background;
     @media only screen and (max-width: 768px) {
         margin-bottom: 3px;
     }
+    box-shadow: @my-box-shadow;
 
     @media only screen and (max-width: 992px) {
         border-bottom: 1px dashed #e5e5e5;
@@ -150,12 +150,11 @@ export default {
         border-radius: @default-border-radius;
         display: block;
         cursor: default;
-        // border-bottom: 1px solid @color-border;
 
         &:hover {
             transform: rotate(0deg) scale(1) translate(0%, 0%);
-            transition: all 0.5s ease;
-            box-shadow: rgba(34, 34, 34, 0.5) 10px 10px 10px 0px;
+            transition: all 0.3s ease;
+            box-shadow: @my-box-shadow-hover;
         }
 
         .text-wrapper {

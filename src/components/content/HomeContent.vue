@@ -142,11 +142,6 @@ export default {
     }
 }
 
-.layout-right {
-    background-color: @my-background;
-    border-radius: @default-border-radius;
-}
-
 .skeDiv {
     margin-bottom: 10px;
     padding: 10px;
