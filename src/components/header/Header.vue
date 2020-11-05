@@ -24,7 +24,7 @@
                 <!-- <span class="motto">FIGHTING</span> -->
 
                 <ul id="nav">
-                    <li>
+                    <!-- <li>
                         <form id="search-form" action="/articles/search">
                             <span class="algolia-autocomplete"
                                 style="position: relative; display: inline-block; direction: ltr;">
@@ -42,7 +42,7 @@
                                 </span>
                             </span>
                         </form>
-                    </li>
+                    </li> -->
 
                     <li>
                         <router-link to="/articles" class="nav-link contribute">CATEGORY</router-link>

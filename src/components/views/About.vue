@@ -121,6 +121,8 @@ export default {
                 font-size: 18px;
                 padding-top: 10px;
             }
+
+            cursor: pointer;
         }
     }
 
