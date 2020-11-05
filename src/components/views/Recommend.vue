@@ -1,6 +1,6 @@
 <template>
     <div class="recommend">
-        <panel :title="'推荐阅读'">
+        <panel :title="'RECOMMEND'">
             <div slot="content" class="content">
                 <div class="top" v-if="topRecommend">
                     <router-link :to="'/' + topRecommend.urlType + '/' + topRecommend.linkId">
@@ -36,9 +36,6 @@
                                 <span class="likes"><a>
                                         <a-icon type="heart" /> {{recommend.likeNum}}
                                     </a></span>
-                                <!-- <span class="comments"><a>
-                                        <a-icon type="edit" /> {{recommend.commentNum}}
-                                    </a></span> -->
                                 <span class="readings"><a>
                                         <a-icon type="eye" /> {{recommend.readNum}}
                                     </a></span>
@@ -106,7 +103,7 @@ export default {
 
             .title {
                 text-align: justify;
-                color: @color-gradually-gray-41;
+                color: @my-dark-font-color;
                 font-size: 16px;
                 line-height: 23px;
                 margin-bottom: 5px;
@@ -181,7 +178,6 @@ export default {
             list-style-type: none;
             margin-top: 10px;
             padding-top: 10px;
-            border-top: 1px solid @color-border;
         }
     }
 }

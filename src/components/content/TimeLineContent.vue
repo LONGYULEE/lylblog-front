@@ -24,7 +24,7 @@
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
-                <a-anchor :offsetTop="80" :bounds="0">
+                <a-anchor :offsetTop="100" :bounds="0">
                     <div class="layout-right">
                         <recommend></recommend>
                         <tag-wall style="margin-top: 15px;"></tag-wall>
@@ -100,6 +100,7 @@ export default {
     .layout-left,
     .layout-right {
         padding: 0;
+        min-height: 500px;
 
         @media only screen and (max-width: 768px) {
             padding: 0;

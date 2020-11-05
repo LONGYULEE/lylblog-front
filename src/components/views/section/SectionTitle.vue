@@ -3,7 +3,6 @@
         <div class="title">
             <a-icon type="smile" class="square" theme="twoTone" two-tone-color="#eb2f96" />
             <span class="main-title">{{mainTitle}}</span>
-            <span class="vertical-line"></span>
             <span class="sub-title">{{subTitle}}</span>
             <span class="view-more">
                 <router-link :to="tipHref" v-if="tipText">{{tipText}}
@@ -68,13 +67,6 @@ export default {
             @media only screen and (max-width: 768px) {
                 padding: 0 15px;
             }
-        }
-        .vertical-line {
-            display: inline-block;
-            height: 20px;
-            width: 1px;
-            background-color: #333;
-            vertical-align: middle;
         }
         .sub-title {
             display: inline-block;

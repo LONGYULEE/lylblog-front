@@ -108,13 +108,15 @@ export default {
         padding: 0.7rem 0;
         width: 100%;
         table-layout: fixed;
-        color: darkgray;
+        color: gray;
         .card-info-item {
             display: table-cell;
 
             .header-line {
-                font-size: 18px;
+                font-size: 22px;
                 padding: 5px 5px;
+                color: lightgray;
+                font-family: 'engttf';
             }
 
             .content-line {

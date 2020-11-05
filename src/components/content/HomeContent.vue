@@ -26,7 +26,7 @@
             <a-col :xs="0" :sm="0" :md="0" :lg="7" :xl="7">
                 <div class="layout-right">
                     <about></about>
-                    <!-- <recommend style="margin-top:15px"></recommend> -->
+                    <recommend style="margin-top:15px"></recommend>
                     <hot-read style="margin-top:15px"></hot-read>
                     <!--<friend-links style="margin-top:15px;"></friend-links> -->
                     <tag-wall style="margin-top: 15px;"></tag-wall>

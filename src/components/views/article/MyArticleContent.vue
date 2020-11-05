@@ -108,7 +108,9 @@ export default {
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
                     this.article = data.data
-                    this.category = data.data.categoryId.split(',');
+                    if (data.data.categoryId) {
+                        this.category = data.data.categoryId.split(',');
+                    }
                     this.tags = data.data.tagList;
 
                     // 更新目录、高亮代码

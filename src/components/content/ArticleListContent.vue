@@ -21,7 +21,7 @@
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
-                <a-anchor :offsetTop="80" :bounds="0">
+                <a-anchor :offsetTop="100" :bounds="0">
                     <div class="layout-right">
                         <recommend></recommend>
                         <tag-wall style="margin-top: 15px;"></tag-wall>
@@ -185,7 +185,7 @@ export default {
     }
 
     @media screen and (min-width: 1200px) {
-        width: 1200px;
+        width: 1300px;
         margin: 0px auto 0;
         margin-bottom: 15px;
     }
@@ -193,6 +193,7 @@ export default {
     .layout-left,
     .layout-right {
         padding: 0;
+        min-height: 500px;
 
         @media only screen and (max-width: 768px) {
             padding: 0;
@@ -207,7 +208,7 @@ export default {
         }
 
         @media screen and (min-width: 1200px) {
-            padding: 0 10px;
+            padding: 0 50px;
         }
 
         .skeDiv {

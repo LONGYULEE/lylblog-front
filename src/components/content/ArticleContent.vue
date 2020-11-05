@@ -14,7 +14,6 @@
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="4">
                 <div class="layout-right">
-                    <!-- <my-anchor></my-anchor> -->
                     <div class="js-toc"></div>
                 </div>
             </a-col>
@@ -125,6 +124,7 @@ export default {
             top: 25vh;
             line-height: 1.6;
             color: @my-font-color02;
+            margin-left: 50px;
             /deep/ .toc-list {
                 list-style: none;
                 position: inherit;
