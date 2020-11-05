@@ -70,11 +70,11 @@ export default {
     padding-bottom: 20px;
     border-radius: @default-border-radius;
 
-    box-shadow: @my-box-shadow;
+    // box-shadow: @my-box-shadow;
     &:hover {
         transform: rotate(0deg) scale(1) translate(0%, 0%);
         transition: all 0.3s ease;
-        box-shadow: @my-box-shadow-hover;
+        box-shadow: @my-box-shadow;
     }
 
     img.avatar {

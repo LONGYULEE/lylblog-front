@@ -1,12 +1,17 @@
 <template>
     <div class="tag-wall">
-        <panel :title="'标签墙'">
+        <panel :title="'TAGS'">
             <div slot="content" class="content">
-                <a-badge :count="tag.linkNum" v-for="(tag, index) in tagList" :key="index" show-zero>
-                    <a-tag type="dot" :color="index | mapTagColor" style="margin: 0 5px 5px 0;" class="dot-tag">
-                        {{ tag.name }}
-                    </a-tag>
-                </a-badge>
+                <!-- <a-badge :count="tag.linkNum" v-for="(tag, index) in tagList" :key="index" show-zero> -->
+                <a-tag type="dot" v-for="(tag, index) in tagList" :key="index" :color="index | mapTagColor"
+                    style="margin: 0 5px 5px 0;" class="dot-tag">
+                    {{ tag.name }}
+                    <span class="mySpan">
+                        {{tag.linkNum}}
+                    </span>
+                </a-tag>
+                <!-- </a-badge> -->
+
             </div>
         </panel>
     </div>
@@ -52,6 +57,16 @@ export default {
         padding: 15px 20px 5px 20px;
         .ant-badge {
             margin-right: 15px;
+        }
+
+        .mySpan {
+            min-width: 18px;
+            padding: 3px 7px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            font-size: 12px;
+            line-height: 1;
+            border-radius: 9px;
         }
     }
 }

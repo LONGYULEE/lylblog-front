@@ -1,9 +1,6 @@
 <template>
     <div class="hotRead">
-        <panel>
-            <div slot="header">
-                <span>最新</span>
-            </div>
+        <panel :title="'NEW'">
             <div slot="content" class="content">
                 <div class="top">
                     <router-link :to="'/' + topHotRead.urlType + '/' + topHotRead.linkId">
@@ -17,17 +14,10 @@
                             <span class="likes"><a>
                                     <a-icon type="heart" /> {{topHotRead.likeNum}}
                                 </a></span>
-                            <!-- <span class="comments"><a>
-                                    <a-icon type="edit" /> {{topHotRead.commentNum}}
-                                </a></span> -->
                             <span class="readings"><a>
                                     <a-icon type="eye" /> {{topHotRead.readNum}}
                                 </a></span>
                         </p>
-                        <!--<div class="img">-->
-                        <!--<img :src="topHotRead.cover" alt="">-->
-                        <!--</div>-->
-                        <p class="desc">{{topHotRead.description | textLineBreak(60)}}</p>
                     </router-link>
                 </div>
                 <ul class="others">
@@ -108,7 +98,7 @@ export default {
 
             .title {
                 text-align: justify;
-                color: @color-gradually-gray-41;
+                color: @my-dark-font-color;
                 font-size: 16px;
                 line-height: 23px;
                 margin-bottom: 5px;
@@ -156,14 +146,6 @@ export default {
                 }
             }
 
-            .desc {
-                text-align: justify;
-                color: @color-secondary-info;
-                font-size: 13px;
-                line-height: 20px;
-                margin: 5px 0 0;
-            }
-
             &:hover {
                 .title {
                     color: @color-main-primary;
@@ -183,7 +165,6 @@ export default {
             list-style-type: none;
             margin-top: 10px;
             padding-top: 10px;
-            border-top: 1px solid @color-border;
         }
     }
 }

@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </a-col>
-            <a-col :xs="0" :sm="0" :md="0" :lg="7">
+            <a-col :xs="0" :sm="0" :md="0" :lg="7" :xl="7">
                 <div class="layout-right">
                     <about></about>
                     <!-- <recommend style="margin-top:15px"></recommend> -->
@@ -132,13 +132,13 @@ export default {
 }
 @media screen and (min-width: 1200px) {
     .home-content {
-        width: 1200px;
+        width: 1300px;
         margin: 0px auto 0;
     }
 
     .home-content .layout-left,
     .home-content .layout-right {
-        margin: 0 10px;
+        margin: 0 0px 0px 50px;
     }
 }
 

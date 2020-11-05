@@ -15,11 +15,6 @@
                                 v-for="(tag) in article.tagList">
                                 {{tag.name}}</a-tag>
                         </div>
-                        <p class="desc">{{article.description | filterHtml | textLineBreak(70) }}<router-link
-                                :to="'/article/'+article.id"> 查看更多
-                                <a-icon type="caret-right" />
-                            </router-link>
-                        </p>
                         <p class="operate_info" :style="myStyle">
                             <span class="publish-time">At Time / <a>{{article.createTime | socialDate}}</a></span>
                             <span class="readings"><a>
