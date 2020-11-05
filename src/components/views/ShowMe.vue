@@ -218,7 +218,7 @@ export default {
                     &:last-child {
                         line-height: 1.3em;
                         margin: 10px 0px;
-                        font-family: courier;
+                        font-family: 'engttf';
                     }
                 }
             }
@@ -249,7 +249,7 @@ export default {
                                 position: absolute;
                             }
                             p {
-                                font-family: georgia;
+                                font-family: 'engttf';
                                 text-align: right;
                                 margin: 10px 30px 10px 30px;
                                 font-weight: normal;
@@ -331,8 +331,7 @@ export default {
                                 top: 0;
                             }
                             p {
-                                font-family: Georgia, 'Times New Roman', Times,
-                                    serif;
+                                font-family: 'engttf';
                                 margin: 10px 30px 10px 30px;
                                 font-weight: 300;
                                 font-size: 18px;

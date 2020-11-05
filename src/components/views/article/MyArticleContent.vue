@@ -113,6 +113,7 @@ export default {
 
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
+                        this.changeTitle();
                         //代码框添加代码类型显示
                         let preEl = document.querySelectorAll('pre');
                         let h2El = document.querySelectorAll('h2');
@@ -255,9 +256,18 @@ export default {
                 headingSelector: 'h2, h3, h4',
                 positionFixedSelector: '.js-toc',
                 scrollSmooth: true,
-                scrollSmoothDuration: 420,
-                headingsOffset: 80
+                scrollSmoothDuration: 1000,
+                scrollSmoothOffset: -80,
+                headingsOffset: 1,
+                throttleTimeout: 100,
             });
+        },
+        changeTitle() {
+            var i = 0;
+            let titleEL = document.querySelectorAll('h2,h3,h4,h5');
+            titleEL.forEach((item, index) => {
+                item.setAttribute('id', 'title-id-' + i++);
+            })
         }
     },
     created: function () {
@@ -271,6 +281,7 @@ export default {
     },
     beforeDestroy() {
         this.$store.commit('setMenus', []);
+        tocbot.destroy();
     }
 };
 </script>

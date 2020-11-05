@@ -9,7 +9,7 @@
                     <div v-show="!skeletonFlag" class="skeletonDiv">
                         <a-skeleton active :paragraph="{ rows: 12 }"></a-skeleton>
                     </div>
-                    <a-back-top />
+                    <a-back-top @click="backTop" />
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="4">
@@ -40,6 +40,12 @@ export default {
             this.$nextTick(() => {
                 this.skeletonFlag = data;
             })
+        },
+        backTop() {
+            setTimeout(() => {
+                document.getElementById('header').setAttribute('class', 'isTop');
+                document.getElementById('header').removeAttribute('class', 'noTop')
+            }, 500)
         }
     }
 }
@@ -112,6 +118,30 @@ export default {
             padding: 30px;
             border-radius: 5px;
             height: calc(100vh - 127px);
+        }
+
+        .js-toc {
+            position: fixed;
+            top: 25vh;
+            line-height: 1.6;
+            color: @my-font-color02;
+            /deep/ .toc-list {
+                list-style: none;
+                position: inherit;
+                overflow: hidden;
+            }
+
+            /deep/ .is-active-link {
+                color: @color-main-primary !important;
+                text-shadow: 0 1px 2px rgba(250, 137, 123, 0.15);
+                &::before {
+                    background-color: @color-main-primary !important;
+                }
+            }
+
+            /deep/ .toc-link::before {
+                background-color: @my-font-color02;
+            }
         }
     }
 }

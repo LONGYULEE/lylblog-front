@@ -116,7 +116,7 @@ export default {
             if (e.wheelDelta) {
                 if (e.wheelDelta > 0) {
                     // 当滑轮向上滚动
-                    this.changeHeaderColor();
+                    this.setTop();
                 }
                 if (e.wheelDelta < 0) {
                     // 当滑轮向下滚动
@@ -126,7 +126,7 @@ export default {
             } else if (e.detail) {
                 if (e.detail < 0) {
                     // 当滑轮向上滚动
-                    this.changeHeaderColor();
+                    this.setTop();
                 }
                 if (e.detail > 0) {
                     // 当滑轮向下滚动
@@ -136,7 +136,7 @@ export default {
             }
             // console.log(e)
         },
-        changeHeaderColor() {
+        setTop() {
             setTimeout(() => {
                 let scrollTop = window.pageYOffset || 0;
                 if (scrollTop == 0) { //此时滚动条处于页面的顶部
