@@ -40,7 +40,6 @@
 import ArticleListCell from "@/components/views/Article/ArticleListCell";
 import SectionTitle from "@/components/views/Section/SectionTitle";
 import TitleMenuFilter from "@/components/views/Section/TitleMenuFilter";
-import ArticlePageHeader from "@/components/views/Article/ArticlePageHeader";
 // import ArticlePageContent from "@/components/views/Article/ArticlePageContent";
 // import ArchiveListTimeTitle from "@/components/views/Archive/ArchiveListTimeTitle";
 // import ArchiveListCell from "@/components/views/Archive/ArchiveListCell";
@@ -49,7 +48,6 @@ import About from "@/components/views/About";
 import TagWall from "@/components/views/tag/TagWall";
 import Recommend from "@/components/views/Recommend";
 import HotRead from "@/components/views/HotRead";
-import SideToc from "@/components/views/SideToc";
 import merge from "lodash/merge"; // 合并对象工具
 import { DefaultFilterList, DefaultLimitSize } from "@/common/js/const";
 export default {
@@ -68,13 +66,11 @@ export default {
         "article-list-cell": ArticleListCell,
         "section-title": SectionTitle,
         "title-menu-filter": TitleMenuFilter,
-        "article-page-header": ArticlePageHeader,
         // "article-page-content": ArticlePageContent,
         // "archive-list-time-title": ArchiveListTimeTitle,
         // "archive-list-cell": ArchiveListCell,
         about: About,
         // "friend-links": FriendLinks,
-        "side-toc": SideToc,
         "tag-wall": TagWall,
         recommend: Recommend,
         "hot-read": HotRead
