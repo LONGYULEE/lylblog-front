@@ -185,7 +185,7 @@ export default {
     }
 
     @media screen and (min-width: 1200px) {
-        width: 1300px;
+        width: 1200px;
         margin: 0px auto 0;
         margin-bottom: 15px;
     }
@@ -208,7 +208,7 @@ export default {
         }
 
         @media screen and (min-width: 1200px) {
-            padding: 0 50px;
+            padding: 0 0 0 50px;
         }
 
         .skeDiv {

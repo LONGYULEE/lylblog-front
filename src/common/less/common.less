@@ -1,0 +1,70 @@
+@import 'theme.less';
+
+.astyle {
+    font-size: 21px;
+    color: #fff;
+    font-family: 'engttf';
+}
+.ahover {
+    a {
+        color: @color-main-primary;
+        text-shadow: 0 4px 8px @color-main-primary;
+        transform: translateY(-5px);
+        transition: all 0.3s;
+    }
+}
+.ant-pagination {
+    text-align: center;
+    margin: 2rem 0;
+    .ant-pagination-item {
+        height: 48px;
+        width: 48px;
+        text-align: center;
+        vertical-align: middle;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        a {
+            transform: translateY(30%);
+            .astyle();
+        }
+        &:hover {
+            .ahover();
+        }
+    }
+    .ant-pagination-prev {
+        margin-right: 25px;
+        a {
+            background: rgba(255, 255, 255, 0);
+            .astyle();
+            border: none;
+        }
+        &:hover {
+            .ahover();
+        }
+    }
+    .ant-pagination-next {
+        margin-left: 25px;
+        a {
+            background: rgba(255, 255, 255, 0);
+            .astyle();
+            border: none;
+        }
+        &:hover {
+            .ahover();
+        }
+    }
+
+    .ant-pagination-disabled {
+        a {
+            color: darkgrey !important;
+            transform: none !important;
+        }
+    }
+
+    .ant-pagination-item-active {
+        a {
+            color: @color-main-primary;
+            text-shadow: 0 4px 8px @color-main-primary;
+        }
+    }
+}

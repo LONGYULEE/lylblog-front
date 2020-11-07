@@ -14,6 +14,8 @@
                         <article-list-cell v-for="(article,index) in articleList" :article="article" :key="article.id"
                             :flag="(index+1) == articleList.length" :type="'article'">
                         </article-list-cell>
+                        <a-pagination :total="pageInfo.totalCount" v-model="pageInfo.page" :pageSize="5"
+                            :hideOnSinglePage="true" @change="pagechange" />
                     </div>
                     <div v-if="!skeletonFlag">
                         <div v-for="item in 5" :key="item" class="skeDiv">
@@ -59,7 +61,14 @@ export default {
                 page: 1,
                 size: DefaultLimitSize
             },
-            skeletonFlag: false
+            skeletonFlag: false,
+            pageInfo: {
+                page: 0,
+                totalCount: 0,
+                currPage: 0,
+                size: DefaultLimitSize,
+                latest: true
+            }
         };
     },
     components: {
@@ -82,7 +91,7 @@ export default {
     },
     methods: {
         refreshArticle(param) {
-            let params = merge(param, this.pageParam);
+            let params = merge(param, this.pageInfo);
             this.$http({
                 url: this.$http.adornUrl("/articles"),
                 params: this.$http.adornParams(params, false),
@@ -91,11 +100,17 @@ export default {
                 if (data && data.code === 2000) {
                     this.articleList = data.data.list;
                     this.skeletonFlag = true;
+                    this.pageInfo.totalCount = data.data.totalCount
+                    this.pageInfo.page = data.data.currPage
+                    document.body.scrollIntoView()
                 }
             });
         },
         browseMore() {
 
+        },
+        pagechange(page, pageSize) {
+            this.refreshArticle(page);
         }
     }
 };
@@ -103,6 +118,7 @@ export default {
 
 <style scope lang="less">
 @import '../../common/less/index.less';
+@import '../../common/less/common.less';
 .home-content {
     width: auto;
 }
@@ -128,7 +144,7 @@ export default {
 }
 @media screen and (min-width: 1200px) {
     .home-content {
-        width: 1300px;
+        width: 1200px;
         margin: 0px auto 0;
     }
 
