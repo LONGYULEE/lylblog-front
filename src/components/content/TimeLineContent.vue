@@ -4,7 +4,7 @@
             <a-col :xs="24" :sm="24" :md="24" :lg="17">
                 <div class="layout-left">
                     <timeline-header></timeline-header>
-                    <div class="timeline-wrapper">
+                    <div class="timeline-wrapper" v-show="skeletonFlag">
                         <div v-for="year in timelineList" :key="year.year">
                             <div v-if="year.months.length > 0">
                                 <archive-list-time-title :date="year.year" :count="year.count">
@@ -19,6 +19,12 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div v-if="!skeletonFlag">
+                        <div v-for="item in 5" :key="item" class="skeDiv">
+                            <a-skeleton active>
+                            </a-skeleton>
                         </div>
                     </div>
                 </div>
@@ -45,7 +51,8 @@ import TagWall from '@/components/views/tag/TagWall'
 export default {
     data() {
         return {
-            timelineList: []
+            timelineList: [],
+            skeletonFlag: false
         }
     },
     components: {
@@ -66,7 +73,8 @@ export default {
                 params: this.$http.adornParams()
             }).then(({ data }) => {
                 if (data && data.code === 2000) {
-                    this.timelineList = data.data
+                    this.timelineList = data.data;
+                    this.skeletonFlag = true;
                 }
             })
         }
@@ -76,6 +84,7 @@ export default {
 
 <style lang="less">
 @import '../../common/less/theme.less';
+@import '../../common/less/zhanwei.less';
 .timeline-content {
     width: auto;
 

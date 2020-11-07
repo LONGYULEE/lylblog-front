@@ -7,7 +7,7 @@
                         <my-article-content ref="article" @getMenus="getArticleMenus"></my-article-content>
                     </div>
                     <div v-show="!skeletonFlag" class="skeletonDiv">
-                        <a-skeleton active :paragraph="{ rows: 12 }"></a-skeleton>
+                        <a-skeleton active :paragraph="{ rows: 21 }"></a-skeleton>
                     </div>
                     <a-back-top @click="backTop" />
                 </div>
@@ -52,6 +52,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../../common/less/theme.less';
+@import '../../common/less/zhanwei.less';
 .article-content {
     width: auto;
 
@@ -113,7 +114,6 @@ export default {
         }
 
         .skeletonDiv {
-            background-color: #fff;
             padding: 30px;
             border-radius: 5px;
             height: calc(100vh - 127px);

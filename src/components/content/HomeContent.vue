@@ -18,7 +18,7 @@
                             :hideOnSinglePage="true" @change="pagechange" />
                     </div>
                     <div v-if="!skeletonFlag">
-                        <div v-for="item in 5" :key="item" class="skeDiv">
+                        <div v-for="item in 7" :key="item" class="skeDiv">
                             <a-skeleton active>
                             </a-skeleton>
                         </div>
@@ -102,7 +102,7 @@ export default {
                     this.skeletonFlag = true;
                     this.pageInfo.totalCount = data.data.totalCount
                     this.pageInfo.page = data.data.currPage
-                    document.body.scrollIntoView()
+                    this.toTop();
                 }
             });
         },
@@ -111,6 +111,15 @@ export default {
         },
         pagechange(page, pageSize) {
             this.refreshArticle(page);
+
+        },
+        toTop() {
+            document.body.scrollIntoView();
+            setTimeout(() => {
+                document.getElementById('header').setAttribute('class', 'isTop');
+                document.getElementById('header').removeAttribute('class', 'noTop')
+            }, 500);
+
         }
     }
 };
@@ -119,6 +128,7 @@ export default {
 <style scope lang="less">
 @import '../../common/less/index.less';
 @import '../../common/less/common.less';
+@import '../../common/less/zhanwei.less';
 .home-content {
     width: auto;
 }
