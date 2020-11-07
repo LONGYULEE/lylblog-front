@@ -3,8 +3,23 @@
         <router-view name="header"></router-view>
         <router-view name="content"></router-view>
         <router-view name="footer"></router-view>
+        <RightBottom></RightBottom>
     </div>
 </template>
+
+<script>
+import RightBottom from '@/components/utils/rightbottom';
+export default {
+    data() {
+        return {
+
+        };
+    },
+    components: {
+        RightBottom: RightBottom
+    },
+}
+</script>
 
 <style lang="less" scoped>
 @import '../common/less/theme.less';
