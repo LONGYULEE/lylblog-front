@@ -62,6 +62,7 @@
                         </a-col>
                     </a-row>
                 </div>
+                <textarea style="position:absolute;left: -100vw" id="mycode"></textarea>
             </div>
         </article>
     </div>
@@ -73,6 +74,7 @@
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
 import Viewer from 'viewerjs';
+import ClipboardJS from 'clipboard';
 import 'viewerjs/dist/viewer.css';
 const highlightCode = () => {
     const preEl = document.querySelectorAll('pre')
@@ -174,17 +176,44 @@ export default {
         },
         //创建代码框头部显示
         createCodeHeader(data) {
-            data.forEach(item => {
+            data.forEach((item, index) => {
                 let str = this.getUpCaseClass(item.getElementsByTagName('code'));
                 //创建一个节点
                 var tmp = document.createElement('div');
                 //向节点中写入需要添加的内容
                 tmp.innerHTML = '<div class="pre-header">' +
                     '<div class="pre-header-left"><div></div><div></div><div></div></div>' +
-                    `<div class="pre-header-right">${str}</div></div>`;
+                    `<div class="pre-header-right">${str}</div>` +
+                    `<div class="copyCode" id="pre-header-end` + index + `" onclick="copyCode(` + index + `)"></div>` +
+                    `</div>`;
                 //加新节点插入到指定位置
                 item.insertBefore(tmp, item.childNodes[0]);
             })
+        },
+        copyCode(index) {
+            let codeDom = document.getElementById('pre-header-end' + index);
+            let copyContent = codeDom.parentNode.parentNode.nextElementSibling.outerText;
+            let arr = copyContent.split('\n');
+            let arr01 = [];
+            let reg = /^[\s]*$/;
+            arr.forEach(item => {
+                let flag = reg.test(item);
+                if (item && !flag) {
+                    arr01.push(item);
+                }
+            })
+            let copyDom = document.getElementById('mycode');
+            copyDom.setAttribute('readonly', 'readonly'); // 防止手机上弹出软键盘
+            copyDom.innerHTML = arr01.join('\n');
+            copyDom.select();
+            document.execCommand('copy');
+            this.$notification['success']({
+                message: '复制成功',
+                description:
+                    '没有换行的',
+                top: '100px'
+            });
+
         },
         //创建目录
         createMenus(data) {
@@ -273,7 +302,9 @@ export default {
         }
     },
     created: function () {
-        this.getArticle(this.$route.params.articleId)
+        this.getArticle(this.$route.params.articleId);
+        let self = this;
+        window.copyCode = self.copyCode;
     },
     mounted() {
         highlightCode();

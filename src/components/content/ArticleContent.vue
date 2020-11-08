@@ -9,7 +9,6 @@
                     <div v-show="!skeletonFlag" class="skeletonDiv">
                         <a-skeleton active :paragraph="{ rows: 21 }"></a-skeleton>
                     </div>
-                    <a-back-top @click="backTop" />
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="4">
@@ -40,12 +39,7 @@ export default {
                 this.skeletonFlag = data;
             })
         },
-        backTop() {
-            setTimeout(() => {
-                document.getElementById('header').setAttribute('class', 'isTop');
-                document.getElementById('header').removeAttribute('class', 'noTop')
-            }, 500)
-        }
+        
     }
 }
 </script>

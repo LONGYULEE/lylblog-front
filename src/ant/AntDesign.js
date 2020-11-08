@@ -7,8 +7,7 @@ import {
     Col,
     Progress,
     Result,
-    Anchor,
-    BackTop
+    Anchor
 } from 'ant-design-vue';
 
 const ant = {
@@ -23,7 +22,6 @@ const ant = {
         Vue.component(Result.name, Result);
         Vue.component(Anchor.name, Anchor);
         Vue.component(Anchor.Link.name, Anchor);
-        Vue.component(BackTop.name, BackTop);
         Vue.prototype.$message = message;
     }
 };
