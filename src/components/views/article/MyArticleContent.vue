@@ -69,11 +69,10 @@
 </template>
 
 <script>
-// import hljs from 'highlight.js'
-// import 'highlight.js/styles/atom-one-dark.css';
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
 import Viewer from 'viewerjs';
+import clipboard from 'clipboard'
 import 'viewerjs/dist/viewer.css';
 const highlightCode = () => {
     const preEl = document.querySelectorAll('pre')
@@ -187,68 +186,31 @@ export default {
                     `</div>`;
                 //加新节点插入到指定位置
                 item.insertBefore(tmp, item.childNodes[0]);
+                //初始化复制插件
+                new clipboard('.copyCode');
             })
         },
         copyCode(index) {
+            //复制代码按钮
             let codeDom = document.getElementById('pre-header-end' + index);
-            let copyContent = codeDom.parentNode.parentNode.nextElementSibling.outerText;
-            let arr = copyContent.split('\n');
-            let arr01 = [];
-            let reg = /^[\s]*$/;
-            arr.forEach(item => {
-                let flag = reg.test(item);
-                if (item && !flag) {
-                    arr01.push(item);
-                }
-            })
-            let copyDom = document.getElementById('mycode');
-            copyDom.setAttribute('readonly', 'readonly'); // 防止手机上弹出软键盘
-            copyDom.innerHTML = arr01.join('\n');
-            copyDom.select();
-            document.execCommand('copy');
+            //代码html
+            let codeLine = codeDom.parentNode.parentNode.nextElementSibling.getElementsByClassName('hljs-ln-code');
+            let codeArr = [];
+            for (let i = 0; i < codeLine.length; i++) {
+                //去除字符串中的html标签
+                codeArr.push(codeLine[i].innerHTML.replace(/<.*?>/ig, ''));
+            }
+            //还原代码，复制到剪贴板中
+            let codestr = codeArr.join('\n');
+            codeDom.setAttribute('data-clipboard-text', codestr);
             this.$notification['success']({
                 message: '复制成功',
-                description:
-                    '没有换行的',
                 top: '100px'
             });
 
         },
         //创建目录
         createMenus(data) {
-            //h2
-            // data.forEach(item => {
-            //     let aEl = item.getElementsByTagName('a');
-            //     const result = {
-            //         href: '#' + aEl[0].getAttribute('id'),
-            //         title: item.innerHTML.substring(item.innerHTML.lastIndexOf('>') + 1),
-            //         children: []
-            //     };
-            //     let nextEl = item.nextElementSibling;
-            //     while (nextEl && nextEl.nodeName !== 'H2') {
-            //         if (nextEl.nodeName === 'H4') {
-            //             let anchor = nextEl.querySelector('a');
-            //             if (anchor) {
-            //                 let l = result.children.length;
-            //                 result.children[l - 1].children.push({
-            //                     href: `#${anchor.id}`,
-            //                     title: nextEl.textContent,
-            //                 })
-            //             }
-            //         } else if (nextEl.nodeName === 'H3') {
-            //             const anchor = nextEl.querySelector('a');
-            //             if (anchor) {
-            //                 result.children.push({
-            //                     href: `#${anchor.id}`,
-            //                     title: nextEl.textContent,
-            //                     children: []
-            //                 });
-            //             }
-            //         }
-            //         nextEl = nextEl.nextElementSibling;
-            //     }
-            // this.menus.push(result)
-            // })
             this.$store.commit('setMenus', false);
         },
         getCategroyName() {
