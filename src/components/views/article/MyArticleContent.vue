@@ -137,6 +137,7 @@ export default {
             const imgDom = document.getElementsByTagName('img');
             let viewWidth = document.body.offsetWidth;
             for (let i = 0; i < imgDom.length; i++) {
+                imgDom[i].parentNode.setAttribute('class', 'img-wrapper');
                 if (viewWidth < 768) {
                     new Viewer(imgDom[i], {
                         navbar: false,
