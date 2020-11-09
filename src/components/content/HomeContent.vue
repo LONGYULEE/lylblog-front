@@ -1,7 +1,7 @@
 <template>
     <div class="home-content">
+        <!-- <div class="img-zhanwei"></div> -->
         <a-row>
-
             <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
                 <div class="layout-left">
                     <!-- <section-title :mainTitle="'文章'" :subTitle="'Articles'" :tipText="'View More'"

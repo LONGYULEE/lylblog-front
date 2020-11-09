@@ -206,7 +206,7 @@ export default {
     }
 }
 .notTop {
-    animation: noTop 0.8s;
+    animation: noTop 0.5s;
     animation-fill-mode: forwards;
     #nav {
         animation: test01 0.5s;

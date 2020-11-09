@@ -25,11 +25,23 @@
                 background: radial-gradient(1600px at 70% 120%,#9b6e85 10%,#49627e 100%);
                 z-index: -1;
             }
+            #clickCanvas {
+                position:fixed;
+                left:0;
+                top:0;
+                z-index:999999999;
+                width: 100vw;
+                height: 100vh;
+                pointer-events:none;
+            }
+           
         </style>
     </head>
 
     <body class="docs">
         <canvas id="universe"></canvas>
+        <div id="clickCanvas" >
+        </div>
         <div id="app"></div>
         <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
         <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.0.0/languages/java.min.js"></script>
@@ -37,5 +49,6 @@
         <script src="https://cdn.bootcdn.net/ajax/libs/highlightjs-line-numbers.js/2.5.0/highlightjs-line-numbers.min.js"></script>
         <script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.9.1/tocbot.min.js"></script>
         <script type="text/javascript" src="/static/js/canvas_bg.js"></script>
+        <script type="text/javascript" src="/static/js/click.js"></script>
     </body>
 </html>
