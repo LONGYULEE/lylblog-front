@@ -139,7 +139,7 @@ export default {
     @media only screen and (max-width: 768px) {
         margin-bottom: 3px;
     }
-    box-shadow: @my-box-shadow;
+    // box-shadow: @my-box-shadow;
 
     @media only screen and (max-width: 992px) {
         border-bottom: 1px dashed #e5e5e5;

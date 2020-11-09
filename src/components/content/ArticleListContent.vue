@@ -171,6 +171,7 @@ export default {
 @import '../../common/less/index.less';
 .article-list-content {
     width: auto;
+    min-height: 75vh;
 
     @media only screen and (max-width: 768px) {
         margin: 5px 5px 10px 5px;

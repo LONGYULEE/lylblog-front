@@ -245,6 +245,7 @@ export default {
             padding: 4px 0;
             font-weight: 700;
             color: @default-title-color;
+            color: @my-font-color02;
         }
 
         .class {
