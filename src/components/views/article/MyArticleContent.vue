@@ -62,7 +62,6 @@
                         </a-col>
                     </a-row>
                 </div>
-                <textarea style="position:absolute;left: -100vw" id="mycode"></textarea>
             </div>
         </article>
     </div>
