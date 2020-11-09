@@ -74,7 +74,6 @@
 import MyActicleMain from '@/components/views/Article/MyArticleMain';
 import { mixin } from "@/util";
 import Viewer from 'viewerjs';
-import ClipboardJS from 'clipboard';
 import 'viewerjs/dist/viewer.css';
 const highlightCode = () => {
     const preEl = document.querySelectorAll('pre')
