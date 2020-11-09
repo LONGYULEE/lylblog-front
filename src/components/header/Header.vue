@@ -184,10 +184,34 @@ export default {
 .isTop {
     animation: top 0.5s;
     animation-fill-mode: forwards;
+    #nav {
+        animation: test 0.5s;
+        animation-fill-mode: forwards;
+    }
+}
+@keyframes test {
+    0% {
+        top: 15px;
+    }
+    100% {
+        top: 10px;
+    }
+}
+@keyframes test01 {
+    0% {
+        top: 10px;
+    }
+    100% {
+        top: 15px;
+    }
 }
 .notTop {
     animation: noTop 0.8s;
     animation-fill-mode: forwards;
+    #nav {
+        animation: test01 0.5s;
+        animation-fill-mode: forwards;
+    }
 }
 @keyframes noTop {
     0% {
@@ -196,15 +220,18 @@ export default {
     100% {
         background: #49627e;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+        padding: 15px 60px;
     }
 }
 
 @keyframes top {
     0% {
         background: #49627e;
+        padding: 15px 60px;
     }
     100% {
         background: @default-background-image;
+        padding: 10px 60px;
     }
 }
 
