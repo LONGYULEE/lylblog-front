@@ -1,7 +1,7 @@
 <template>
     <!-- <div class="side-bar" @touchmove.stop.prevent :class="{ open: show }"> -->
     <div>
-        <a-drawer placement="left" width="290" :closable="false" :visible="visible" :headerStyle="headerStyle"
+        <a-drawer placement="right" width="290" :closable="false" :visible="visible" :headerStyle="headerStyle"
             @close="onClose">
             <div class="main-area">
                 <div class="top-wrapper" @touchmove.stop>
