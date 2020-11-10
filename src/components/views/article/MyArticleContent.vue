@@ -203,10 +203,7 @@ export default {
             //还原代码，复制到剪贴板中
             let codestr = codeArr.join('\n');
             codeDom.setAttribute('data-clipboard-text', codestr);
-            this.$notification['success']({
-                message: '复制成功',
-                top: '100px'
-            });
+            this.$message.success("复制成功");
 
         },
         //创建目录
