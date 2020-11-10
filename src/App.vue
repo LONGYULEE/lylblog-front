@@ -15,6 +15,6 @@ export default {
 @import 'assets/font/font.css';
 #nprogress .bar {
     /* 自定义颜色 */
-    background: #409eff !important;
+    background: #fa897b !important;
 }
 </style>
