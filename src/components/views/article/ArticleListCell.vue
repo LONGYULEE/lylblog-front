@@ -35,7 +35,7 @@
                     </div>
                 </a-col>
                 <a-col :xs="0" :sm="0" :md="imgSpan" :lg="imgSpan" :order="imgOrderType"
-                    style="padding-left: 0px;padding-right: 0px">
+                    style="padding-left: 0px;padding-right: 0px;margin: auto 0;">
                     <div class="img-wrapper" :class="themeClass">
                         <img :src="article.cover" alt="">
                     </div>
@@ -303,7 +303,6 @@ export default {
             width: 100%;
             height: 0;
             overflow: hidden;
-            border-radius: @border-radius;
 
             &.big-image {
                 padding-bottom: 26%;
@@ -311,7 +310,6 @@ export default {
 
             img {
                 width: 100%;
-                border-top-right-radius: 7px;
             }
         }
     }
