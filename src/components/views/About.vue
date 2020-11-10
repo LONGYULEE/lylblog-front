@@ -113,7 +113,7 @@ export default {
             display: table-cell;
 
             .header-line {
-                font-size: 22px;
+                font-size: 18px;
                 padding: 5px 5px;
                 color: lightgray;
                 font-family: 'engttf';

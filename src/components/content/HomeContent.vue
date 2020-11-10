@@ -4,7 +4,8 @@
         <a-row>
             <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
                 <div class="layout-left">
-                    <section-title :mainTitle="'ARTICLES'" :tipText="'View More'" :tipHref="'/articles'">
+                    <section-title :mainTitle="'ARTICLES'" :subTitle="'文章列表'" :tipText="'View More'"
+                        :tipHref="'/articles'">
                         <title-menu-filter @filterByMenu="refreshArticle" slot="menu"
                             :menu-filter-list="defaultFilterList">
                         </title-menu-filter>

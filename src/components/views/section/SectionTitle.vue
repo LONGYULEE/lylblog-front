@@ -3,6 +3,7 @@
         <div class="title">
             <!-- <a-icon type="smile" class="square" theme="twoTone" two-tone-color="#eb2f96" /> -->
             <span class="main-title">{{mainTitle}}</span>
+            <a-divider type="vertical" />
             <span class="sub-title">{{subTitle}}</span>
             <span class="view-more">
                 <router-link :to="tipHref" v-if="tipText">{{tipText}}
