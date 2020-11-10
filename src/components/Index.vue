@@ -1,6 +1,6 @@
 <template>
     <div class="main-wrapper">
-        <div id="test"></div>
+        <!-- <div id="test"></div> -->
         <router-view name="header"></router-view>
         <router-view name="content"></router-view>
         <router-view name="footer"></router-view>

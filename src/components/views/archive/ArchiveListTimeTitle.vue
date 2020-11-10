@@ -108,7 +108,6 @@ export default {
         .view-more {
             display: inline-block;
             vertical-align: middle;
-            font-size: 14px;
             padding-left: 10px;
 
             a {

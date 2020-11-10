@@ -71,7 +71,6 @@ export default {
         line-height: inherit;
         a {
             font-size: 20px;
-            color: @color-gradually-gray-41;
             cursor: pointer;
             &:hover {
                 color: @color-main-primary;

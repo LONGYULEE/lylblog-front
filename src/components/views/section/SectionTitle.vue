@@ -1,7 +1,7 @@
 <template>
     <div class="section-title">
         <div class="title">
-            <a-icon type="smile" class="square" theme="twoTone" two-tone-color="#eb2f96" />
+            <!-- <a-icon type="smile" class="square" theme="twoTone" two-tone-color="#eb2f96" /> -->
             <span class="main-title">{{mainTitle}}</span>
             <span class="sub-title">{{subTitle}}</span>
             <span class="view-more">
@@ -35,7 +35,7 @@ export default {
     border-radius: @default-border-radius;
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 20px 0px;
     height: 90px;
     line-height: 50px;
     text-align: left;
@@ -50,6 +50,7 @@ export default {
         border-bottom: 1px dashed #e5e5e5;
     }
     .title {
+        font-family: 'engttf';
         .square {
             vertical-align: middle;
             font-size: 30px;
@@ -62,7 +63,7 @@ export default {
             color: @my-font-color;
             display: inline-block;
             vertical-align: middle;
-            font-size: 22px;
+            font-size: 32px;
             padding: 0 10px;
             @media only screen and (max-width: 768px) {
                 padding: 0 15px;
@@ -77,7 +78,6 @@ export default {
         .view-more {
             display: inline-block;
             vertical-align: middle;
-            font-size: 14px;
             padding-left: 10px;
             a {
                 color: @color-main-primary;

@@ -180,10 +180,10 @@ export default {
             }
 
             .title {
-                font-size: 32px;
+                font-size: 24px;
                 font-weight: 100;
                 line-height: 27px;
-                font-family: '微软雅黑';
+                font-family: 'title';
                 margin-bottom: 20px;
 
                 span.special {
