@@ -1,16 +1,16 @@
 <template>
     <div>
         <ul id="menu" class="mfb-component--br mfb-slidein-spring" data-mfb-toggle="hover">
-            <li class="mfb-component__wrap">
-                <a class="mfb-component__button--main">
+            <li class="mfb-component__wrap" v-show="topShow">
+                <a @click.prevent="backTop(16)" class="mfb-component__button--main">
                     <i class="mfb-component__main-icon--resting ion-plus-round">
-                        <a-icon type="plus" />
+                        <a-icon type="up" />
                     </i>
                     <i class="mfb-component__main-icon--active ion-close-round">
-                        <a-icon type="close" />
+                        <a-icon type="up" />
                     </i>
                 </a>
-                <ul class="mfb-component__list">
+                <!-- <ul class="mfb-component__list">
 
                     <li v-if="topShow">
                         <a @click.prevent="backTop(16)" data-mfb-label="Top" class="mfb-component__button--child">
@@ -26,7 +26,7 @@
                             </i>
                         </a>
                     </li>
-                </ul>
+                </ul> -->
             </li>
         </ul>
     </div>

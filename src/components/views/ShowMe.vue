@@ -152,7 +152,6 @@ export default {
     padding-top: 70px;
     @media screen and (max-width: 992px) {
         margin-top: -10px;
-        margin-bottom: 10px;
     }
     .backgroud-div {
         margin-top: 70px;
@@ -231,16 +230,14 @@ export default {
                     min-height: 80px;
                     .timeline-div {
                         display: flex;
-                        border-radius: 10px;
                         @media screen and (max-width: 768px) {
                             display: block;
                             position: relative;
-                            border-radius: 0px;
                         }
                         &:hover {
                             transform: rotate(0deg) scale(1) translate(0%, 0%);
                             transition: all 0.3s ease;
-                            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px 0px;
+                            box-shadow: @my-box-shadow-hover;
                         }
                         .left-box {
                             flex: 1 1 0%;
@@ -359,10 +356,8 @@ export default {
             .help {
                 margin-top: 60px;
                 span {
-                    font-size: 18px;
                     color: rgba(255, 255, 255, 0.8);
                     background: none;
-                    margin-left: -40px;
                 }
                 a {
                     font-size: 16px;

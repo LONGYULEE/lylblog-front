@@ -5,7 +5,7 @@
                 <div class="layout-left">
                     <article-list-header v-if="categoryList.length>0" @filterByMenu="filterByMenu"
                         @filterByCategory="filterByCategory" :categorys="categoryList"
-                        :defaultCategory="selected_category" :mainTitle="'CATEGORIES'" :sub-title="'Articles'">
+                        :defaultCategory="selected_category" :mainTitle="'CATEGORIES'" :sub-title="'文章分类'">
                     </article-list-header>
                     <div v-if="skeletonFlag">
                         <article-list-cell v-for="article in articleList" :article="article" :key="article.id">

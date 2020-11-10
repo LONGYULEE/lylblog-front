@@ -36,9 +36,5 @@ export default {
         margin: -96px 0 30px 0px;
         background: rgba(0, 0, 0, 0.2);
     }
-
-    @media only screen and (max-width: 992px) {
-        background-color: white;
-    }
 }
 </style>

@@ -131,9 +131,6 @@ export default {
             background-color: @default-background-color;
             padding: 10px 15px;
             border-radius: @default-border-radius;
-            @media only screen and (max-width: 992px) {
-                border-bottom: 1px dashed #e5e5e5;
-            }
         }
     }
     .ant-anchor-wrapper {

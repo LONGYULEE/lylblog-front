@@ -51,10 +51,6 @@ export default {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    @media only screen and (max-width: 992px) {
-        padding-bottom: 10px;
-        border-bottom: 1px dashed #e5e5e5;
-    }
 
     .ant-btn-primary {
         background-color: #fa8990;

@@ -137,15 +137,12 @@ export default {
     margin-bottom: 1.5rem;
     border-radius: @default-border-radius;
     @media only screen and (max-width: 768px) {
-        margin-bottom: 3px;
+        margin: 0 3px 7px 3px;
+        background: @my-box-backgroud-color-dark;
     }
     box-shadow: @my-box-shadow;
     border-radius: @default-border-radius;
     background: @my-box-backgroud-color;
-
-    @media only screen and (max-width: 992px) {
-        border-bottom: 1px dashed #e5e5e5;
-    }
 
     > a {
         border-radius: @default-border-radius;
@@ -166,7 +163,7 @@ export default {
 
             @media only screen and (max-width: 768px) {
                 padding: 15px 15px 0 15px;
-                min-height: 110px;
+                min-height: 200px;
             }
 
             .article-top {
@@ -277,6 +274,9 @@ export default {
                     bottom: -5px;
                     border: none;
                     color: @color-main-primary;
+                    @media only screen and (max-width: 768px) {
+                        display: none;
+                    }
                 }
 
                 span {

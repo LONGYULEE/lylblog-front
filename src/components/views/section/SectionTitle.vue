@@ -46,9 +46,7 @@ export default {
         padding: 10px 0;
         margin-bottom: 5px;
         height: 70px;
-    }
-    @media only screen and (max-width: 992px) {
-        border-bottom: 1px dashed #e5e5e5;
+        margin-bottom: 20px;
     }
     .title {
         font-family: 'engttf';
@@ -73,7 +71,7 @@ export default {
         .sub-title {
             display: inline-block;
             vertical-align: middle;
-            font-size: 18px;
+            font-size: 16px;
             padding-left: 10px;
         }
         .view-more {

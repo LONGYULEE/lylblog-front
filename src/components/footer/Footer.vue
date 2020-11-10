@@ -34,10 +34,6 @@ export default {
     background-color: #222;
     line-height: 1.5rem;
 
-    @media only screen and (max-width: 768px) {
-        padding: 5px 0px 15px 0px;
-    }
-
     a {
         color: @color-typegraphy-title-hover;
         cursor: pointer;
