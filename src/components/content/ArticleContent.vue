@@ -39,7 +39,7 @@ export default {
                 this.skeletonFlag = data;
             })
         },
-        
+
     }
 }
 </script>
@@ -60,10 +60,6 @@ export default {
 
     @media screen and (min-width: 992px) {
         margin: 15px 35px 50px 35px;
-    }
-
-    @media only screen and (max-width: 992px) {
-        border-bottom: 1px dashed #e5e5e5;
     }
 
     @media screen and (min-width: 1200px) {

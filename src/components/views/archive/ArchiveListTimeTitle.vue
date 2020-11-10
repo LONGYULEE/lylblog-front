@@ -4,7 +4,7 @@
             <a-icon :type="iconType" />
         </span>
         <span class="main-title">{{date}}</span>
-        <span class="vertical-line"></span>
+        <a-divider type="vertical" />
         <span class="sub-title">共 <a>{{count}}</a> 篇</span>
     </div>
 </template>
@@ -90,19 +90,14 @@ export default {
             padding: 0 10px;
         }
 
-        .vertical-line {
-            display: inline-block;
-            height: 20px;
-            width: 1px;
-            background-color: #333;
-            vertical-align: middle;
-        }
-
         .sub-title {
             display: inline-block;
             vertical-align: middle;
             font-size: 18px;
             padding-left: 10px;
+            a {
+                color: @color-main-primary;
+            }
         }
 
         .view-more {
@@ -168,19 +163,14 @@ export default {
             padding: 0 10px;
         }
 
-        .vertical-line {
-            display: inline-block;
-            height: 20px;
-            width: 1px;
-            background-color: #333;
-            vertical-align: middle;
-        }
-
         .sub-title {
             display: inline-block;
             vertical-align: middle;
             font-size: 14px;
             padding-left: 10px;
+            a {
+                color: @color-main-primary;
+            }
         }
 
         .view-more {

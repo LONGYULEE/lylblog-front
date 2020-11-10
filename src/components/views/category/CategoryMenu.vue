@@ -1,7 +1,7 @@
 <template>
     <div class="classify-bar" v-if="categorys !== undefined">
         <p class="level level-one">
-            <span class="title">一级：</span>
+            <span class="title">Level 1：</span>
             <span class="class">
                 <a class="active" data-level="1" @click="choseLevel(categorys[0].parentId, $event)">全部</a>
                 <a class="name" :id="'id' + category_level1.id" :data-level="category_level1.rank"
@@ -10,7 +10,7 @@
             </span>
         </p>
         <p class="level level-two" v-if="sub_category !== undefined">
-            <span class="title">二级：</span>
+            <span class="title">Level 2：</span>
             <span class="class">
                 <a class="active" data-level="2" @click="choseLevel(sub_category[0].parentId, $event)">全部</a>
                 <a class="name" :id="'id' + category_level2.id" :data-level="category_level2.rank"
@@ -19,7 +19,7 @@
             </span>
         </p>
         <p class="level level-three" v-if="sub_sub_category !== undefined">
-            <span class="title">三级：</span>
+            <span class="title">Level 3：</span>
             <span class="class">
                 <a class="active" data-level="3" @click="choseLevel(sub_sub_category[0].parentId, $event)">全部</a>
                 <a class="name" :id="'id' + category_level3.id" :data-level="category_level3.rank"
@@ -217,46 +217,42 @@ export default {
 @import '../../../common/less/theme.less';
 
 .classify-bar {
-    margin-bottom: 10px;
-    @media only screen and (max-width: 992px) {
-        margin-bottom: 0px;
-    }
-    .level-one {
-        border-top: 1px dashed #c4c4c4;
-    }
+    margin: 0 0 25px 32px;
+
     .level {
         display: flex;
         padding: 10px 0;
-        font-size: 15px;
+        font-size: 21px;
         line-height: 22px;
-        border-bottom: 1px dashed #c4c4c4;
-        margin: 0px 10px;
-
         @media only screen and (max-width: 992px) {
-            border-bottom: 1px dashed #e5e5e5;
+            font-size: 15px;
         }
 
         .title {
             display: inline-block;
-            flex: 0 0 60px;
-            width: 60px;
-            font-size: 17px;
+            flex: 0 0 100px;
+            width: 100px;
+            font-size: 21px;
             line-height: 22px;
             padding: 4px 0;
             font-weight: 700;
-            color: @default-title-color;
-            color: @my-font-color02;
+            color: #2db6f4;
+            font-family: 'engttf';
+            @media only screen and (max-width: 992px) {
+                font-size: 15px;
+                flex: 0 0 80px;
+            }
         }
 
         .class {
             a {
                 display: inline-block;
-                margin-right: 4px;
+                margin-right: 10px;
                 padding: 3px 8px;
                 margin-bottom: 2px;
                 font-weight: 300;
                 border-radius: @border-radius;
-                color: @default-link-color;
+                color: @my-font-color02;
 
                 &.name {
                     &:hover {
@@ -266,7 +262,8 @@ export default {
 
                 &.active {
                     color: @default-select-color;
-                    background: @default-select-background-hover-color;
+                    background: @color-main-primary;
+                    font-size: 18px;
                 }
             }
         }

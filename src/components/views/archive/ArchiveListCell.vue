@@ -8,7 +8,7 @@
                 <router-link class="title" :to="'/' + post.postType + '/' + post.id">
                     {{post.title}}
                 </router-link>
-                <a class="see-desc" @click.stop="seeDesc" :class="{show: showDesc}">查看简介&nbsp;&nbsp;
+                <a class="see-desc" @click.stop="seeDesc" :class="{show: showDesc}">desc&nbsp;&nbsp;
                     <a-icon type="down-circle" />
                 </a>
                 <p class="desc" :class="{show: showDesc}">{{post.description}}</p>
@@ -80,16 +80,16 @@ export default {
         }
 
         .base-info {
-            // @media only screen and (max-width: 768px) {
-            //     &::before {
-            //         content: '';
-            //         height: 10px;
-            //         width: 10px;
-            //         background: lightpink;
-            //         display: inline-block;
-            //         border-radius: 5px;
-            //     }
-            // }
+            @media only screen and (max-width: 768px) {
+                &::before {
+                    content: '';
+                    height: 10px;
+                    width: 10px;
+                    background: lightpink;
+                    display: inline-block;
+                    border-radius: 5px;
+                }
+            }
             a.title {
                 margin-left: 5px;
                 font-weight: 300;
@@ -106,6 +106,7 @@ export default {
                 margin-left: 5px;
                 font-weight: 100;
                 cursor: pointer;
+                font-family: 'engttf';
 
                 > i {
                     transition: All 0.4s ease-in-out;

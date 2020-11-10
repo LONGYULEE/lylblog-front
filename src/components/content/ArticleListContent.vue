@@ -21,7 +21,7 @@
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="7">
-                <a-anchor :offsetTop="100" :bounds="0">
+                <a-anchor :offsetTop="120" :bounds="0">
                     <div class="layout-right">
                         <recommend></recommend>
                         <tag-wall style="margin-top: 15px;"></tag-wall>

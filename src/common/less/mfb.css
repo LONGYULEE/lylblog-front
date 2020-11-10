@@ -213,6 +213,17 @@
     z-index: 20;
 }
 
+@media only screen and (max-width: 768px) {
+    .mfb-component__button--main {
+        height: 32px;
+        width: 32px;
+        z-index: 20;
+    }
+    .anticon {
+        vertical-align: 0.6rem;
+    }
+}
+
 .mfb-component__button--child {
     height: 56px;
     width: 56px;

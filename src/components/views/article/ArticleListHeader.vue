@@ -1,11 +1,11 @@
 <template>
     <div class="article-list-header">
-        <category-menu @filterByCategory="filterByCategory" :categorys="categorys" :defaultCategory="defaultCategory">
-        </category-menu>
         <section-title :mainTitle="mainTitle" :subTitle="subTitle">
             <title-menu-filter @filterByMenu="filterByMenu" slot="menu" :menu-filter-list="defaultFilterList">
             </title-menu-filter>
         </section-title>
+        <category-menu @filterByCategory="filterByCategory" :categorys="categorys" :defaultCategory="defaultCategory">
+        </category-menu>
     </div>
 </template>
 
