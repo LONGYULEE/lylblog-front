@@ -6,7 +6,9 @@
             <div class="main-area">
                 <div class="top-wrapper" @touchmove.stop>
                     <div class="top-area">
-                        <img src="http://img.lylblog.xyz/006yt1Omgy1gfwu9s7amaj31kw0vab2a.jpg" alt="">
+                        <div style="width: 100%">
+                            <img src="http://img.lylblog.xyz/006yt1Omgy1gfwu9s7amaj31kw0vab2a.jpg" alt="">
+                        </div>
                         <div class="site-info">
                             <h1 class="site-name">寒露</h1>
                         </div>
@@ -24,6 +26,10 @@
                             </li>
                         </ul>
                         <hr>
+                        <div class="anchorDiv">
+                            <my-anchor :setHeight="myHeight" :affix="affix" :showInkInFixed="showInkInFixed"
+                                @getClose="getClose"></my-anchor>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,7 +44,7 @@ export default {
     name: "side-bar",
     data() {
         return {
-            myHeight: 'calc(100vh - 277px)',
+            myHeight: 'calc(100vh - 300px)',
             headerStyle: {
                 'display': 'none'
             },
@@ -46,7 +52,6 @@ export default {
             affix: false,
             showInkInFixed: false,
             defaultActiveKey: '1',
-            visible: true
         };
     },
     components: {
@@ -54,7 +59,7 @@ export default {
     },
     props: {
         articleCategoryList: Array,
-        // visible: { type: Boolean, default: false }
+        visible: { type: Boolean, default: false }
     },
     mixins: [mixin],
     beforeRouteUpdate(to, from, next) {
@@ -99,4 +104,19 @@ export default {
 
 <style lang="less" scope>
 @import './css/sidebar.less';
+.anchorDiv {
+    margin-left: -5px;
+    .ant-anchor-link-title {
+        color: darkgray;
+        &:active {
+            color: #fa897b;
+        }
+    }
+    .ant-anchor-link-title-active {
+        color: #fa897b;
+    }
+    .ant-anchor-ink::before {
+        content: none;
+    }
+}
 </style>
