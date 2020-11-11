@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import SideBar from '@/components/header/SideBar';
+import SideBar from '@/components/header/NewSideBar';
 import { treeDataTranslate } from '@/util';
 export default {
     components: {

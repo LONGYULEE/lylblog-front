@@ -84,77 +84,72 @@ body {
                     }
                 }
                 ul {
-                    list-style-type: none;
-                    padding-left: 1.4em;
-                }
-                ul.nav-menu {
-                    display: block;
-                    padding: 8px 15px;
-                    transition: all 0.7s;
-                    max-height: 300px;
-                    overflow: hidden;
-                    &.hide {
-                        padding: 0 15px;
-                        max-height: 0;
-                    }
+                    color: @my-font-color02;
+                    padding-left: 1.4rem;
+                    list-style: none;
+                    font-size: 16px;
+                    font-family: 'engttf';
                     li {
-                        line-height: 1.8em;
-                        > i {
-                            color: @default-link-color;
-                        }
-                        > a {
-                            font-size: 17px;
-                            color: @default-link-color;
-                            &:hover,
-                            &.active {
-                                color: @default-link-hover-color;
-                            }
-                        }
-                        > ul > li > a {
-                            font-size: 15px;
-                            color: @default-link-color;
-                        }
-                    }
-                    .nav-link {
-                        text-decoration: none;
-                        color: rgba(white, 0.7);
-                        font-family: serif;
-                        &:hover,
-                        &.active {
-                            text-decoration: underline;
-                            color: @color-main-primary;
-                        }
+                        padding: 3px 0;
                     }
                 }
-                // 生成Toc目录css
-                .sidebar-toc-list {
-                    .menu-root {
-                        padding-left: 0;
-                        line-height: 1.4em;
-                    }
-                    #sidebar-toc {
-                        position: relative;
-                        padding: 8px 15px;
-                        color: #b9d4d8;
-                        .toc-link {
-                            padding-left: 0.3em;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            &::before {
-                                background: transparent;
-                            }
-                        }
-                        .active {
-                            font-weight: 700;
-                            color: @color-main-primary;
-                            border-left: 2px solid @color-main-primary;
-                            &::before {
-                                background-color: @default-link-hover-color;
-                            }
-                        }
-                    }
+                hr {
+                    width: 86%;
+                    margin: 20px auto;
+                    height: 3px;
+                    border: none;
+                    background-color: #000;
+                    background-image: repeating-linear-gradient(
+                        -45deg,
+                        #333,
+                        #333 4px,
+                        transparent 4px,
+                        transparent 8px
+                    );
                 }
+                // ul {
+                //     list-style-type: none;
+                //     padding-left: 1.4em;
+                // }
+                // ul.nav-menu {
+                //     display: block;
+                //     padding: 8px 15px;
+                //     transition: all 0.7s;
+                //     max-height: 300px;
+                //     overflow: hidden;
+                //     &.hide {
+                //         padding: 0 15px;
+                //         max-height: 0;
+                //     }
+                //     li {
+                //         line-height: 1.8em;
+                //         > i {
+                //             color: @default-link-color;
+                //         }
+                //         > a {
+                //             font-size: 17px;
+                //             color: @default-link-color;
+                //             &:hover,
+                //             &.active {
+                //                 color: @default-link-hover-color;
+                //             }
+                //         }
+                //         > ul > li > a {
+                //             font-size: 15px;
+                //             color: @default-link-color;
+                //         }
+                //     }
+                //     .nav-link {
+                //         text-decoration: none;
+                //         color: rgba(white, 0.7);
+                //         font-family: serif;
+                //         &:hover,
+                //         &.active {
+                //             text-decoration: underline;
+                //             color: @color-main-primary;
+                //         }
+                //     }
+                // }
             }
         }
         .sidebar-operate-area {
