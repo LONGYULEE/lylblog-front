@@ -25,14 +25,16 @@
                 <a-divider class="divider">[ END ]</a-divider>
                 <div class="info-class">
                     <div class="category-class">
-                        <span>所属分类：</span>
+                        <span>Categories:</span>
                         <router-link to="" v-for="(item,index) in categoryArr" @click.native="toCategory(item.id)"
                             :key="item.id">{{item.name}}
-                            <a-divider type="vertical" v-if="(index + 1) != categoryArr.length" />
+                            <div style="display: inline;color:darkgray;margin-right: 3px">
+                                <a-icon type="double-right" v-if="(index + 1) != categoryArr.length" />
+                            </div>
                         </router-link>
                     </div>
                     <div class="tags-class" v-if="tags.length != 0">
-                        <span>标签：</span>
+                        <span>Tags:</span>
                         <a-tag :color="index | mapTagColor" v-for="(tag, index) in tags" :key="index">{{tag.name}}
                         </a-tag>
                     </div>
@@ -45,18 +47,18 @@
                                 </span>
                                 <span>&nbsp;&nbsp;&nbsp;</span>
                                 <span class="publish-time">
-                                    At time / <a>{{article.createTime | socialDate}}</a>
+                                    Latest / <a>{{article.createTime | socialDate}}</a>
                                 </span>
                             </p>
                         </a-col>
                         <a-col :xs="24" :sm="12" :md="12" :lg="12" style="padding-left: 0;padding-right: 0;">
                             <p class="operate_info">
                                 <span class="readings"><a>
-                                        <a-icon type="eye"></a-icon> {{article.readNum}} 阅读
+                                        <a-icon type="eye"></a-icon> {{article.readNum}}
                                     </a></span> |
                                 <span class="likes">
                                     <a @click="likePost(article)">
-                                        <a-icon type="heart"></a-icon> {{article.likeNum}} 喜欢
+                                        <a-icon type="heart"></a-icon> {{article.likeNum}}
                                     </a></span>
                             </p>
                         </a-col>
@@ -96,7 +98,9 @@ export default {
             toc: null,
             category: [],
             categoryArr: [],
-            tags: []
+            tags: [],
+            pre: {},
+            next: {}
         };
     },
     methods: {
@@ -111,6 +115,9 @@ export default {
                         this.category = data.data.categoryId.split(',');
                     }
                     this.tags = data.data.tagList;
+                    this.pre = data.data.pre;
+                    this.next = data.data.next;
+                    console.log(data.data)
 
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
@@ -124,7 +131,7 @@ export default {
                         this.setViewer();
                         this.createToc();
                     })
-                    // this.getCategroyName();
+                    this.getCategroyName();
                     //占位取消
                     this.$emit('getMenus', true);
                 }
@@ -326,6 +333,7 @@ export default {
 .info-class {
     display: flex;
     justify-content: space-between;
+    font-family: 'engttf';
     @media only screen and (max-width: 992px) {
         display: flex;
         justify-content: center;
@@ -336,7 +344,7 @@ export default {
             color: @my-dark-font-color;
         }
         a {
-            color: #2799ff;
+            color: #2cc2d7;
             cursor: pointer;
 
             &:hover {
@@ -364,6 +372,9 @@ export default {
                 color: @color-typegraphy-title-hover;
                 text-decoration: underline;
             }
+        }
+        .ant-tag {
+            font-family: 'sans-serif';
         }
     }
 }
@@ -517,6 +528,7 @@ export default {
     color: #666;
     font-size: 14px;
     margin-top: 20px;
+    font-family: 'engttf';
     .publish-time {
         color: @my-dark-font-color;
     }

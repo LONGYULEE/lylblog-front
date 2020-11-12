@@ -20,12 +20,12 @@
                             </router-link>
                         </p>
                         <p class="operate_info" :style="myStyle">
-                            <span class="publish-time">At Time / <a>{{article.createTime | socialDate}}</a></span>
+                            <span class="publish-time">Latest / <a>{{article.createTime | socialDate}}</a></span>
                             <span class="readings"><a>
-                                    <a-icon type="eye" /> {{article.readNum}} 阅读
+                                    <a-icon type="eye" /> {{article.readNum}}
                                 </a></span>
                             <span class="likes"><a @click="likePost(article)">
-                                    <a-icon type="heart" /> {{article.likeNum}} 喜欢
+                                    <a-icon type="heart" /> {{article.likeNum}}
                                 </a></span>
                             <a-button type="link" icon="double-right" @click="viewArticle(article.id)" :ghost="true"
                                 size="small">
@@ -268,6 +268,7 @@ export default {
                 position: absolute;
                 bottom: 0px;
                 width: 95%;
+                font-family: 'engttf';
                 .ant-btn {
                     position: absolute;
                     right: 0;
@@ -306,6 +307,8 @@ export default {
 
             &.big-image {
                 padding-bottom: 26%;
+                border-top-left-radius: @default-border-radius;
+                border-top-right-radius: @default-border-radius;
             }
 
             img {

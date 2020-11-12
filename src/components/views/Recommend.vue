@@ -111,6 +111,7 @@ export default {
 
             .info {
                 margin: 5px 0 0px;
+                font-family: 'engttf';
 
                 span {
                     font-size: 13px;
