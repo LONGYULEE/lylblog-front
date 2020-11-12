@@ -219,7 +219,7 @@
         width: 32px;
         z-index: 20;
     }
-    .anticon {
+    .mfb-component__button--main .anticon {
         vertical-align: 0.6rem;
     }
 }

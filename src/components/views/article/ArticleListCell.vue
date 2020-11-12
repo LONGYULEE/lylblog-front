@@ -138,7 +138,7 @@ export default {
     border-radius: @default-border-radius;
     @media only screen and (max-width: 768px) {
         margin: 0 3px 7px 3px;
-        background: @my-box-backgroud-color-dark;
+        background: rgba(0, 0, 0, 0.2);
     }
     box-shadow: @my-box-shadow;
     border-radius: @default-border-radius;
