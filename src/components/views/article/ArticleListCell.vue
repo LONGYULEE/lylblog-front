@@ -158,7 +158,7 @@ export default {
         .text-wrapper {
             padding: 20px 20px 0 20px;
             text-align: left;
-            min-height: 300px;
+            min-height: 14rem;
             position: relative;
 
             @media only screen and (max-width: 768px) {

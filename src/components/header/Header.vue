@@ -138,6 +138,7 @@ export default {
                         this.articleCategoryList
                     );
                 }
+                this.$store.commit('setCategories', data.data);
             });
         }
     }

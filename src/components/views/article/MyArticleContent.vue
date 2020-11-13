@@ -117,7 +117,6 @@ export default {
                     this.tags = data.data.tagList;
                     this.pre = data.data.pre;
                     this.next = data.data.next;
-                    console.log(data.data)
 
                     // 更新目录、高亮代码
                     this.$nextTick(function () {
@@ -212,32 +211,18 @@ export default {
             this.$message.success("复制成功");
 
         },
-        //创建目录
-        createMenus() {
-            this.$store.commit('setMenus', false);
-        },
         getCategroyName() {
-            this.$http({
-                url: this.$http.adornUrl("/operation/categories?type=0"),
-                method: "get",
-                data: this.$http.adornData()
-            }).then(({ data }) => {
-                if (data && data.code === 2000) {
-                    let categoryArr = data.data;
-                    this.category.forEach((item01, index01) => {
-                        categoryArr.forEach((item02, index02) => {
-                            if (item01 == item02.id) {
-                                this.categoryArr.push({
-                                    'id': item02.id,
-                                    'name': item02.name
-                                })
-                            }
+            let categoryArr = this.$store.state.categories;
+            this.category.forEach((item01, index01) => {
+                categoryArr.forEach((item02, index02) => {
+                    if (item01 == item02.id) {
+                        this.categoryArr.push({
+                            'id': item02.id,
+                            'name': item02.name
                         })
-                    })
-                }
-            }).catch(error => {
-                console.log(error);
-            });
+                    }
+                })
+            })
         },
         toCategory(id) {
             this.$router.push({
