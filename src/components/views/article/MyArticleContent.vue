@@ -477,6 +477,9 @@ export default {
                 position: absolute;
                 bottom: 10px;
                 right: 10px;
+                @media only screen and (max-width: 768px) {
+                    font-size: 12px;
+                }
             }
         }
 
@@ -490,6 +493,9 @@ export default {
                 padding-left: 10px;
                 font-size: 21px;
                 margin-top: 10px;
+                @media only screen and (max-width: 768px) {
+                    font-size: 12px;
+                }
             }
         }
     }

@@ -15,13 +15,13 @@
                     </div>
                     <div class="sidebar-menus">
                         <ul>
-                            <li>
+                            <li @click="sideClose()">
                                 <router-link to="/articles">Categoies</router-link>
                             </li>
-                            <li>
+                            <li @click="sideClose()">
                                 <router-link to="/timeline">Timeline</router-link>
                             </li>
-                            <li>
+                            <li @click="sideClose()">
                                 <router-link to="/showme">About</router-link>
                             </li>
                         </ul>
@@ -84,6 +84,9 @@ export default {
             return router;
         },
         onClose() {
+            this.$emit('closepop', false);
+        },
+        sideClose() {
             this.$emit('closepop', false);
         }
     },
