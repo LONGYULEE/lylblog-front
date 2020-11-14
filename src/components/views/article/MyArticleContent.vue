@@ -64,6 +64,24 @@
                         </a-col>
                     </a-row>
                 </div>
+                <div class="prev-next-wrapper">
+                    <div class="prev">
+                        <a @click.prevent="toPreNext(pre)">
+                            <span>
+                                <a-icon type="left" style="padding-right:10px" />PRE
+                            </span>
+                            <div class="title">{{pre ? pre.title : '没有上一篇了哦'}}</div>
+                        </a>
+                    </div>
+                    <div class="next">
+                        <a @click.prevent="toPreNext(next)">
+                            <span>NEXT
+                                <a-icon type="right" style="padding-left:10px" />
+                            </span>
+                            <div class="title">{{next ? next.title : '没有下一篇了哦'}}</div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </article>
     </div>
@@ -288,6 +306,11 @@ export default {
             titleEL.forEach((item, index) => {
                 item.setAttribute('id', 'title-id-' + i++);
             })
+        },
+        toPreNext(article) {
+            if (article) {
+                this.$router.push({ path: `/article/${article.id}` })
+            }
         }
     },
     created: function () {
@@ -304,6 +327,15 @@ export default {
     beforeDestroy() {
         this.$store.commit('setMenus', []);
         tocbot.destroy();
+    },
+    watch: {
+        '$route'(to, from) {
+            if (to.path != from.path) {
+                this.categoryArr = [];
+                this.getArticle(to.params.articleId);
+                this.$forceUpdate();
+            }
+        }
     }
 };
 </script>
@@ -409,6 +441,59 @@ export default {
     .divider {
         color: @my-font-color;
         margin: 60px 0;
+    }
+
+    .prev-next-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: @my-font-color;
+        .prev,
+        .next {
+            width: 45%;
+            height: 90px;
+            margin-top: 5rem;
+            background: @my-box-backgroud-color;
+            border-radius: @default-border-radius;
+            box-shadow: @my-box-shadow;
+            position: relative;
+            font-family: 'engttf';
+            &:hover {
+                box-shadow: @my-box-shadow-hover;
+            }
+        }
+        a:hover {
+            color: @color-main-primary;
+        }
+
+        .prev {
+            span {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            .title {
+                text-align: right;
+                font-family: 'title';
+                font-size: 21px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+
+        .next {
+            span {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+            }
+            .title {
+                padding-left: 10px;
+                font-family: 'title';
+                font-size: 21px;
+                margin-top: 10px;
+            }
+        }
     }
 }
 
