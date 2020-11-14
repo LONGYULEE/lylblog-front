@@ -180,7 +180,6 @@ export default {
                 font-size: 24px;
                 font-weight: 100;
                 line-height: 27px;
-                font-family: 'title';
                 margin-bottom: 20px;
 
                 span.special {

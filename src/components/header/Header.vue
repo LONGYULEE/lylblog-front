@@ -12,6 +12,7 @@
             <div id="header" v-show="show">
                 <router-link to="/">
                     <span class="title">寒露</span>
+                    <span style="font-size:41px"></span>
                 </router-link>
 
                 <ul id="nav">

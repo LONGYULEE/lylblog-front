@@ -473,7 +473,6 @@ export default {
             }
             .title {
                 text-align: right;
-                font-family: 'title';
                 font-size: 21px;
                 position: absolute;
                 bottom: 10px;
@@ -489,7 +488,6 @@ export default {
             }
             .title {
                 padding-left: 10px;
-                font-family: 'title';
                 font-size: 21px;
                 margin-top: 10px;
             }

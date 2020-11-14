@@ -92,7 +92,7 @@ export default {
         color: @my-font-color;
         line-height: 30px;
         font-weight: 700;
-        font-family: 'name';
+        font-family: 'engttf';
     }
 
     .desc {
