@@ -9,6 +9,7 @@
                     <div v-show="!skeletonFlag" class="skeletonDiv">
                         <a-skeleton active :paragraph="{ rows: 21 }"></a-skeleton>
                     </div>
+                    <div id="gitalk-container"></div>
                 </div>
             </a-col>
             <a-col :xs="0" :sm="0" :md="0" :lg="4">
@@ -40,6 +41,18 @@ export default {
             })
         },
 
+    },
+    mounted() {
+        const gitalk = new Gitalk({
+            clientID: 'a0f2c57a7461ba9e7198',
+            clientSecret: '252d5b5bfd35fedecea101c07bf65147699ee0c3',
+            repo: 'blog',      // The repository of store comments,
+            owner: 'hanlulee',
+            admin: ['hanlulee'],
+            id: location.pathname,      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+        gitalk.render('gitalk-container')
     }
 }
 </script>
@@ -132,6 +145,11 @@ export default {
             /deep/ .toc-link::before {
                 background-color: @my-font-color02;
             }
+        }
+
+        #gitalk-container {
+            color: darkgrey;
+            margin: 100px 0;
         }
     }
 }
