@@ -38,21 +38,20 @@ export default {
         getArticleMenus(data) {
             this.$nextTick(() => {
                 this.skeletonFlag = data;
+                this.initGitalk();
             })
         },
-
-    },
-    mounted() {
-        const gitalk = new Gitalk({
-            clientID: 'a0f2c57a7461ba9e7198',
-            clientSecret: '252d5b5bfd35fedecea101c07bf65147699ee0c3',
-            repo: 'blog',      // The repository of store comments,
-            owner: 'hanlulee',
-            admin: ['hanlulee'],
-            id: location.pathname,      // Ensure uniqueness and length less than 50
-            distractionFreeMode: false  // Facebook-like distraction free mode
-        })
-        gitalk.render('gitalk-container')
+        initGitalk() {
+            const gitalk = new Gitalk({
+                clientID: '6fee6cc21b9648498cd4',
+                clientSecret: '57d435184c146183bc8f1645e39db7481afb5c43',
+                repo: 'blogcomment',      // The repository of store comments,
+                owner: 'LONGYULEE',
+                admin: ['LONGYULEE'],
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('gitalk-container')
+        }
     }
 }
 </script>
@@ -149,7 +148,11 @@ export default {
 
         #gitalk-container {
             color: darkgrey;
-            margin: 100px 0;
+            margin: 100px 20px;
+
+            .gt-comment-content {
+                border-radius: 5px;
+            }
         }
     }
 }
